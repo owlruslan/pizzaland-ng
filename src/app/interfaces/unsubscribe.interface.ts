@@ -1,6 +1,6 @@
 import {Subject} from 'rxjs';
 
-export interface IUnsubscribe {
+export interface Unsubscribe {
 
   /**
    * Unsubscribe subject.

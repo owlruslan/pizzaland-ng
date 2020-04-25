@@ -12,7 +12,7 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { Store, Action } from '@ngrx/store';
 
 import { hot } from 'jasmine-marbles';
-import { IResponse } from '../../../base/interfaces/response/response.interface';
+import { IResponse } from '../../../interfaces/response/response.interface';
 import { UserService } from '../../../services/client/user/user.service';
 import {
   CreateUser,
