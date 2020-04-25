@@ -1,0 +1,29 @@
+.pizzas {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  margin: 20px 0
+}
+
+.preview {
+  margin: 20px auto;
+  max-width: 1280px;
+  width: 100%;
+  height: 300px;
+  background-color: aliceblue;
+}
+
+.total {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 24px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  &__value {
+    color: green;
+  }
+}

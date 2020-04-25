@@ -9,12 +9,12 @@ const routes: Routes = [
     component: AppComponent,
     children: [
       {
-        path: 'auth',
-        loadChildren: () => import('./modules/auth/auth.module').then(mod => mod.AuthModule)
+        path: '',
+        loadChildren: () => import('./modules/pizzas/pizzas.module').then(mod => mod.PizzasModule)
       },
       {
-        path: 'pizzas',
-        loadChildren: () => import('./modules/pizzas/pizzas.module').then(mod => mod.PizzasModule)
+        path: 'auth',
+        loadChildren: () => import('./modules/auth/auth.module').then(mod => mod.AuthModule)
       },
       {
         path: 'basket',

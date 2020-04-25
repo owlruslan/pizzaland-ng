@@ -1,0 +1,9 @@
+<app-navbar></app-navbar>
+<h1>Pizzas</h1>
+<div class="filter">
+  <span>Vegan</span>
+  <span>Chicken</span>
+</div>
+<div class="pizzas">
+  <app-pizza-card *ngFor="let pizza of pizzas" class="pizza-card"></app-pizza-card>
+</div>

@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<h1>Basket</h1>
+<div class="preview"></div>
+<div class="pizzas">
+  <app-pizza-card *ngFor="let pizza of pizzas" class="pizza-card"></app-pizza-card>
+</div>
+<div class="total">
+  <div class="total__title">
+    Total
+  </div>
+  <div class="total__value">
+    {{ '100' | currency: 'USD'}}
+  </div>
+</div>

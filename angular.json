@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pizzaiols"
+    }
+  },
+  "defaultProject": "pizzaiols",
+  "cli": {
+    "analytics": "5e40fa87-bfd8-46ce-ad46-f86041b4e35a"
+  }
 }
