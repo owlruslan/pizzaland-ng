@@ -12,7 +12,8 @@
 }
 
 h1 {
-  margin: 20px 0
+  margin: 20px 0;
+  color: #1A1A1A;
 }
 
 .preview {
@@ -29,9 +30,18 @@ h1 {
   font-size: 24px;
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-start;
+  margin-top: 30px;
+
+  &__title {
+    margin-right: 30px;
+  }
 
   &__value {
-    color: green;
+    color: #32D184;
   }
+}
+
+.pizza-card {
+  margin-right: 30px;
 }

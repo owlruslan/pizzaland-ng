@@ -12,7 +12,8 @@
 }
 
 h1 {
-  margin: 20px 0
+  margin: 20px 0;
+  color: #1A1A1A;
 }
 
 .filter {
@@ -20,7 +21,9 @@ h1 {
   margin-bottom: 40px;
 
   span {
-    background-color: red;
+    background-color: #FF0154;
+    color: #ffffff;
+    font-weight: 900;
     height: 36px;
     width: fit-content;
     margin-right: 20px;
@@ -28,7 +31,14 @@ h1 {
     justify-content: center;
     align-items: center;
     border-radius: 36px;
-    padding: 0 10px;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: 200ms ease-out;
+
+    &:hover {
+      background-color: rgba(#FF0154, 0.8);
+      color: black;
+    }
   }
 }
 

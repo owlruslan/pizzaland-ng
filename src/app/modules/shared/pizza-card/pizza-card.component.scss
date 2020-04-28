@@ -4,7 +4,8 @@
   background-color: gainsboro;
   cursor: pointer;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Параметры тени */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: 200ms ease-out;
 
   &:hover {
     background-color: gray;
