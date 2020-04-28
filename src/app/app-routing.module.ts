@@ -9,7 +9,7 @@ const routes: Routes = [
     component: AppComponent,
     children: [
       {
-        path: '',
+        path: 'pizzas',
         loadChildren: () => import('./modules/pizzas/pizzas.module').then(mod => mod.PizzasModule)
       },
       {
@@ -19,6 +19,11 @@ const routes: Routes = [
       {
         path: 'basket',
         loadChildren: () => import('./modules/basket/basket.module').then(mod => mod.BasketModule)
+      },
+      {
+        path: '',
+        redirectTo: 'pizzas',
+        pathMatch: 'full'
       },
     ]
   }

@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AuthComponent } from './auth.component';
+import {AuthComponent} from './auth.component';
 import {provideMockStore} from '@ngrx/store/testing';
-import {AuthModule} from '@app/modules/auth/auth.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 describe('app.modules.auth.AuthComponent', () => {
   let component: AuthComponent;
@@ -17,6 +17,9 @@ describe('app.modules.auth.AuthComponent', () => {
       ],
       providers: [
         provideMockStore()
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
       ]
     })
     .compileComponents();
@@ -26,6 +29,12 @@ describe('app.modules.auth.AuthComponent', () => {
     fixture = TestBed.createComponent(AuthComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  afterEach(() => {
+    if (fixture.nativeElement && 'remove' in fixture.nativeElement) {
+      (fixture.nativeElement as HTMLElement).remove();
+    }
   });
 
   it('should create', () => {

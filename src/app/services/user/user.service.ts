@@ -10,7 +10,7 @@ import {UserLoginResponse} from '@app/models/user/user-login-response.model';
 /**
  * Implementation of user APIs.
  */
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class UserService implements APIService {
   readonly host = environment.host;
 

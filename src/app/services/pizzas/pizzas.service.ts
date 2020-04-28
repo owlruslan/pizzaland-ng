@@ -11,7 +11,7 @@ import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
 /**
  * Implementation of pizzas APIs.
  */
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class PizzasService implements APIService {
   readonly host = environment.host;
 

@@ -2,8 +2,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ButtonComponent} from './button.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {NO_ERRORS_SCHEMA} from '@angular/core';
-import {of} from 'rxjs';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 describe('app.ui.v1.button.ButtonComponent', () => {
   let component: ButtonComponent;
@@ -18,7 +17,9 @@ describe('app.ui.v1.button.ButtonComponent', () => {
       providers: [
         NoopAnimationsModule,
       ],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
       .compileComponents();
   }));
@@ -29,7 +30,7 @@ describe('app.ui.v1.button.ButtonComponent', () => {
     fixture.detectChanges();
   });
 
-  afterAll(() => {
+  afterEach(() => {
     if (fixture.nativeElement && 'remove' in fixture.nativeElement) {
       (fixture.nativeElement as HTMLElement).remove();
     }

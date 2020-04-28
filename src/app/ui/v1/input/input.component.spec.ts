@@ -2,7 +2,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {InputComponent} from './input.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 describe('app.ui.v1.input.InputComponent', () => {
   let component: InputComponent;
@@ -17,7 +17,9 @@ describe('app.ui.v1.input.InputComponent', () => {
       providers: [
         NoopAnimationsModule,
       ],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
       .compileComponents();
   }));
@@ -28,7 +30,7 @@ describe('app.ui.v1.input.InputComponent', () => {
     fixture.detectChanges();
   });
 
-  afterAll(() => {
+  afterEach(() => {
     if (fixture.nativeElement && 'remove' in fixture.nativeElement) {
       (fixture.nativeElement as HTMLElement).remove();
     }

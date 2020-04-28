@@ -2,7 +2,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ErrorMessageComponent} from './error-message.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {of} from 'rxjs';
 
 describe('app.ui.v1.error-message.ErrorMessageComponent', () => {
@@ -18,7 +18,9 @@ describe('app.ui.v1.error-message.ErrorMessageComponent', () => {
       providers: [
         NoopAnimationsModule,
       ],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
       .compileComponents();
   }));
@@ -30,7 +32,7 @@ describe('app.ui.v1.error-message.ErrorMessageComponent', () => {
     fixture.detectChanges();
   });
 
-  afterAll(() => {
+  afterEach(() => {
     if (fixture.nativeElement && 'remove' in fixture.nativeElement) {
       (fixture.nativeElement as HTMLElement).remove();
     }
