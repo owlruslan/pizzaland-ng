@@ -9,21 +9,6 @@ import {ButtonType} from '@app/ui/v1/button/button.component';
 export class PizzaCardComponent implements OnInit {
   readonly buttonType = ButtonType.SUCCESS;
 
-  toppings = [
-    'anchovy',
-    'bacon',
-    'basil',
-    'chili',
-  /*  'mozzarella',
-    'mushroom',
-    'olive',
-    'onion',
-    'pepper',
-    'pepperoni',
-    'sweetcorn',
-    'tomato'*/
-  ];
-
   constructor() { }
 
   ngOnInit(): void {
