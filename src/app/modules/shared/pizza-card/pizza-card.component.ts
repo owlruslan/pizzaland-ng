@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ButtonType} from '@app/ui/v1/button/button.component';
 
 @Component({
   selector: 'app-pizza-card',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pizza-card.component.scss'],
 })
 export class PizzaCardComponent implements OnInit {
+  readonly buttonType = ButtonType.SUCCESS;
 
   constructor() { }
 

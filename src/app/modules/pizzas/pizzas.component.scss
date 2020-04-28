@@ -21,8 +21,8 @@ h1 {
   margin-bottom: 40px;
 
   span {
-    background-color: #FF0154;
-    color: #ffffff;
+    background-color: #e5f1fd;
+    color: rgba(#000, 0.5);
     font-weight: 900;
     height: 36px;
     width: fit-content;
@@ -36,7 +36,7 @@ h1 {
     transition: 200ms ease-out;
 
     &:hover {
-      background-color: rgba(#FF0154, 0.8);
+      background-color: rgba(aliceblue, 0.8);
       color: black;
     }
   }
@@ -44,4 +44,5 @@ h1 {
 
 .pizza-card {
   margin-right: 30px;
+  margin-bottom: 20px;
 }
