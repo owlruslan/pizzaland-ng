@@ -1,25 +1,41 @@
 .navbar {
   display: flex;
+  max-width: 1280px;
+  width: 100%;
+  margin: 20px auto;
+  justify-content: space-between;
 
   &__logo {
+    display: flex;
+    align-items: flex-start;
     margin-right: 60px;
     cursor: pointer;
+    font-weight: 900;
+    font-size: 42px;
+
+    svg {
+      margin-left: 2px;
+    }
   }
 
   &__menu {
     display: flex;
+    align-items: center;
+    font-weight: 900;
+    font-size: 22px;
 
     &__item {
       cursor: pointer;
       font-weight: 900;
       margin-right: 30px;
+      transition: 200ms ease-out;
 
       &:hover {
-        color: red;
+        color: rgba(#000, 0.6);
       }
 
       &.active {
-        color: red;
+        color: #FF0154;
       }
     }
   }
