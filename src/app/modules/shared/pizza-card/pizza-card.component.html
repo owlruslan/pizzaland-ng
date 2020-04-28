@@ -3,6 +3,18 @@
     <div class="pizza">
       <div class="pizza__board"></div>
       <div class="pizza__base"></div>
+      <div class="pizza__toppings">
+        <div
+          *ngFor="let topping of toppings; let i = index;"
+          [style.zIndex]="i"
+        >
+          <div class="pizza__topping pizza__topping--{{topping}}"></div>
+          <div class="pizza__topping pizza__topping--{{topping}}"></div>
+          <div class="pizza__topping pizza__topping--{{topping}}"></div>
+          <div class="pizza__topping pizza__topping--{{topping}}"></div>
+          <div class="pizza__topping pizza__topping--{{topping}}"></div>
+        </div>
+      </div>
     </div>
     <div class="pizza-card__preview__price">{{ 100 | currency: "USD" }}</div>
   </div>
