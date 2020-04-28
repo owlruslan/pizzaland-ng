@@ -7,7 +7,7 @@ import mockErrorResponse from '@app/mocks/error/error-response.mock';
 
 const errorResponse$ = of(mockErrorResponse);
 
-storiesOf('app.ui.v1.ErrorMessageComponent', module)
+storiesOf('app.ui.v1.error-message.ErrorMessageComponent', module)
   .addDecorator(
     moduleMetadata({
       imports: [
