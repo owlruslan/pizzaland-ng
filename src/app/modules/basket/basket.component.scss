@@ -9,6 +9,7 @@
 .pizzas {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 h1 {
@@ -43,6 +44,10 @@ h1 {
 }
 
 .pizza-card {
-  margin-right: 30px;
   margin-bottom: 20px;
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }

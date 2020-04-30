@@ -1,17 +1,17 @@
-<div class="pizza-card">
-  <div class="pizza-card__preview">
-    <app-pizza-small-preview class="pizza"></app-pizza-small-preview>
-  </div>
-  <div class="pizza-card__info">
-    <div class="pizza-card__price">{{ 100 | currency: "USD" }}</div>
-    <div class="pizza-card__info__name">NAME</div>
-    <div class="pizza-card__info__description">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-      architecto, dicta ducimus, exercitationem id modi nam officia officiis placeat quas quo ullam voluptate!
-      Aspernatur cupiditate maxime neque ratione tempora veniam.
+<ng-container *ngIf="(pizza$ | async) as pizza; else preloader">
+  <div class="pizza-card">
+    <div class="pizza-card__preview">
+      <app-pizza-small-preview class="pizza"></app-pizza-small-preview>
     </div>
-    <div class="pizza-card__info__bottom">
-      <app-ui-v1-button class="pizza-card__info__buy-btn" title="Buy" [type]="buttonType"></app-ui-v1-button>
+    <div class="pizza-card__info">
+      <div class="pizza-card__price">{{ pizza.price  | currency: "USD" }}</div>
+      <div class="pizza-card__info__name">{{ pizza.name }}</div>
+      <div class="pizza-card__info__description">{{ pizza.description }}</div>
+      <div class="pizza-card__info__bottom">
+        <app-ui-v1-button class="pizza-card__info__buy-btn" title="Buy" [type]="buttonType"></app-ui-v1-button>
+      </div>
     </div>
   </div>
-</div>
+</ng-container>
+<ng-template #preloader>
+</ng-template>

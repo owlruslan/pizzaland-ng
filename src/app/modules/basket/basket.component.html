@@ -3,14 +3,16 @@
   <h1>Basket</h1>
   <app-pizza-preview></app-pizza-preview>
   <div class="pizzas">
-    <app-pizza-card *ngFor="let pizza of pizzas" class="pizza-card"></app-pizza-card>
+    <ng-container *ngFor="let pizza of (pizzasResponse$ | async)?.pizzas">
+      <app-pizza-card  [pizza]="pizza" class="pizza-card"></app-pizza-card>
+    </ng-container>
   </div>
   <div class="total">
     <div class="total__title">
       Total
     </div>
     <div class="total__value">
-      {{ '100' | currency: 'USD'}}
+      {{ total$ | async | currency: 'USD'}}
     </div>
   </div>
 </div>

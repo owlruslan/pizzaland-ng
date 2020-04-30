@@ -1,3 +1,3 @@
 export class GetPizzasResponse {
-  pizzas: any;
+  pizzas: any[];
 }

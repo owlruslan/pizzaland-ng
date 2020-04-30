@@ -5,7 +5,7 @@ import {State} from './basket.state';
 export function reducer(state = initialState, action: Actions): State {
   switch (action.type) {
 
-    // Login
+    // Get Pizzas
     case ActionTypes.GetPizzas: {
       return {
         ...state,

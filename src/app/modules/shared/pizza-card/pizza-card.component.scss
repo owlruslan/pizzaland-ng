@@ -1,6 +1,5 @@
 .pizza-card {
-  max-width: 240px;
-  width: 100%;
+  width: 300px;
   height: 400px;
   background-color: #ffffff;
   cursor: pointer;
@@ -13,10 +12,6 @@
 
     .pizza-card__preview {
       transform: scale(1.1);
-    }
-
-    .pizza-card__price {
-      color: #32D184;
     }
   }
 

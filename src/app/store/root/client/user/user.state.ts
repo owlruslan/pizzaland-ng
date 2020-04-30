@@ -1,9 +1,19 @@
+import {UserResponse} from '@app/models/user/user-response.model';
+import {UserLoginResponse} from '@app/models/user/user-login-response.model';
+
 export interface State {
   logined: boolean;
-  userTokenResponse: any;
+  userTokenResponse: UserLoginResponse;
+  userResponse: UserResponse;
 }
 
 export const initialState: State = {
   logined: false,
-  userTokenResponse: null
+  userTokenResponse: {
+    token: 'TOKEN',
+    expiresAt: 'DATE'
+  },
+  userResponse: {
+    name: 'Ruslan'
+  }
 };

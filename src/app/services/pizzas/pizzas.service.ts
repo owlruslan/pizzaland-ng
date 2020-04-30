@@ -3,9 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from 'src/environments/environment';
 import {APIService} from '@app/interfaces/api-service.interface';
-import {UserLoginRequest} from '@app/models/user/user-login-request.model';
 import {ResponseSuccess} from '@app/models/response/response-success.model';
-import {UserLoginResponse} from '@app/models/user/user-login-response.model';
 import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
 
 /**

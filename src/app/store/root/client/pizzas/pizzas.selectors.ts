@@ -1,5 +1,15 @@
-import { createSelector, createFeatureSelector } from '@ngrx/store';
-import { State } from './pizzas.state';
+import {RootStoreState} from '@app/store/root';
+import {createSelector} from '@ngrx/store';
+import {State} from '@app/store/root/client/pizzas/pizzas.state';
 
-export const getUserState = createFeatureSelector<State>('user');
+export const getPizzasState = (state: RootStoreState.State) => state.client.pizzas;
 
+export const getPizzasResponseState = createSelector(
+  getPizzasState,
+  (state: State) => state.pizzasResponse
+);
+
+export const getTagsResponseState = createSelector(
+  getPizzasState,
+  (state: State) => state.tagsResponse
+);

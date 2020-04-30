@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ButtonType} from '@app/ui/v1/button/button.component';
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-pizza-card',
@@ -8,6 +9,20 @@ import {ButtonType} from '@app/ui/v1/button/button.component';
 })
 export class PizzaCardComponent implements OnInit {
   readonly buttonType = ButtonType.SUCCESS;
+
+  /**
+   * @input: pizza - Pizza entity.
+   */
+  pizza$ = new BehaviorSubject<any>(null);
+
+  get pizza(): any {
+    return this.pizza$.getValue();
+  }
+
+  @Input()
+  set pizza(value: any) {
+    this.pizza$.next(value);
+  }
 
   constructor() { }
 

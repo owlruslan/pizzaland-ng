@@ -41,14 +41,46 @@
       font-weight: 900;
       margin-right: 30px;
       transition: 200ms ease-out;
+      display: flex;
+      align-items: center;
 
       &:hover {
-        color: rgba(#000, 0.6);
+        opacity: 0.6;
       }
 
       &.active {
         color: #FF0154;
+
+        svg {
+          fill: #FF0154;
+        }
+      }
+
+      &.auth {
+        svg {
+          margin-left: 6px;
+        }
       }
     }
+  }
+}
+
+.basket {
+  position: relative;
+  width: 44px;
+  height: 44px;
+
+  &__count {
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    font-size: 14px;
+    position: absolute;
+    background-color: #FF0154;
+    color: #ffffff;
+    border-radius: 16px;
+    font-weight: 900;
   }
 }
