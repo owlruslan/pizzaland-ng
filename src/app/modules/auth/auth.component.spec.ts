@@ -1,13 +1,17 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {AuthComponent} from './auth.component';
-import {provideMockStore} from '@ngrx/store/testing';
+import {MockStore, provideMockStore} from '@ngrx/store/testing';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {UserLoginRequest} from '@app/models/user/user-login-request.model';
+import {UserStoreActions} from '@app/store/root';
 
 describe('app.modules.auth.AuthComponent', () => {
   let component: AuthComponent;
   let fixture: ComponentFixture<AuthComponent>;
+
+  let mockStore: MockStore;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -27,6 +31,9 @@ describe('app.modules.auth.AuthComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AuthComponent);
+
+    mockStore = TestBed.inject(MockStore);
+
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -39,5 +46,14 @@ describe('app.modules.auth.AuthComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('#onSubmit', () => {
+    it('should login', () => {
+      const dispatchSpy = spyOn(mockStore, 'dispatch');
+      const request = new UserLoginRequest();
+      component.onSubmit();
+      expect(dispatchSpy).toHaveBeenCalledWith(new UserStoreActions.Login({request}));
+    });
   });
 });

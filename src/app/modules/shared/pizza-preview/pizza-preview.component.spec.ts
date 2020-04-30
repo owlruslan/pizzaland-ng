@@ -2,6 +2,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {PizzaPreviewComponent} from './pizza-preview.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import mockPizza from '@app/mocks/pizzas/pizza.mock';
 
 describe('app.modules.shared.pizza-preview.PizzaPreviewComponent', () => {
   let component: PizzaPreviewComponent;
@@ -30,5 +31,16 @@ describe('app.modules.shared.pizza-preview.PizzaPreviewComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should set pizza', () => {
+    component.pizza$.next(null);
+    component.pizza = mockPizza;
+    expect(component.pizza).toEqual(mockPizza);
+  });
+
+  it('should get pizza', () => {
+    component.pizza = mockPizza;
+    expect(component.pizza).toEqual(mockPizza);
   });
 });

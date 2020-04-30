@@ -6,6 +6,7 @@ import {MockStore, provideMockStore} from '@ngrx/store/testing';
 import {MemoizedSelector} from '@ngrx/store';
 import {RootStoreState} from '@app/store/root';
 import {BasketStoreSelectors} from '@app/store/root/client';
+import mockGetPizzasResponse from '@app/mocks/pizzas/get-pizzas-response.mock';
 
 describe('app.modules.basket.BasketComponent', () => {
   let component: BasketComponent;
@@ -18,24 +19,7 @@ describe('app.modules.basket.BasketComponent', () => {
   const initialState = {
     client: {
       basket: {
-        pizzasResponse: {
-          pizzas: [
-            {
-              id: '0',
-              name: 'PIZZA_NAME_0',
-              description: 'PIZZA_DESCRIPTION_0',
-              toppings: ['bacon', 'basil', 'chili', 'mozzarella'],
-              price: 100,
-            },
-            {
-              id: '1',
-              name: 'PIZZA_NAME_1',
-              description: 'PIZZA_DESCRIPTION_1',
-              toppings: ['bacon', 'basil', 'chili'],
-              price: 130,
-            },
-          ]
-        }
+        pizzasResponse: mockGetPizzasResponse
       }
     }
   };

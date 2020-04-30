@@ -23,8 +23,8 @@ export class PizzaToppingsComponent implements ControlValueAccessor {
   value: string[] = [];
   focused: string;
 
-  private onTouch: Function;
-  private onModelChange: Function;
+  onTouch: Function;
+  onModelChange: Function;
 
   registerOnChange(fn) {
     this.onModelChange = fn;
