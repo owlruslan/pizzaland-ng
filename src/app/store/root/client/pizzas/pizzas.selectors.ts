@@ -9,7 +9,7 @@ export const getPizzasResponseState = createSelector(
   (state: State) => state.pizzasResponse
 );
 
-export const getTagsResponseState = createSelector(
+export const getToppingsResponseState = createSelector(
   getPizzasState,
-  (state: State) => state.tagsResponse
+  (state: State) => state.toppingsResponse
 );

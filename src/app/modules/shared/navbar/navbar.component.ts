@@ -29,11 +29,6 @@ export class NavbarComponent implements OnInit, OnDestroy, Unsubscribe {
   constructor(private store: Store<RootStoreState.State>) { }
 
   ngOnInit(): void {
-    this.userResponse$.subscribe(x => {
-      if (x) {
-        console.log(x);
-      }
-    });
     // TODO: dispatch get user response
   }
 
