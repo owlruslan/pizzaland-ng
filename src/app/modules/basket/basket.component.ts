@@ -33,7 +33,11 @@ export class BasketComponent implements OnInit, OnDestroy, Unsubscribe {
     // TODO: dispatch get pizzas response
     // this.store.dispatch(new GetPizzas());
 
-    this.pizzasResponse$.subscribe(resp => this.activePizza$.next(resp.pizzas[0]));
+    this.pizzasResponse$.subscribe(resp => {
+      if (resp) {
+        this.activePizza$.next(resp.pizzas[0]);
+      }
+    });
   }
 
   ngOnDestroy(): void {

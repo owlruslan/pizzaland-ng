@@ -1,15 +1,51 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BasketComponent } from './basket.component';
+import {BasketComponent} from './basket.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {MockStore, provideMockStore} from '@ngrx/store/testing';
+import {MemoizedSelector} from '@ngrx/store';
+import {RootStoreState} from '@app/store/root';
+import {BasketStoreSelectors} from '@app/store/root/client';
 
 describe('app.modules.basket.BasketComponent', () => {
   let component: BasketComponent;
   let fixture: ComponentFixture<BasketComponent>;
 
+  let mockStore: MockStore;
+  let mockPizzasResponseSelector: MemoizedSelector<RootStoreState.State, any>;
+  let mockTotalSelector: MemoizedSelector<RootStoreState.State, any>;
+
+  const initialState = {
+    client: {
+      basket: {
+        pizzasResponse: {
+          pizzas: [
+            {
+              id: '0',
+              name: 'PIZZA_NAME_0',
+              description: 'PIZZA_DESCRIPTION_0',
+              toppings: ['bacon', 'basil', 'chili', 'mozzarella'],
+              price: 100,
+            },
+            {
+              id: '1',
+              name: 'PIZZA_NAME_1',
+              description: 'PIZZA_DESCRIPTION_1',
+              toppings: ['bacon', 'basil', 'chili'],
+              price: 130,
+            },
+          ]
+        }
+      }
+    }
+  };
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ BasketComponent ],
+      providers: [
+        provideMockStore({initialState})
+      ],
       schemas: [
         CUSTOM_ELEMENTS_SCHEMA
       ]
@@ -19,6 +55,17 @@ describe('app.modules.basket.BasketComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(BasketComponent);
+
+    mockStore = TestBed.inject(MockStore);
+    mockPizzasResponseSelector = mockStore.overrideSelector(
+      BasketStoreSelectors.getPizzasResponseState,
+      null
+    );
+    mockTotalSelector = mockStore.overrideSelector(
+      BasketStoreSelectors.getTotalState,
+      null
+    );
+
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -5,7 +5,6 @@ import {Observable, Subject} from 'rxjs';
 import {UserResponse} from '@app/models/user/user-response.model';
 import {takeUntil} from 'rxjs/operators';
 import {Unsubscribe} from '@app/interfaces/unsubscribe.interface';
-import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
 import {BasketStoreSelectors} from '@app/store/root/client';
 
 @Component({

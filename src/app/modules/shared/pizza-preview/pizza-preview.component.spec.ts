@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PizzaPreviewComponent } from './pizza-preview.component';
+import {PizzaPreviewComponent} from './pizza-preview.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 describe('app.modules.shared.pizza-preview.PizzaPreviewComponent', () => {
@@ -17,6 +17,7 @@ describe('app.modules.shared.pizza-preview.PizzaPreviewComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PizzaPreviewComponent);
+
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
