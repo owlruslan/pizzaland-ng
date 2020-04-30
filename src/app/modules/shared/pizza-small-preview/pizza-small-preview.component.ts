@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-pizza-small-preview',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pizza-small-preview.component.scss']
 })
 export class PizzaSmallPreviewComponent implements OnInit {
+  @Input()
   toppings = [
     'anchovy',
     'bacon',

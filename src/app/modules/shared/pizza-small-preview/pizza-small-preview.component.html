@@ -4,8 +4,7 @@
   <div class="pizza__toppings">
     <div
       *ngFor="let topping of toppings; let i = index;"
-      [style.zIndex]="i"
-    >
+      [style.zIndex]="i">
       <div class="pizza__topping pizza__topping--{{topping}}"></div>
       <div class="pizza__topping pizza__topping--{{topping}}"></div>
       <div class="pizza__topping pizza__topping--{{topping}}"></div>
