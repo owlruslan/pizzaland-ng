@@ -309,6 +309,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _app_in_memory_web_api_in_memory_web_api_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @app/in-memory-web-api/in-memory-web-api.module */
     "./src/app/in-memory-web-api/in-memory-web-api.module.ts");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -322,6 +328,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       factory: function AppModule_Factory(t) {
         return new (t || AppModule)();
       },
+      providers: [{
+        provide: _angular_common__WEBPACK_IMPORTED_MODULE_8__["LocationStrategy"],
+        useClass: _angular_common__WEBPACK_IMPORTED_MODULE_8__["HashLocationStrategy"]
+      }],
       imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _app_in_memory_web_api_in_memory_web_api_module__WEBPACK_IMPORTED_MODULE_7__["InMemoryWebApiModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _app_store_root__WEBPACK_IMPORTED_MODULE_4__["RootStoreModule"]]]
     });
 
@@ -340,6 +350,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         args: [{
           declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
           imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _app_in_memory_web_api_in_memory_web_api_module__WEBPACK_IMPORTED_MODULE_7__["InMemoryWebApiModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _app_store_root__WEBPACK_IMPORTED_MODULE_4__["RootStoreModule"]],
+          providers: [{
+            provide: _angular_common__WEBPACK_IMPORTED_MODULE_8__["LocationStrategy"],
+            useClass: _angular_common__WEBPACK_IMPORTED_MODULE_8__["HashLocationStrategy"]
+          }],
           bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         }]
       }], null, null);
