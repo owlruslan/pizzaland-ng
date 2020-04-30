@@ -3,11 +3,12 @@ import {getStatusText, RequestInfo, ResponseOptions, STATUS} from 'angular-in-me
 import {environment} from '@src/environments/environment';
 import {APIService} from '@app/interfaces/api-service.interface';
 import {userResponseData} from '@app/in-memory-web-api/data/user/user-response-data';
+import {pizzasResponseData} from '@app/in-memory-web-api/data/user/pizzas-response.data';
 
 @Injectable()
-export class UserInMemoryWebAPIService implements APIService {
+export class PizzasInMemoryWebAPIService implements APIService {
   readonly host = environment.host;
-  readonly collectionName = 'user';
+  readonly collectionName = 'pizzas';
 
   /**
    * HTTP GET interceptor.
@@ -16,48 +17,22 @@ export class UserInMemoryWebAPIService implements APIService {
     const url = reqInfo.req.url;
 
     switch (url) {
-      case `${this.host}/api/v1/user/profile`: {
-        return this.getProfile(reqInfo);
+      case `${this.host}/api/v1/pizzas`: {
+        return this.getPizzas(reqInfo);
       }
     }
 
     return undefined; // let the default GET handle all others
   }
 
-  post(reqInfo: RequestInfo) {
-    const url = reqInfo.req.url;
-
-    switch (url) {
-      case `${this.host}/api/v1/user/login`: {
-        return this.postLogin(reqInfo);
-      }
-    }
-
-  }
-
   /**
-   * GET: `/api/v1/user/profile`.
-   * Returns info about profile
+   * GET: `/api/v1/pizzas`.
+   * Returns pizzas response
    */
-  getProfile(reqInfo: RequestInfo) {
+  getPizzas(reqInfo: RequestInfo) {
     return reqInfo.utils.createResponse$(() => {
       const options: ResponseOptions = {
-        body: userResponseData,
-        status: STATUS.OK
-      };
-
-      return this.finishOptions(options, reqInfo);
-    });
-  }
-
-  /**
-   * POST: `/api/v1/user/login`.
-   * Returns user login response.
-   */
-  postLogin(reqInfo: RequestInfo) {
-    return reqInfo.utils.createResponse$(() => {
-      const options: ResponseOptions = {
-        body: userResponseData,
+        body: pizzasResponseData,
         status: STATUS.OK
       };
 

@@ -4,7 +4,7 @@ import {BehaviorSubject, combineLatest, Observable, of, Subject} from 'rxjs';
 import {select, Store} from '@ngrx/store';
 import {RootStoreState} from '@app/store/root';
 import {filter, map, startWith, switchMap, takeUntil, tap, withLatestFrom} from 'rxjs/operators';
-import {PizzasStoreSelectors} from '@app/store/root/client';
+import {PizzasStoreActions, PizzasStoreSelectors} from '@app/store/root/client';
 import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
 import {FormBuilder} from '@angular/forms';
 
@@ -51,7 +51,7 @@ export class PizzasComponent implements OnInit, AfterContentChecked, OnDestroy, 
   }
 
   ngOnInit(): void {
-    // TODO: dispatch get pizzas response
+    this.store.dispatch(new PizzasStoreActions.GetPizzas());
   }
 
   ngAfterContentChecked(): void {

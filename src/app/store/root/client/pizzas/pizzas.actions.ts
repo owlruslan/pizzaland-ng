@@ -6,7 +6,7 @@ import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
 
 export enum ActionTypes {
 
-  // Login
+  // Get Pizzas
 
   GetPizzas = '[Pizzas] Get Pizzas',
   GetPizzasSuccess = '[Pizzas] Get Pizzas Success',

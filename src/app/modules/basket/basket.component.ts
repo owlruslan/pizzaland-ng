@@ -3,7 +3,7 @@ import {Unsubscribe} from '@app/interfaces/unsubscribe.interface';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
 import {select, Store} from '@ngrx/store';
-import {BasketStoreSelectors} from '@app/store/root/client';
+import {BasketStoreActions, BasketStoreSelectors} from '@app/store/root/client';
 import {takeUntil} from 'rxjs/operators';
 import {RootStoreState} from '@app/store/root';
 
@@ -30,9 +30,6 @@ export class BasketComponent implements OnInit, OnDestroy, Unsubscribe {
   constructor(private store: Store<RootStoreState.State>) { }
 
   ngOnInit(): void {
-    // TODO: dispatch get pizzas response
-    // this.store.dispatch(new GetPizzas());
-
     this.pizzasResponse$.subscribe(resp => {
       if (resp) {
         this.activePizza$.next(resp.pizzas[0]);

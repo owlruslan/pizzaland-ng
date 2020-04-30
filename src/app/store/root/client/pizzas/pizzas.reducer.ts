@@ -14,11 +14,13 @@ export function reducer(state = initialState, action: Actions): State {
     case ActionTypes.GetPizzasSuccess: {
       return {
         ...state,
+        pizzasResponse: action.payload.response.data
       };
     }
     case ActionTypes.GetPizzasFailure: {
       return {
         ...state,
+        pizzasResponse: null
       };
     }
 

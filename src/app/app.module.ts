@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {RootStoreModule} from '@app/store/root';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {InMemoryWebApiModule} from '@app/in-memory-web-api/in-memory-web-api.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    InMemoryWebApiModule,
     AppRoutingModule,
     RootStoreModule,
   ],

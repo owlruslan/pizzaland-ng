@@ -1,22 +1,22 @@
 import {Injectable} from '@angular/core';
 import {getStatusText, InMemoryDbService, RequestInfo, ResponseOptions} from 'angular-in-memory-web-api';
-import {environment} from '@src/environments/environment';
-import {APIService} from '@app/interfaces/api-service.interface';
 import {userResponseData} from '@app/in-memory-web-api/data/user/user-response-data';
 import {UserInMemoryWebAPIService} from '@app/in-memory-web-api/services/user.in-memory-web-api.service';
+import {PizzasInMemoryWebAPIService} from '@app/in-memory-web-api/services/pizzas.in-memory-web-api.service';
+import {pizzasResponseData} from '@app/in-memory-web-api/data/user/pizzas-response.data';
 
 @Injectable()
-export class AppInMemoryWebAPIService implements InMemoryDbService, APIService {
-
-  readonly host = environment.host;
-
+export class AppInMemoryWebAPIService implements InMemoryDbService {
   userInMemoryWebAPIService;
+  pizzasInMemoryWebAPIService;
 
   createDb() {
     this.userInMemoryWebAPIService = new UserInMemoryWebAPIService();
+    this.pizzasInMemoryWebAPIService = new PizzasInMemoryWebAPIService();
 
     return {
       userResponseData,
+      pizzasResponseData
     };
   }
 
@@ -30,6 +30,11 @@ export class AppInMemoryWebAPIService implements InMemoryDbService, APIService {
     // User
     if (collectionName === this.userInMemoryWebAPIService.collectionName) {
       return this.userInMemoryWebAPIService.get(reqInfo);
+    }
+
+    // Pizzas
+    if (collectionName === this.pizzasInMemoryWebAPIService.collectionName) {
+      return this.pizzasInMemoryWebAPIService.get(reqInfo);
     }
 
     return undefined; // let the default GET handle all others

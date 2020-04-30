@@ -27,18 +27,19 @@ export class PizzasEffects {
   getPizzas$ = createEffect(() => this.actions$.pipe(
     ofType<GetPizzas>(ActionTypes.GetPizzas),
     withLatestFrom(this.store.pipe(select(getUserTokenState))),
-    switchMap(([action, token]) =>
-      this.pizzasService.getPizzas(token).pipe(
-        map((response: ResponseSuccess<GetPizzasResponse>) =>
-          new GetPizzasSuccess({response})
-        ),
-        catchError((errResponse: ResponseError) => of(errResponse).pipe(
-          switchMap((response: ResponseError) => [
-            new GetPizzasFailure({response}),
-            new AppStoreActions.AddErrorResponse({response})
-          ])
-        ))
-      )
+    switchMap(([action, token]) => {
+        return this.pizzasService.getPizzas(token).pipe(
+          map((response: ResponseSuccess<GetPizzasResponse>) =>
+            new GetPizzasSuccess({response})
+          ),
+          catchError((errResponse: ResponseError) => of(errResponse).pipe(
+            switchMap((response: ResponseError) => [
+              new GetPizzasFailure({response}),
+              new AppStoreActions.AddErrorResponse({response})
+            ])
+          ))
+        );
+      }
     )
   ));
 
