@@ -20,20 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e44aff3-6629-4dff-9880-8775dc9d81ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pizzaiols-react/config/env.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizzaiols-react/config/getHttpsConfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizzaiols-react/config/jest/cssTransform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizzaiols-react/config/jest/fileTransform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizzaiols-react/config/modules.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizzaiols-react/config/paths.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizzaiols-react/config/pnpTs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizzaiols-react/config/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizzaiols-react/config/webpackDevServer.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizzaiols-react/scripts/build.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizzaiols-react/scripts/start.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pizzaiols-react/scripts/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pizzaiols-react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pizzaiols-react/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pizzaiols-react/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pizzaiols-react/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pizzaiols-react" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -60,8 +48,8 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/pizzaiols-ng/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -71,6 +59,7 @@
   <component name="RunManager" selected="JavaScript Debug.Angular Application">
     <configuration name="Tests (pizzaiols)" type="JavaScriptTestRunnerKarma">
       <config-file value="$PROJECT_DIR$/angular/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/pizzaiols-ng/node_modules/@angular/cli" />
       <working-directory value="$PROJECT_DIR$" />
       <node-interpreter value="project" />
       <envs />
@@ -108,7 +97,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588972716244</updated>
-      <workItem from="1588972717375" duration="1883000" />
+      <workItem from="1588972717375" duration="3041000" />
+      <workItem from="1588978152688" duration="265000" />
     </task>
     <task id="LOCAL-00001" summary="create-react-app">
       <created>1588975923858</created>
@@ -124,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588975954907</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="remove react">
+      <created>1588977221439</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588977221439</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,16 +137,26 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create-react-app" />
     <MESSAGE value="add idea file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add idea file" />
+    <MESSAGE value="remove react" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove react" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1166" y="560" width="1507" height="1108" key="SettingsEditor" timestamp="1588975934991">
+    <state x="1370" y="693" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588978403489">
       <screen x="0" y="40" width="3840" height="2120" />
     </state>
-    <state x="1166" y="560" width="1507" height="1108" key="SettingsEditor/0.40.3840.2120@0.40.3840.2120" timestamp="1588975934991" />
+    <state x="1370" y="693" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.3840.2120@0.40.3840.2120" timestamp="1588978403489" />
+    <state x="1597" y="744" width="636" height="740" key="FileChooserDialogImpl" timestamp="1588978415582">
+      <screen x="0" y="40" width="3840" height="2120" />
+    </state>
+    <state x="1597" y="744" width="636" height="740" key="FileChooserDialogImpl/0.40.3840.2120@0.40.3840.2120" timestamp="1588978415582" />
+    <state x="1166" y="560" width="1507" height="1108" key="SettingsEditor" timestamp="1588977587366">
+      <screen x="0" y="40" width="3840" height="2120" />
+    </state>
+    <state x="1166" y="560" width="1507" height="1108" key="SettingsEditor/0.40.3840.2120@0.40.3840.2120" timestamp="1588977587366" />
   </component>
 </project>
