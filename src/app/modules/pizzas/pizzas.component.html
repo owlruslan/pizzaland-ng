@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div class="container" [formGroup]="form">
+  <h1>Pizzas</h1>
+  <div class="filter">
+    <app-pizza-toppings formControlName="toppings"></app-pizza-toppings>
+  </div>
+  <div class="pizzas">
+    <ng-container *ngFor="let pizza of (pizzas$ | async)">
+      <app-pizza-card  [pizza]="pizza" class="pizza-card"></app-pizza-card>
+    </ng-container>
+  </div>
+</div>

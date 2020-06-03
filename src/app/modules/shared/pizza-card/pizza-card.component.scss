@@ -1,0 +1,57 @@
+.pizza-card {
+  width: 300px;
+  height: 400px;
+  background-color: #ffffff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 300ms ease-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+    .pizza-card__preview {
+      transform: scale(1.1);
+    }
+  }
+
+  &__price {
+    font-weight: 900;
+    color: #000000;
+    transition: 200ms;
+    margin-bottom: 20px;
+  }
+
+  &__preview {
+    height: 200px;
+    position: relative;
+    transition: transform 200ms ease-out;
+  }
+
+  &__info {
+    height: 100%;
+    bottom: 0;
+    padding: 10px;
+    box-sizing: border-box;
+
+    &__name {
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    &__description {
+      font-size: 14px;
+      max-height: 46px;
+      overflow: hidden;
+    }
+
+    &__bottom {
+      display: flex;
+    }
+
+    &__buy-btn {
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+}

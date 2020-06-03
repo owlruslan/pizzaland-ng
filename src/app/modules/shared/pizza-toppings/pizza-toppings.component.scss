@@ -1,0 +1,46 @@
+.pizza-toppings {
+  display: flex;
+  margin-bottom: 40px;
+  max-width: 1280px;
+  width: 100%;
+  flex-wrap: wrap;
+
+  .pizza-topping {
+    background-color: #e5f1fd;
+    color: rgba(#000, 0.5);
+    font-weight: 900;
+    height: 36px;
+    width: fit-content;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 36px;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: 200ms ease-out;
+    user-select: none;
+    margin-bottom: 12px;
+
+    &:hover {
+      background-color: rgba(aliceblue, 0.8);
+      color: black;
+    }
+
+    input {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    &--active {
+      background-color: rgba(aliceblue, 0.8);
+      color: black;
+    }
+  }
+}
