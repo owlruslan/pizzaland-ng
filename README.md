@@ -8,6 +8,8 @@
 - [**NGRX**](https://ngrx.io/)
 - [**SCSS**](https://sass-lang.com/documentation/syntax)
 
+![Captured](./src/assets/images/captured.gif "Captured")
+
 ## **Style guides**
 
 - [**Angular Style Guide**](https://angular.io/guide/styleguide) - Looking for an opinionated guide to Angular syntax, conventions, and application structure? Step right in! This style guide presents preferred conventions and, as importantly, explains why.
