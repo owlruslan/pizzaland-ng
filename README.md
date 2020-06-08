@@ -1,6 +1,6 @@
 <img src="./src/assets/images/logotype.png" width="312" height="76">
 
-###[DEMO](https://pizzaiols-ng.now.sh/pizzas)
+[**DEMO**](https://pizzaiols-ng.now.sh/pizzas)
 
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://storybook.js.org/)
 
