@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "cypress": "npx cypress open"
   },
   "private": true,
   "dependencies": {
@@ -28,7 +29,6 @@
     "@ngrx/store": "^9.1.0",
     "@ngrx/store-devtools": "^9.1.0",
     "angular-in-memory-web-api": "^0.10.0",
-    "cypress": "^4.4.1",
     "jasmine-marbles": "^0.6.0",
     "rxjs": "~6.5.5",
     "tslib": "^1.10.0",
@@ -51,6 +51,7 @@
     "@types/node": "^12.11.1",
     "babel-loader": "^8.0.6",
     "codelyzer": "^5.1.2",
+    "cypress": "^4.7.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",

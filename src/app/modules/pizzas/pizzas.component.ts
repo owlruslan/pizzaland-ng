@@ -28,7 +28,7 @@ import {animate, query, stagger, style, transition, trigger} from '@angular/anim
     ])
   ]
 })
-export class PizzasComponent implements OnInit, OnDestroy, Unsubscribe {
+export class PizzasComponent implements OnInit, AfterContentChecked, OnDestroy, Unsubscribe {
   readonly unsubscribe = new Subject<void>();
 
   form = this.fb.group({
@@ -48,14 +48,12 @@ export class PizzasComponent implements OnInit, OnDestroy, Unsubscribe {
       const toppings = results[0];
       const pizzasResponse = results[1];
 
-      if (pizzasResponse && pizzasResponse.pizzas) {
-        if (toppings.length > 0) {
-          return pizzasResponse.pizzas.filter(pizza =>
-            toppings.some(topping => pizza.toppings.includes(topping))
-          );
-        } else {
-          return pizzasResponse.pizzas;
-        }
+      if (toppings.length > 0) {
+        return pizzasResponse.pizzas.filter(pizza =>
+          toppings.some(topping => pizza.toppings.includes(topping))
+        );
+      } else {
+        return pizzasResponse.pizzas;
       }
     })
   );
@@ -74,6 +72,11 @@ export class PizzasComponent implements OnInit, OnDestroy, Unsubscribe {
   ngOnInit(): void {
     this.store.dispatch(new PizzasStoreActions.GetPizzas());
   }
+
+  ngAfterContentChecked(): void {
+    this.form.controls.toppings.enable();
+  }
+
 
   ngOnDestroy(): void {
     this.unsubscribe.next();
