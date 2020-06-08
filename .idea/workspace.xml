@@ -16,12 +16,21 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e44aff3-6629-4dff-9880-8775dc9d81ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/shared/pizza-preview/pizza-preview.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/shared/pizza-preview/pizza-preview.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/modules/shared/pizza-small-preview/pizza-small-preview.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/modules/shared/pizza-small-preview/pizza-small-preview.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/fonts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.app.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,23 +49,24 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pizzaiols-react" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/node_modules/protractor" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/pizzaiols-ng/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/angular" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Angular Application">
+  <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Tests (pizzaiols)" type="JavaScriptTestRunnerKarma">
       <config-file value="$PROJECT_DIR$/angular/karma.conf.js" />
       <karma-package-dir value="$PROJECT_DIR$/pizzaiols-ng/node_modules/@angular/cli" />
@@ -68,6 +78,7 @@
     <configuration name="E2E Tests (pizzaiols)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
+      <protractor-package value="$PROJECT_DIR$/node_modules/protractor" />
       <protractor-options value="" />
       <envs />
       <scope-kind value="ALL" />
@@ -82,10 +93,17 @@
       <scripts>
         <script value="start" />
       </scripts>
+      <arguments value="--open" />
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Angular Application" />
+      <item itemvalue="Karma.Tests (pizzaiols)" />
+      <item itemvalue="npm.Angular CLI Server" />
+      <item itemvalue="Protractor.E2E Tests (pizzaiols)" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -99,6 +117,20 @@
       <updated>1588972716244</updated>
       <workItem from="1588972717375" duration="3041000" />
       <workItem from="1588978152688" duration="265000" />
+      <workItem from="1591169916930" duration="4798000" />
+      <workItem from="1591244801106" duration="599000" />
+      <workItem from="1591419624586" duration="144000" />
+      <workItem from="1591419785180" duration="65000" />
+      <workItem from="1591420633060" duration="259000" />
+      <workItem from="1591420901675" duration="35000" />
+      <workItem from="1591420945598" duration="103000" />
+      <workItem from="1591421057055" duration="1203000" />
+      <workItem from="1591422326730" duration="5372000" />
+      <workItem from="1591436205558" duration="13000" />
+      <workItem from="1591444861844" duration="48000" />
+      <workItem from="1591501952785" duration="37000" />
+      <workItem from="1591524205198" duration="2617000" />
+      <workItem from="1591551240646" duration="1486000" />
     </task>
     <task id="LOCAL-00001" summary="create-react-app">
       <created>1588975923858</created>
@@ -121,7 +153,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588977221439</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="remove react">
+      <created>1591170179139</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1591170179139</updated>
+    </task>
+    <task id="LOCAL-00005" summary="remove react">
+      <created>1591170360171</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1591170360171</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +178,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -146,17 +204,46 @@
     <option name="LAST_COMMIT_MESSAGE" value="remove react" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1370" y="693" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588978403489">
+    <state x="1370" y="665" width="1099" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591171720700">
       <screen x="0" y="40" width="3840" height="2120" />
     </state>
-    <state x="1370" y="693" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.3840.2120@0.40.3840.2120" timestamp="1588978403489" />
+    <state x="1370" y="665" width="1099" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.3840.2120@0.40.3840.2120" timestamp="1591171720700" />
     <state x="1597" y="744" width="636" height="740" key="FileChooserDialogImpl" timestamp="1588978415582">
       <screen x="0" y="40" width="3840" height="2120" />
     </state>
     <state x="1597" y="744" width="636" height="740" key="FileChooserDialogImpl/0.40.3840.2120@0.40.3840.2120" timestamp="1588978415582" />
-    <state x="1166" y="560" width="1507" height="1108" key="SettingsEditor" timestamp="1588977587366">
+    <state width="3806" height="598" key="GridCell.Tab.0.bottom" timestamp="1591172044958">
       <screen x="0" y="40" width="3840" height="2120" />
     </state>
-    <state x="1166" y="560" width="1507" height="1108" key="SettingsEditor/0.40.3840.2120@0.40.3840.2120" timestamp="1588977587366" />
+    <state width="3806" height="598" key="GridCell.Tab.0.bottom/0.40.3840.2120@0.40.3840.2120" timestamp="1591172044958" />
+    <state width="3806" height="598" key="GridCell.Tab.0.center" timestamp="1591172044957">
+      <screen x="0" y="40" width="3840" height="2120" />
+    </state>
+    <state width="3806" height="598" key="GridCell.Tab.0.center/0.40.3840.2120@0.40.3840.2120" timestamp="1591172044957" />
+    <state width="3806" height="598" key="GridCell.Tab.0.left" timestamp="1591172044957">
+      <screen x="0" y="40" width="3840" height="2120" />
+    </state>
+    <state width="3806" height="598" key="GridCell.Tab.0.left/0.40.3840.2120@0.40.3840.2120" timestamp="1591172044957" />
+    <state width="3806" height="598" key="GridCell.Tab.0.right" timestamp="1591172044957">
+      <screen x="0" y="40" width="3840" height="2120" />
+    </state>
+    <state width="3806" height="598" key="GridCell.Tab.0.right/0.40.3840.2120@0.40.3840.2120" timestamp="1591172044957" />
+    <state x="1166" y="546" width="1575" height="1287" key="SettingsEditor" timestamp="1591501967586">
+      <screen x="0" y="40" width="3840" height="2120" />
+    </state>
+    <state x="1166" y="546" width="1507" height="1108" key="SettingsEditor/0.40.3840.2120@0.40.3840.2120" timestamp="1591501967586" />
+    <state x="1166" y="541" width="1575" height="1287" key="SettingsEditor/0.46.3840.2114@0.46.3840.2114" timestamp="1591419805745" />
+    <state x="1315" y="676" width="1200" height="800" key="Vcs.Push.Dialog.v2" timestamp="1591170361863">
+      <screen x="0" y="40" width="3840" height="2120" />
+    </state>
+    <state x="1315" y="676" width="1200" height="800" key="Vcs.Push.Dialog.v2/0.40.3840.2120@0.40.3840.2120" timestamp="1591170361863" />
+    <state x="1468" y="496" width="903" height="1194" key="find.popup" timestamp="1591172042984">
+      <screen x="0" y="40" width="3840" height="2120" />
+    </state>
+    <state x="1468" y="496" width="903" height="1194" key="find.popup/0.40.3840.2120@0.40.3840.2120" timestamp="1591172042984" />
+    <state x="1408" y="511" width="1020" height="1470" key="search.everywhere.popup" timestamp="1591172037210">
+      <screen x="0" y="40" width="3840" height="2120" />
+    </state>
+    <state x="1408" y="511" width="1020" height="1470" key="search.everywhere.popup/0.40.3840.2120@0.40.3840.2120" timestamp="1591172037210" />
   </component>
 </project>

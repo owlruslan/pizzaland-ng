@@ -12,7 +12,7 @@ $topping-size: 10%;
   }
 
   &__board {
-    background: url("angular/src../../../assets/toppings/board.svg") no-repeat 0 20px;
+    background: url("src/assets/toppings/board.svg") no-repeat 0 20px;
     background-size: contain;
     width: 200px;
     height: 200px;
@@ -23,7 +23,7 @@ $topping-size: 10%;
   }
 
   &__base {
-    background: url("angular/src../../../assets/toppings/base.svg") no-repeat;
+    background: url("src/assets/toppings/base.svg") no-repeat;
     background-size: contain;
     width: 160px;
     height: 100px;
@@ -46,7 +46,7 @@ $topping-size: 10%;
     background-size: contain;
 
     &--anchovy {
-      background-image: url("angular/src../../../assets/toppings/anchovy.svg");
+      background-image: url("src/assets/toppings/anchovy.svg");
       width: $topping-size;
       height: $topping-size;
 
@@ -71,38 +71,38 @@ $topping-size: 10%;
     }
 
     &--bacon {
-      background-image: url("angular/src../../../assets/toppings/bacon.svg");
+      background-image: url("src/assets/toppings/bacon.svg");
       width: $topping-size;
       height: $topping-size;
 
       &:nth-child(1) {
-        left: 50%;
-        top: 50%;
+        left: 170px;
+        top: 80px;
       }
 
       &:nth-child(2) {
-        left: 69%;
-        top: 40%;
+        left: 100px;
+        top: 75px;
       }
 
       &:nth-child(3) {
-        left: 42%;
-        top: 32%;
+        left: 134px;
+        top: 123px;
       }
 
       &:nth-child(4) {
-        left: 32%;
-        top: 39%;
+        left: 170px;
+        top: 90px;
       }
 
       &:nth-child(5) {
-        left: 56%;
-        top: 32%;
+        left: 170px;
+        top: 80px;
       }
     }
 
     &--basil {
-      background-image: url("angular/src../../../assets/toppings/basil.svg");
+      background-image: url("src/assets/toppings/basil.svg");
       width: $topping-size;
       height: $topping-size;
 
@@ -127,7 +127,7 @@ $topping-size: 10%;
     }
 
     &--chili {
-      background-image: url("angular/src../../../assets/toppings/chili.svg");
+      background-image: url("src/assets/toppings/chili.svg");
       width: $topping-size;
       height: $topping-size;
 
@@ -152,29 +152,29 @@ $topping-size: 10%;
       }
 
       &:nth-child(5) {
-        left: 31%;
+        left: 34%;
         top: 33%;
       }
     }
 
     &--mozzarella {
-      background-image: url("angular/src../../../assets/toppings/mozzarella.svg");
+      background-image: url("src/assets/toppings/mozzarella.svg");
       width: $topping-size;
       height: $topping-size;
 
       &:nth-child(1) {
-        left: 6px;
-        top: 106px;
+        left: 150px;
+        top: 116px;
       }
 
       &:nth-child(2) {
         left: 186px;
-        top: 114px;
+        top: 78px;
       }
 
       &:nth-child(3) {
-        left: 162px;
-        top: 8px;
+        left: 130px;
+        top: 80px;
       }
 
       &:nth-child(4), &:nth-child(5) {
@@ -183,176 +183,178 @@ $topping-size: 10%;
     }
 
     &--mushroom {
-      background-image: url("angular/src../../../assets/toppings/mushroom.svg");
+      background-image: url("src/assets/toppings/mushroom.svg");
       width: $topping-size;
       height: $topping-size;
 
       &:nth-child(1) {
-        left: 18%;
-        top: 8%;
+        left: 180px;
+        top: 78px;
       }
 
       &:nth-child(2) {
-        left: 40px;
-        top: 60px;
+        left: 110px;
+        top: 90px;
       }
 
       &:nth-child(3) {
-        left: 90px;
-        top: 18%;
+        left: 130px;
+        top: 120px;
       }
 
       &:nth-child(4) {
-        left: 240px;
-        top: 30px;
+        left: 150px;
+        top: 70px;
       }
 
       &:nth-child(5) {
-        left: 28%;
-        top: 129px;
+        left: 130px;
+        top: 70px;
       }
     }
 
     &--olive {
-      background-image: url("angular/src../../../assets/toppings/olive.svg");
+      background-image: url("src/assets/toppings/olive.svg");
       width: $topping-size;
       height: $topping-size;
 
       &:nth-child(1) {
-        left: 161px;
-        top: 60px;
+        left: 48%;
+        top: 56%;
       }
 
       &:nth-child(2) {
-        left: 90px;
-        top: 57px;
+        left: 58%;
+        top: 36%;
       }
 
       &:nth-child(3) {
-        left: 110px;
-        top: 110px;
+        left: 52%;
+        top: 42%;
       }
 
       &:nth-child(4) {
-        left: 279px;
-        top: 47px;
+        left: 67%;
+        top: 37%;
       }
 
       &:nth-child(5) {
-        display: none;
+        left: 34%;
+        top: 46%;
       }
     }
 
     &--onion {
-      background-image: url("angular/src../../../assets/toppings/onion.svg");
+      background-image: url("src/assets/toppings/onion.svg");
       width: $topping-size;
       height: $topping-size;
 
       &:nth-child(1) {
-        left: 101px;
-        top: 55px;
+        left: 40%;
+        top: 48%;
       }
 
       &:nth-child(2) {
-        left: 10px;
-        top: 61px;
+        left: 52%;
+        top: 32%;
       }
 
       &:nth-child(3) {
-        left: 261px;
-        top: 55px;
+        left: 37%;
+        top: 39%;
       }
 
       &:nth-child(4) {
-        left: 172px;
-        top: 132px;
+        left: 63%;
+        top: 44%;
       }
 
       &:nth-child(5) {
-        display: none;
+        left: 34%;
+        top: 33%;
       }
     }
 
     &--pepper {
-      background-image: url("angular/src../../../assets/toppings/pepper.svg");
+      background-image: url("src/assets/toppings/pepper.svg");
       width: 20px;
       height: 20px;
 
       &:nth-child(1) {
-        left: 122px;
-        top: 30px;
+        left: 48%;
+        top: 48%;
       }
 
       &:nth-child(2) {
-        left: 175px;
-        top: 87px;
+        left: 64%;
+        top: 32%;
       }
 
       &:nth-child(3) {
-        left: 30px;
-        top: 81px;
+        left: 52%;
+        top: 39%;
       }
 
       &:nth-child(4) {
-        left: 282px;
-        top: 69px;
+        left: 67%;
+        top: 44%;
       }
 
       &:nth-child(5) {
-        left: 105px;
-        top: 147px;
+        left: 34%;
+        top: 33%;
       }
     }
 
     &--pepperoni {
-      background-image: url("angular/src../../../assets/toppings/pepperoni.svg");
+      background-image: url("src/assets/toppings/pepperoni.svg");
       width: 20px;
       height: 20px;
 
       &:nth-child(1) {
-        left: 222px;
-        top: 35px;
+        left: 180px;
+        top: 72px;
       }
 
       &:nth-child(2) {
-        left: 145px;
-        top: 107px;
-      }
-
-      &:nth-child(3) {
-        left: 81px;
-        top: 21px;
-      }
-
-      &:nth-child(4) {
-        left: 221px;
+        left: 110px;
         top: 80px;
       }
 
+      &:nth-child(3) {
+        left: 130px;
+        top: 110px;
+      }
+
+      &:nth-child(4) {
+        left: 160px;
+        top: 120px;
+      }
+
       &:nth-child(5) {
-        left: 75px;
-        top: 137px;
+        left: 140px;
+        top: 120px;
       }
     }
 
     &--sweetcorn {
-      background-image: url("angular/src../../../assets/toppings/sweetcorn.svg");
+      background-image: url("src/assets/toppings/sweetcorn.svg");
       width: 20px;
       height: 20px;
 
       &:nth-child(1) {
-        left: 192px;
-        top: 35px;
+        left: 48%;
+        top: 48%;
       }
 
       &:nth-child(2) {
-        left: 41px;
-        top: 41px;
+        left: 64%;
+        top: 32%;
       }
 
       &:nth-child(3) {
-        left: 212px;
-        top: 146px;
+        left: 52%;
+        top: 39%;
       }
 
       &:nth-child(4), &:nth-child(5) {
@@ -361,28 +363,28 @@ $topping-size: 10%;
     }
 
     &--tomato {
-      background-image: url("angular/src../../../assets/toppings/tomato.svg");
+      background-image: url("src/assets/toppings/tomato.svg");
       width: 20px;
       height: 20px;
 
       &:nth-child(1) {
-        left: 175px;
-        top: 147px;
+        left: 180px;
+        top: 78px;
       }
 
       &:nth-child(2) {
-        left: 41px;
-        top: 41px;
+        left: 110px;
+        top: 80px;
       }
 
       &:nth-child(3) {
-        left: 85px;
+        left: 130px;
         top: 100px;
       }
 
       &:nth-child(4) {
-        left: 280px;
-        top: 99px;
+        left: 150px;
+        top: 60px;
       }
 
       &:nth-child(5) {
