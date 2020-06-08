@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { PizzaSmallPreviewComponent } from './pizza-small-preview.component';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {PizzaSmallPreviewComponent} from './pizza-small-preview.component';
 
 
 @NgModule({
@@ -11,4 +10,5 @@ import { PizzaSmallPreviewComponent } from './pizza-small-preview.component';
   ],
   exports: [PizzaSmallPreviewComponent]
 })
-export class PizzaSmallPreviewModule { }
+export class PizzaSmallPreviewModule {
+}

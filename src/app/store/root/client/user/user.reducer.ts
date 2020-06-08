@@ -1,6 +1,5 @@
-import {ActionTypes, Actions} from './user.actions';
-import {initialState} from './user.state';
-import {State} from './user.state';
+import {Actions, ActionTypes} from './user.actions';
+import {initialState, State} from './user.state';
 
 export function reducer(state = initialState, action: Actions): State {
   switch (action.type) {

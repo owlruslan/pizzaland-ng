@@ -28,7 +28,8 @@ export class BasketComponent implements OnInit, OnDestroy, Unsubscribe {
 
   activePizza$ = new BehaviorSubject<Pizza>(null);
 
-  constructor(private store: Store<RootStoreState.State>) { }
+  constructor(private store: Store<RootStoreState.State>) {
+  }
 
   ngOnInit(): void {
     this.pizzasResponse$.subscribe(resp => {

@@ -1,20 +1,21 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PizzaToppingsComponent } from './pizza-toppings.component';
+import {PizzaToppingsComponent} from './pizza-toppings.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 describe('PizzaToppingsComponent', () => {
   let component: PizzaToppingsComponent;
   let fixture: ComponentFixture<PizzaToppingsComponent>;
 
-  const fn = () => {};
+  const fn = () => {
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PizzaToppingsComponent ],
+      declarations: [PizzaToppingsComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

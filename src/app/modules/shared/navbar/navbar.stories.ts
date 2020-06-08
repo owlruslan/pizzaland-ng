@@ -2,8 +2,6 @@ import {moduleMetadata, storiesOf} from '@storybook/angular';
 import {RouterTestingModule} from '@angular/router/testing';
 import {provideMockStore} from '@ngrx/store/testing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {PizzasComponent} from '@app/modules/pizzas/pizzas.component';
-import {PizzasModule} from '@app/modules/pizzas/pizzas.module';
 import {NavbarModule} from '@app/modules/shared/navbar/navbar.module';
 
 storiesOf('app.modules.shared.navbar.NavbarComponent', module)

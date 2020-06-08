@@ -19,6 +19,11 @@ export class PizzaCardComponent implements OnInit {
    */
   pizza$ = new BehaviorSubject<Pizza>(null);
 
+  constructor(
+    private store: Store<RootStoreState.State>
+  ) {
+  }
+
   get pizza(): Pizza {
     return this.pizza$.getValue();
   }
@@ -27,10 +32,6 @@ export class PizzaCardComponent implements OnInit {
   set pizza(value: Pizza) {
     this.pizza$.next(value);
   }
-
-  constructor(
-    private store: Store<RootStoreState.State>
-  ) { }
 
   ngOnInit(): void {
   }

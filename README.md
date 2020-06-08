@@ -1,27 +1,49 @@
-# Pizzaiols
+<img src="./src/assets/images/logotype.png" width="312" height="76">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.1.
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://storybook.js.org/)
 
-## Development server
+## **Stack**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [**Angular CLI**](https://cli.angular.io/)
+- [**NGRX**](https://ngrx.io/)
+- [**SCSS**](https://sass-lang.com/documentation/syntax)
 
-## Code scaffolding
+## **Style guides**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [**Angular Style Guide**](https://angular.io/guide/styleguide) - Looking for an opinionated guide to Angular syntax, conventions, and application structure? Step right in! This style guide presents preferred conventions and, as importantly, explains why.
 
-## Build
+## **Cheat Sheet**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### **Installation**
 
-## Running unit tests
+- Run `npm i`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### **Development server**
 
-## Running end-to-end tests
+*Angular CLI*
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Run `ng serve --open` or you can specify port `ng serve --open --port 4200`
 
-## Further help
+### **Build**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+### **Code scaffolding**
+
+- Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+### [**Storybook**](https://storybook.js.org/)
+
+<img src="./src/assets/images/storybook-ic.svg">
+
+**Run** `npm run storybook`
+
+### **Tests**
+
+*Unit tests*
+
+- Run `ng test` to execute the unit tests via [**Karma**](https://karma-runner.github.io).
+
+*Cypress*
+
+- Run `npx cypress open` to execute the [**Cypress**](https://www.cypress.io/) tests.
