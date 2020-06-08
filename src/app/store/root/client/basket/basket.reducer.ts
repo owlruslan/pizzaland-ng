@@ -1,18 +1,14 @@
-import {ActionTypes, Actions} from './basket.actions';
-import {initialState} from './basket.state';
-import {State} from './basket.state';
-import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
+import {Actions, ActionTypes} from './basket.actions';
+import {initialState, State} from './basket.state';
 
 export function reducer(state = initialState, action: Actions): State {
   switch (action.type) {
-    // Add Pizzas
-    case ActionTypes.AddPizzas: {
-      const resp = new GetPizzasResponse();
-      resp.pizzas = action.payload.pizzas;
-
+    case ActionTypes.AddPizza: {
       return {
         ...state,
-        pizzasResponse: resp
+        pizzasResponse: {
+          pizzas: [...state.pizzasResponse.pizzas, action.payload.pizza]
+        }
       };
     }
 

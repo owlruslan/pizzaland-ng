@@ -11,10 +11,9 @@ const PIZZA_TOPPINGS_ACCESSOR = {
   selector: 'app-pizza-toppings',
   providers: [PIZZA_TOPPINGS_ACCESSOR],
   templateUrl: './pizza-toppings.component.html',
-  styleUrls: ['./pizza-toppings.component.scss']
+  styleUrls: ['./pizza-toppings.component.scss'],
 })
 export class PizzaToppingsComponent implements ControlValueAccessor {
-
   toppings = [
     'anchovy', 'bacon', 'basil', 'chili', 'mozzarella', 'mushroom',
     'olive', 'onion', 'pepper', 'pepperoni', 'sweetcorn', 'tomato'

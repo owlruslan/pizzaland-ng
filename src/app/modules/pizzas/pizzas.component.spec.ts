@@ -1,28 +1,38 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PizzasComponent } from './pizzas.component';
+import {PizzasComponent} from './pizzas.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {MockStore, provideMockStore} from '@ngrx/store/testing';
 import {FormBuilder} from '@angular/forms';
 import {MemoizedSelector} from '@ngrx/store';
 import {RootStoreState} from '@app/store/root';
-import {BasketStoreSelectors, PizzasStoreSelectors} from '@app/store/root/client';
-import {of} from 'rxjs';
+import {PizzasStoreSelectors} from '@app/store/root/client';
 import {cold} from 'jasmine-marbles';
 import mockGetPizzasResponse from '@app/mocks/pizzas/get-pizzas-response.mock';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
+
+const initialState = {
+  client: {
+    pizzas: mockGetPizzasResponse
+  }
+}
 
 describe('app.modules.pizzas.PizzasComponent', () => {
   let component: PizzasComponent;
   let fixture: ComponentFixture<PizzasComponent>;
 
   let mockStore: MockStore;
-  let mockPizzasResponseSelector: MemoizedSelector<RootStoreState.State, any>;
+  let mockPizzasResponseSelector: MemoizedSelector<RootStoreState.State, GetPizzasResponse>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PizzasComponent ],
+      imports: [
+        NoopAnimationsModule
+      ],
       providers: [
-        provideMockStore(),
+        provideMockStore({initialState}),
         FormBuilder
       ],
       schemas: [

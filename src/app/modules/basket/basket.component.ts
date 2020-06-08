@@ -3,9 +3,10 @@ import {Unsubscribe} from '@app/interfaces/unsubscribe.interface';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
 import {select, Store} from '@ngrx/store';
-import {BasketStoreActions, BasketStoreSelectors} from '@app/store/root/client';
+import {BasketStoreSelectors} from '@app/store/root/client';
 import {takeUntil} from 'rxjs/operators';
 import {RootStoreState} from '@app/store/root';
+import {Pizza} from '@app/models/pizzas/pizza.model';
 
 @Component({
   selector: 'app-basket',
@@ -20,12 +21,12 @@ export class BasketComponent implements OnInit, OnDestroy, Unsubscribe {
     takeUntil(this.unsubscribe)
   );
 
-  total$: Observable<GetPizzasResponse> = this.store.pipe(
+  total$: Observable<number> = this.store.pipe(
     select(BasketStoreSelectors.getTotalState),
     takeUntil(this.unsubscribe)
   );
 
-  activePizza$ = new BehaviorSubject(null);
+  activePizza$ = new BehaviorSubject<Pizza>(null);
 
   constructor(private store: Store<RootStoreState.State>) { }
 
@@ -41,7 +42,7 @@ export class BasketComponent implements OnInit, OnDestroy, Unsubscribe {
     this.unsubscribe.next();
   }
 
-  onPizzaHover(pizza: any) {
+  onPizzaHover(pizza: Pizza) {
     this.activePizza$.next(pizza);
   }
 }

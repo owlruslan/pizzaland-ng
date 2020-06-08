@@ -1,19 +1,20 @@
 import {Action} from '@ngrx/store';
+import {Pizza} from '@app/models/pizzas/pizza.model';
 
 
 export enum ActionTypes {
-  AddPizzas = '[Basket] Add Pizzas',
+  AddPizza = '[Basket] Add Pizza',
 }
 
 
-// Add Pizzas
+// Add Pizza
 
-export class AddPizzas implements Action {
-  readonly type = ActionTypes.AddPizzas;
+export class AddPizza implements Action {
+  readonly type = ActionTypes.AddPizza;
 
-  constructor(public payload: {pizzas: any[]}) {
+  constructor(public payload: {pizza: Pizza}) {
   }
 }
 
 
-export type Actions = AddPizzas;
+export type Actions = AddPizza;

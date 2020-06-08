@@ -14,6 +14,6 @@ export const initialState: State = {
     expiresAt: 'DATE'
   },
   userResponse: {
-    name: 'Ruslan'
+    name: 'Username'
   }
 };
