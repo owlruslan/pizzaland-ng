@@ -2,16 +2,16 @@
   <div class="pizza-viewer__table-side"></div>
   <div class="pizza-viewer__table"></div>
   <div
+    class="pizza"
     *ngFor="let pizza of (pizza$ | async)"
-    @slide
-    class="pizza">
+    @slide>
     <div class="pizza__board"></div>
     <div class="pizza__base"></div>
     <div class="pizza__toppings">
       <div
         *ngFor="let topping of pizza.toppings; let i = index;"
-        @drop
-        [style.zIndex]="i">
+        [style.zIndex]="i"
+        @drop>
         <div class="pizza__topping pizza__topping--{{ topping }}"></div>
         <div class="pizza__topping pizza__topping--{{ topping }}"></div>
         <div class="pizza__topping pizza__topping--{{ topping }}"></div>

@@ -5,4 +5,4 @@ import * as fromRouter from './router';
 
 export * from './client/user';
 
-export {RootStoreModule, RootStoreState, fromRouter};
+export { RootStoreModule, RootStoreState, fromRouter };

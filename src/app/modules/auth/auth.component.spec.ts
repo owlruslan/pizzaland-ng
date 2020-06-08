@@ -15,7 +15,7 @@ describe('app.modules.auth.AuthComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AuthComponent],
+      declarations: [ AuthComponent ],
       imports: [
         ReactiveFormsModule
       ],
@@ -26,7 +26,7 @@ describe('app.modules.auth.AuthComponent', () => {
         CUSTOM_ELEMENTS_SCHEMA
       ]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {

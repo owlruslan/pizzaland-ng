@@ -23,21 +23,21 @@ export class GetPizzas implements Action {
 export class GetPizzasSuccess implements Action {
   readonly type = ActionTypes.GetPizzasSuccess;
 
-  constructor(public payload: { response: ResponseSuccess<GetPizzasResponse> }) {
+  constructor(public payload: {response: ResponseSuccess<GetPizzasResponse>}) {
   }
 }
 
 export class GetPizzasFailure implements Action {
   readonly type = ActionTypes.GetPizzasFailure;
 
-  constructor(public payload: { response: ResponseError }) {
+  constructor(public payload: {response: ResponseError}) {
   }
 }
 
 
 export type Actions =
 
-// GetPizzas
+  // GetPizzas
 
   | GetPizzas
   | GetPizzasSuccess

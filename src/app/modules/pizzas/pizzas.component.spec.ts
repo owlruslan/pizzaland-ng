@@ -27,7 +27,7 @@ describe('app.modules.pizzas.PizzasComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PizzasComponent],
+      declarations: [ PizzasComponent ],
       imports: [
         NoopAnimationsModule
       ],
@@ -39,7 +39,7 @@ describe('app.modules.pizzas.PizzasComponent', () => {
         CUSTOM_ELEMENTS_SCHEMA
       ]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {

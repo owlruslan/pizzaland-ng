@@ -11,7 +11,7 @@ describe('app.modules.shared.pizza-card.PizzaCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PizzaCardComponent],
+      declarations: [ PizzaCardComponent ],
       providers: [
         provideMockStore()
       ],

@@ -7,15 +7,14 @@ describe('PizzaToppingsComponent', () => {
   let component: PizzaToppingsComponent;
   let fixture: ComponentFixture<PizzaToppingsComponent>;
 
-  const fn = () => {
-  };
+  const fn = () => {};
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PizzaToppingsComponent],
+      declarations: [ PizzaToppingsComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {

@@ -10,14 +10,13 @@ import {PizzaPreviewModule} from '@app/modules/shared/pizza-preview/pizza-previe
 
 @NgModule({
   declarations: [BasketComponent],
-  imports: [
-    CommonModule,
-    BasketRoutingModule,
-    NavbarModule,
-    PizzaCardModule,
-    PizzaPreviewModule
-  ],
+    imports: [
+        CommonModule,
+        BasketRoutingModule,
+        NavbarModule,
+        PizzaCardModule,
+        PizzaPreviewModule
+    ],
   exports: [BasketComponent]
 })
-export class BasketModule {
-}
+export class BasketModule { }

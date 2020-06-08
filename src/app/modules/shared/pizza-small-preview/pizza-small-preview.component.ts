@@ -22,8 +22,7 @@ export class PizzaSmallPreviewComponent implements OnInit {
       'tomato'*/
   ];
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }

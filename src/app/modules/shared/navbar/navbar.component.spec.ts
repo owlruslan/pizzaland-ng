@@ -17,7 +17,7 @@ describe('app.modules.shared.navbar.NavbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [NavbarComponent],
+      declarations: [ NavbarComponent ],
       providers: [
         provideMockStore()
       ],
@@ -25,7 +25,7 @@ describe('app.modules.shared.navbar.NavbarComponent', () => {
         CUSTOM_ELEMENTS_SCHEMA
       ]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {

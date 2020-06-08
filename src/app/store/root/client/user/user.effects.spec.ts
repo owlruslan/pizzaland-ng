@@ -64,16 +64,16 @@ describe('app.store.root.client.user.UserEffects', () => {
         data: null,
         success: true
       };
-      const completion = new LoginSuccess({response});
+      const completion = new LoginSuccess({ response });
 
       // Refer to 'Writing Marble Tests' for details on '--a-' syntax
-      actions$ = hot('--a-', {a: action});
+      actions$ = hot('--a-', { a: action });
 
       userServiceSpy.login.and.returnValue(
-        hot('--a|', {a: response})
+        hot('--a|', { a: response })
       );
 
-      const expected = hot('--(b)', {b: completion});
+      const expected = hot('--(b)', { b: completion });
 
       expect(effects.login$).toBeObservable(expected);
     });

@@ -10,5 +10,4 @@ import {PizzaToppingsComponent} from './pizza-toppings.component';
   ],
   exports: [PizzaToppingsComponent]
 })
-export class PizzaToppingsModule {
-}
+export class PizzaToppingsModule { }

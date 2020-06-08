@@ -11,7 +11,7 @@ describe('app.modules.shared.pizza-preview.PizzaPreviewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PizzaPreviewComponent],
+      declarations: [ PizzaPreviewComponent ],
       imports: [ReactiveFormsModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();

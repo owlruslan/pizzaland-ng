@@ -23,5 +23,4 @@ import {InMemoryWebApiModule} from '@app/in-memory-web-api/in-memory-web-api.mod
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }

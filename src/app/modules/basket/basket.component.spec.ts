@@ -26,7 +26,7 @@ describe('app.modules.basket.BasketComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [BasketComponent],
+      declarations: [ BasketComponent ],
       providers: [
         provideMockStore({initialState})
       ],
@@ -34,7 +34,7 @@ describe('app.modules.basket.BasketComponent', () => {
         CUSTOM_ELEMENTS_SCHEMA
       ]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {

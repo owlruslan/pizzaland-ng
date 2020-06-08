@@ -14,5 +14,4 @@ import {PizzaSmallPreviewModule} from '@app/modules/shared/pizza-small-preview/p
   ],
   exports: [PizzaCardComponent]
 })
-export class PizzaCardModule {
-}
+export class PizzaCardModule { }

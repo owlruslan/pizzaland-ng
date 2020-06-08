@@ -12,7 +12,7 @@ export enum ActionTypes {
 export class AddPizza implements Action {
   readonly type = ActionTypes.AddPizza;
 
-  constructor(public payload: { pizza: Pizza }) {
+  constructor(public payload: {pizza: Pizza}) {
   }
 }
 

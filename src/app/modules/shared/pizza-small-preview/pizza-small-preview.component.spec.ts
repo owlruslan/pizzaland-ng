@@ -9,10 +9,10 @@ describe('app.modules.shared.pizza-small-preview.PizzaSmallPreviewComponent', ()
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PizzaSmallPreviewComponent],
+      declarations: [ PizzaSmallPreviewComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {

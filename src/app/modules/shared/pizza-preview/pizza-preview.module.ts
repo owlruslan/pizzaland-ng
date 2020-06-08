@@ -10,5 +10,4 @@ import {PizzaPreviewComponent} from './pizza-preview.component';
   ],
   exports: [PizzaPreviewComponent]
 })
-export class PizzaPreviewModule {
-}
+export class PizzaPreviewModule { }

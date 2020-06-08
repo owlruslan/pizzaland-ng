@@ -21,5 +21,4 @@ import {ReactiveFormsModule} from '@angular/forms';
   ],
   exports: [PizzasComponent]
 })
-export class PizzasModule {
-}
+export class PizzasModule { }
