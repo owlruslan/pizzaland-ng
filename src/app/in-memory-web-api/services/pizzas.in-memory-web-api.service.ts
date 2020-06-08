@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {getStatusText, RequestInfo, ResponseOptions, STATUS} from 'angular-in-memory-web-api';
 import {environment} from '@src/environments/environment';
 import {APIService} from '@app/interfaces/api-service.interface';
-import {userResponseData} from '@app/in-memory-web-api/data/user/user-response-data';
 import {pizzasResponseData} from '@app/in-memory-web-api/data/user/pizzas-response.data';
 
 @Injectable()

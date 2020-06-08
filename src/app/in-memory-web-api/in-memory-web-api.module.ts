@@ -10,7 +10,7 @@ import {AppInMemoryWebAPIService} from '@app/in-memory-web-api/services/app.in-m
     CommonModule,
     HttpClientInMemoryWebApiModule.forRoot(
       AppInMemoryWebAPIService, {
-        delay: 1000,
+        delay: 0,
         dataEncapsulation: true,
         apiBase: '/api/v1',
         host: 'localhost',
