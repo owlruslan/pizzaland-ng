@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ButtonType} from '@app/ui/v1/button/button.component';
+import {ButtonType} from '@app/ui/button/button.component';
 import {BehaviorSubject} from 'rxjs';
 import {Pizza} from '@app/models/pizzas/pizza.model';
 import {Store} from '@ngrx/store';

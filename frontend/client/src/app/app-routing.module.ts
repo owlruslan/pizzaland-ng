@@ -9,6 +9,10 @@ const routes: Routes = [
     component: AppComponent,
     children: [
       {
+        path: '',
+        loadChildren: () => import('./modules/restaurants/restaurants.module').then(mod => mod.RestaurantsModule)
+      },
+      {
         path: 'pizzas',
         loadChildren: () => import('./modules/pizzas/pizzas.module').then(mod => mod.PizzasModule)
       },
@@ -22,7 +26,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'pizzas',
+        redirectTo: '',
         pathMatch: 'full'
       },
     ]
