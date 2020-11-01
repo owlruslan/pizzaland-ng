@@ -1,4 +1,6 @@
 <div class="search-bar">
-  <img src="/assets/icons/search-black-24dp.svg">
-  <input type="text">
+    <img src="/assets/icons/search-black-24dp.svg">
+    <form [formGroup]="searchForm">
+        <input type="text" formControlName="searchQuery">
+    </form>
 </div>
