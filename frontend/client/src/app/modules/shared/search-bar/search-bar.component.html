@@ -1,6 +1,16 @@
-<div class="search-bar">
-    <img src="/assets/icons/search-black-24dp.svg">
-    <form [formGroup]="searchForm">
-        <input type="text" formControlName="searchQuery">
-    </form>
+<div class="search-bar"
+     (click)="isViewActive = true">
+    <div class="search-bar__input">
+        <img src="/assets/icons/search-black-24dp.svg">
+        <form [formGroup]="searchForm">
+            <input type="text" formControlName="searchQuery">
+        </form>
+    </div>
+    <div class="search-bar__results" *ngIf="isViewActive">
+        <ul>
+            <li>Result</li>
+            <li>Result</li>
+            <li>Result</li>
+        </ul>
+    </div>
 </div>

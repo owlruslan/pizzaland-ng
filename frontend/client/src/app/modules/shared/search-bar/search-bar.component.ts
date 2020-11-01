@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core'
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms'
 
 @Component({
@@ -9,12 +9,21 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms'
 export class SearchBarComponent implements OnInit {
 
   public searchForm: FormGroup
+  public isViewActive = false
 
-  private get searchQuery(): FormControl {
-    return this.searchForm.controls.searchQuery as FormControl;
+  private get searchQuery (): FormControl {
+    return this.searchForm.controls.searchQuery as FormControl
   }
 
-  constructor (private formBuilder: FormBuilder) { }
+  @HostListener('document:click', ['$event'])
+  clicked (event) {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      this.isViewActive = false
+    }
+  }
+
+  constructor (
+    private formBuilder: FormBuilder, private elementRef: ElementRef) { }
 
   ngOnInit (): void {
     this.searchForm = this.formBuilder.group({
