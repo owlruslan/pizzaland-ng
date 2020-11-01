@@ -1,16 +1,21 @@
 <div class="search-bar"
-     (click)="isViewActive = true">
+     (click)="isViewActive = true; search()">
     <div class="search-bar__input">
-        <img src="/assets/icons/search-black-24dp.svg">
+        <img src="/assets/icons/search-black-24dp.svg" *ngIf="!isSearching; else syncIcon">
+        <ng-template #syncIcon>
+            <img src="/assets/icons/sync-24px.svg">
+        </ng-template>
         <form [formGroup]="searchForm">
             <input type="text" formControlName="searchQuery">
         </form>
     </div>
     <div class="search-bar__results" *ngIf="isViewActive">
-        <ul>
-            <li>Result</li>
-            <li>Result</li>
-            <li>Result</li>
-        </ul>
+        <ng-container *ngIf="(searchResults$ | async) as results">
+            <ul *ngIf="results.length > 0">
+                <li *ngFor="let result of results">
+                    {{result}}
+                </li>
+            </ul>
+        </ng-container>
     </div>
 </div>
