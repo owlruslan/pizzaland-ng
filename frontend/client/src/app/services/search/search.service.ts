@@ -4,6 +4,7 @@ import { environment } from '@src/environments/environment'
 import { HttpClient, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { ResponseSuccess } from '@app/models/response/response-success.model'
+import { SearchAPI } from '@app/services/search/search-api'
 
 /**
  * Implementation of Search APIs.
@@ -11,10 +12,11 @@ import { ResponseSuccess } from '@app/models/response/response-success.model'
 @Injectable({
   providedIn: 'root',
 })
-export class SearchService implements APIService {
+export class SearchService extends SearchAPI implements APIService {
   readonly host = environment.host
 
   constructor (private http: HttpClient) {
+    super()
   }
 
   /**
