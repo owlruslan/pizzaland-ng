@@ -7,6 +7,7 @@ import {RootStoreModule} from '@app/store/root';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {InMemoryWebApiModule} from '@app/in-memory-web-api/in-memory-web-api.module';
+import { NavbarModule } from '@app/modules/shared/navbar/navbar.module'
 
 @NgModule({
   declarations: [
@@ -19,8 +20,8 @@ import {InMemoryWebApiModule} from '@app/in-memory-web-api/in-memory-web-api.mod
     InMemoryWebApiModule,
     AppRoutingModule,
     RootStoreModule,
+    NavbarModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
