@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core'
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms'
+import { SearchService } from '@app/services/search/search.service'
 
 @Component({
   selector: 'app-search-bar',
@@ -23,7 +24,8 @@ export class SearchBarComponent implements OnInit {
   }
 
   constructor (
-    private formBuilder: FormBuilder, private elementRef: ElementRef) { }
+    private formBuilder: FormBuilder, private elementRef: ElementRef,
+    private searchService: SearchService) { }
 
   ngOnInit (): void {
     this.searchForm = this.formBuilder.group({
