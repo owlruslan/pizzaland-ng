@@ -1,7 +1,7 @@
 export class Pizza {
-  id: string;
-  name: string;
-  description: string;
-  toppings: string[];
-  price: number;
+  id: string | undefined;
+  name: string | undefined;
+  description: string | undefined;
+  toppings: string[] | undefined;
+  price: number | undefined;
 }

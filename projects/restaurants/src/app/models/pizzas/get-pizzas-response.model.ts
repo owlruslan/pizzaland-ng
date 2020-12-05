@@ -1,5 +1,5 @@
-import {Pizza} from '@app/models/pizzas/pizza.model';
+import { Pizza } from './pizza.model'
 
 export class GetPizzasResponse {
-  pizzas: Pizza[];
+  pizzas: Pizza[] | undefined;
 }

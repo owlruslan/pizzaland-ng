@@ -1,4 +1,4 @@
 export class UserLoginResponse {
-  token: string;
-  expiresAt: string;
+  token: string | undefined;
+  expiresAt: string | undefined;
 }

@@ -1,7 +1,7 @@
-import { SearchAPI } from '@app/services/search/search-api'
 import { Observable, of } from 'rxjs'
-import { ResponseSuccess } from '@app/models/response/response-success.model'
 import { delay } from 'rxjs/operators'
+import { ResponseSuccess } from '../../models/response/response-success.model'
+import { SearchAPI } from './search-api'
 
 export const mockSearchResults = ['Results1', 'Result2', 'Result3']
 

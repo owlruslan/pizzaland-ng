@@ -1,9 +1,9 @@
-import {ResponseError} from '@app/models/response/response-error.model';
+import { ResponseError } from '../../../models/response/response-error.model'
 
 export interface State {
   errorResponse: ResponseError;
 }
 
 export const initialState: State = {
-  errorResponse: null,
+  errorResponse: new ResponseError(),
 };

@@ -1,4 +1,4 @@
-import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
+import { GetPizzasResponse } from '../../models/pizzas/get-pizzas-response.model'
 
 const mockGetPizzasResponse = new GetPizzasResponse();
 mockGetPizzasResponse.pizzas = [

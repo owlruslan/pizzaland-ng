@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {environment} from '@src/environments/environment';
-import {APIService} from '@app/interfaces/api-service.interface';
-import {ResponseSuccess} from '@app/models/response/response-success.model';
-import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
+import { APIService } from '../../interfaces/api-service.interface'
+import { ResponseSuccess } from '../../models/response/response-success.model'
+import { GetPizzasResponse } from '../../models/pizzas/get-pizzas-response.model'
+import { environment } from '../../../environments/environment'
 
 /**
  * Implementation of pizzas APIs.

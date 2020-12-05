@@ -1,23 +1,27 @@
-import {RootStoreState} from '@app/store/root';
 import {createSelector} from '@ngrx/store';
-import {State} from '@app/store/root/client/basket/basket.state';
-import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
+import { GetPizzasResponse } from '../../../../models/pizzas/get-pizzas-response.model'
+import { State } from '../pizzas/pizzas.state'
+import { RootStoreState } from '../../index'
+
 
 export const getBasketState = (state: RootStoreState.State) => state.client.basket;
 
 export const getPizzasResponseState = createSelector(
+  // @ts-ignore
   getBasketState,
   (state: State) => state.pizzasResponse
 );
 
 export const getTotalState = createSelector(
   getPizzasResponseState,
+  // @ts-ignore
   (state: GetPizzasResponse) => {
     if (state.pizzas) {
       return state.pizzas
         .map(pizza => pizza.price)
         .reduce(
-          (accumulator, currentValue) => accumulator + currentValue
+        // @ts-ignore
+        (accumulator, currentValue) => accumulator + currentValue
         );
     }
   }
@@ -25,6 +29,7 @@ export const getTotalState = createSelector(
 
 export const getPizzasCountState = createSelector(
   getPizzasResponseState,
+  // @ts-ignore
   (state: GetPizzasResponse) => {
     if (state.pizzas) {
       return state.pizzas.length;

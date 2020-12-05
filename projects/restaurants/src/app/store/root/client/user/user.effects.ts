@@ -4,12 +4,12 @@ import {Store} from '@ngrx/store';
 import {RootStoreState} from '../../index';
 import {catchError, map, switchMap} from 'rxjs/operators';
 import {ActionTypes, Login, LoginFailure, LoginSuccess} from './user.actions';
-import {ResponseSuccess} from '@app/models/response/response-success.model';
-import {UserLoginResponse} from '@app/models/user/user-login-response.model';
-import {ResponseError} from '@app/models/response/response-error.model';
-import {UserService} from '@app/services/user/user.service';
-import {AppStoreActions} from '@app/store/root/app';
 import {of} from 'rxjs';
+import { UserLoginResponse } from '../../../../models/user/user-login-response.model'
+import { ResponseSuccess } from '../../../../models/response/response-success.model'
+import { UserService } from '../../../../services/user/user.service'
+import { ResponseError } from '../../../../models/response/response-error.model'
+import { AppStoreActions } from '../../app'
 
 /**
  * Provides User Store Effects.

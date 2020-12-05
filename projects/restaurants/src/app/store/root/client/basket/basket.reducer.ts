@@ -7,6 +7,7 @@ export function reducer(state = initialState, action: Actions): State {
       return {
         ...state,
         pizzasResponse: {
+          // @ts-ignore
           pizzas: [...state.pizzasResponse.pizzas, action.payload.pizza]
         }
       };

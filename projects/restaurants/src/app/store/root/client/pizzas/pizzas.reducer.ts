@@ -12,7 +12,7 @@ export function reducer(state = initialState, action: Actions): State {
       };
     }
     case ActionTypes.GetPizzasSuccess: {
-      return {
+      return <State>{
         ...state,
         pizzasResponse: action.payload.response.data,
         loading: false
@@ -21,6 +21,7 @@ export function reducer(state = initialState, action: Actions): State {
     case ActionTypes.GetPizzasFailure: {
       return {
         ...state,
+        // @ts-ignore
         pizzasResponse: null,
         loading: false
       };

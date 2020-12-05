@@ -20,7 +20,7 @@ export class PizzaSmallPreviewComponent implements OnInit {
       'pepperoni',
       'sweetcorn',
       'tomato'*/
-  ];
+  ] || undefined;
 
   constructor() { }
 

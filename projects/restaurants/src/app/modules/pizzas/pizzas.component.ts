@@ -1,13 +1,16 @@
 import {AfterContentChecked, Component, OnDestroy, OnInit} from '@angular/core';
-import {Unsubscribe} from '@app/interfaces/unsubscribe.interface';
 import {combineLatest, Observable, Subject} from 'rxjs';
 import {select, Store} from '@ngrx/store';
-import {RootStoreState} from '@app/store/root';
 import {map, takeUntil} from 'rxjs/operators';
-import {PizzasStoreActions, PizzasStoreSelectors} from '@app/store/root/client';
-import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
 import {FormBuilder} from '@angular/forms';
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
+import {
+  PizzasStoreActions,
+  PizzasStoreSelectors,
+} from '../../store/root/client'
+import { GetPizzasResponse } from '../../models/pizzas/get-pizzas-response.model'
+import { Unsubscribe } from '../../interfaces/unsubscribe.interface'
+import { RootStoreState } from '../../store/root'
 
 @Component({
   selector: 'app-pizzas',
@@ -36,6 +39,7 @@ export class PizzasComponent implements OnInit, AfterContentChecked, OnDestroy, 
     takeUntil(this.unsubscribe)
   );
 
+  // @ts-ignore
   pizzas$: Observable<any[]> = combineLatest([
     this.form.controls.toppings.valueChanges,
     this.pizzasResponse$
@@ -45,8 +49,10 @@ export class PizzasComponent implements OnInit, AfterContentChecked, OnDestroy, 
       const pizzasResponse = results[1];
 
       if (toppings.length > 0) {
+        // @ts-ignore
         return pizzasResponse.pizzas.filter(pizza =>
-          toppings.some(topping => pizza.toppings.includes(topping))
+          // @ts-ignore
+          toppings.some((topping: any) => pizza.toppings.includes(topping))
         );
       } else {
         return pizzasResponse.pizzas;

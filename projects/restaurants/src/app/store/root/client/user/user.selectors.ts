@@ -1,6 +1,6 @@
 import {createSelector} from '@ngrx/store';
 import {State} from './user.state';
-import {RootStoreState} from '@app/store/root';
+import { RootStoreState } from '../../index'
 
 export const getUserState = (state: RootStoreState.State) => state.client.user;
 

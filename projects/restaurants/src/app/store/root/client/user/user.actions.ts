@@ -1,8 +1,8 @@
 import {Action} from '@ngrx/store';
-import {ResponseSuccess} from '@app/models/response/response-success.model';
-import {ResponseError} from '@app/models/response/response-error.model';
-import {UserLoginRequest} from '@app/models/user/user-login-request.model';
-import {UserLoginResponse} from '@app/models/user/user-login-response.model';
+import { UserLoginResponse } from '../../../../models/user/user-login-response.model'
+import { ResponseSuccess } from '../../../../models/response/response-success.model'
+import { ResponseError } from '../../../../models/response/response-error.model'
+import { UserLoginRequest } from '../../../../models/user/user-login-request.model'
 
 
 export enum ActionTypes {

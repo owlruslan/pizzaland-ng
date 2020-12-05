@@ -1,4 +1,4 @@
 export class ResponseError {
-  error: string;
+  error: string | undefined;
   success = false;
 }

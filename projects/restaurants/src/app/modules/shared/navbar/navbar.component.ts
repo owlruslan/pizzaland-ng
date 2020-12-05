@@ -1,11 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
-import {RootStoreState, UserStoreSelectors} from '@app/store/root';
 import {Observable, Subject} from 'rxjs';
-import {UserResponse} from '@app/models/user/user-response.model';
 import {takeUntil} from 'rxjs/operators';
-import {Unsubscribe} from '@app/interfaces/unsubscribe.interface';
-import {BasketStoreSelectors} from '@app/store/root/client';
+import { UserResponse } from '../../../models/user/user-response.model'
+import { RootStoreState, UserStoreSelectors } from '../../../store/root'
+import { BasketStoreSelectors } from '../../../store/root/client'
+import { Unsubscribe } from '../../../interfaces/unsubscribe.interface'
 
 @Component({
   selector: 'app-navbar',
@@ -21,6 +21,7 @@ export class NavbarComponent implements OnInit, OnDestroy, Unsubscribe {
   );
 
   pizzasCount$: Observable<number> = this.store.pipe(
+    // @ts-ignore
     select(BasketStoreSelectors.getPizzasCountState),
     takeUntil(this.unsubscribe)
   );

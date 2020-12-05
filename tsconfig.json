@@ -23,7 +23,7 @@
       "uikit": [
         "dist/uikit/uikit",
         "dist/uikit"
-      ]
+      ],
     }
   },
   "angularCompilerOptions": {

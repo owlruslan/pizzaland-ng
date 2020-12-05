@@ -1,6 +1,7 @@
 import {UserStoreState} from './user';
-import {PizzasStoreState} from '@app/store/root/client/pizzas';
-import {BasketStoreState} from '@app/store/root/client/basket';
+import { BasketStoreState } from './basket'
+import { PizzasStoreState } from './pizzas'
+
 
 export interface State {
   user: UserStoreState.State;
@@ -9,7 +10,7 @@ export interface State {
 }
 
 export const initialState: State = {
-  user: null,
-  pizzas: null,
-  basket: null,
+  user: UserStoreState.initialState,
+  pizzas: PizzasStoreState.initialState,
+  basket: BasketStoreState.initialState,
 };

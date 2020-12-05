@@ -2,10 +2,10 @@ import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {StoreModule} from '@ngrx/store';
 import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store';
-import {AppStoreModule} from '@app/store/root/app/app-store.module';
 import {EffectsModule} from '@ngrx/effects';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
-import {ClientStoreModule} from '@app/store/root/client';
+import { AppStoreModule } from './app/app-store.module'
+import { ClientStoreModule } from './client'
 
 
 @NgModule({

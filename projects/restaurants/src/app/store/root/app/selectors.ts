@@ -1,6 +1,6 @@
 import {createSelector} from '@ngrx/store';
 import {State} from './state';
-import {RootStoreState} from '@app/store/root';
+import { RootStoreState } from '../index'
 
 export const getAppState = (state: RootStoreState.State) => state.app;
 

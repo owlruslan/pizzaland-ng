@@ -1,12 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Unsubscribe} from '@app/interfaces/unsubscribe.interface';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
-import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
 import {select, Store} from '@ngrx/store';
-import {BasketStoreSelectors} from '@app/store/root/client';
 import {takeUntil} from 'rxjs/operators';
-import {RootStoreState} from '@app/store/root';
-import {Pizza} from '@app/models/pizzas/pizza.model';
+import { Pizza } from '../../models/pizzas/pizza.model'
+import { GetPizzasResponse } from '../../models/pizzas/get-pizzas-response.model'
+import { BasketStoreSelectors } from '../../store/root/client'
+import { Unsubscribe } from '../../interfaces/unsubscribe.interface'
+import { RootStoreState } from '../../store/root'
 
 @Component({
   selector: 'app-basket',
@@ -22,10 +22,12 @@ export class BasketComponent implements OnInit, OnDestroy, Unsubscribe {
   );
 
   total$: Observable<number> = this.store.pipe(
+    // @ts-ignore
     select(BasketStoreSelectors.getTotalState),
     takeUntil(this.unsubscribe)
   );
 
+  // @ts-ignore
   activePizza$ = new BehaviorSubject<Pizza>(null);
 
   constructor(private store: Store<RootStoreState.State>) { }
@@ -33,6 +35,7 @@ export class BasketComponent implements OnInit, OnDestroy, Unsubscribe {
   ngOnInit(): void {
     this.pizzasResponse$.subscribe(resp => {
       if (resp) {
+        // @ts-ignore
         this.activePizza$.next(resp.pizzas[0]);
       }
     });

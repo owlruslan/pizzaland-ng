@@ -19,30 +19,34 @@ export class PizzaToppingsComponent implements ControlValueAccessor {
     'olive', 'onion', 'pepper', 'pepperoni', 'sweetcorn', 'tomato'
   ];
 
-  value: string[] = [];
-  focused: string;
+  value: string | string[] = [];
+  focused: string | undefined;
 
-  onTouch: Function;
-  onModelChange: Function;
+  onTouch: Function | undefined;
+  onModelChange: Function | undefined;
 
-  registerOnChange(fn) {
+  registerOnChange(fn: Function | undefined) {
     this.onModelChange = fn;
   }
 
-  registerOnTouched(fn) {
+  registerOnTouched(fn: Function | undefined) {
     this.onTouch = fn;
   }
 
-  writeValue(value) {
+  writeValue(value: any) {
     this.value = value;
   }
 
   updateTopping(topping: string) {
     if (this.value.includes(topping)) {
-      this.value = this.value.filter((x: string) => topping !== x);
+      if (typeof this.value !== 'string') {
+        this.value = this.value.filter((x: string) => topping !== x)
+      }
     } else {
+      // @ts-ignore
       this.value = this.value.concat([topping]);
     }
+    // @ts-ignore
     this.onModelChange(this.value);
   }
 
@@ -52,6 +56,7 @@ export class PizzaToppingsComponent implements ControlValueAccessor {
 
   onFocus(value: string) {
     this.focused = value;
+    // @ts-ignore
     this.onTouch();
   }
 }

@@ -1,5 +1,6 @@
-import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
-import mockGetPizzasResponse from '@app/mocks/pizzas/get-pizzas-response.mock';
+import { GetPizzasResponse } from '../../../../models/pizzas/get-pizzas-response.model'
+import mockGetPizzasResponse
+  from '../../../../mocks/pizzas/get-pizzas-response.mock'
 
 export interface State {
   pizzasResponse: GetPizzasResponse;
@@ -7,6 +8,6 @@ export interface State {
 
 export const initialState: State = {
   pizzasResponse: {
-    pizzas: mockGetPizzasResponse.pizzas.slice(0, 2)
+    pizzas: mockGetPizzasResponse?.pizzas?.slice(0, 2)
   }
 };

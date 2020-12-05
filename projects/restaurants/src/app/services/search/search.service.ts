@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core'
-import { APIService } from '@app/interfaces/api-service.interface'
-import { environment } from '@src/environments/environment'
 import { HttpClient, HttpParams } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import { ResponseSuccess } from '@app/models/response/response-success.model'
-import { SearchAPI } from '@app/services/search/search-api'
+import { APIService } from '../../interfaces/api-service.interface'
+import { ResponseSuccess } from '../../models/response/response-success.model'
+import { SearchAPI } from './search-api'
+import { environment } from '../../../environments/environment'
+
 
 /**
  * Implementation of Search APIs.

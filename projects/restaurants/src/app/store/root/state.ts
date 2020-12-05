@@ -1,5 +1,5 @@
-import {ClientStoreState} from '@app/store/root/client';
-import {AppStoreState} from '@app/store/root/app';
+import { ClientStoreState } from './client'
+import { AppStoreState } from './app'
 
 export interface State {
   app: AppStoreState.State;
@@ -7,6 +7,6 @@ export interface State {
 }
 
 export const initialState: State = {
-  app: null,
-  client: null,
+  app: AppStoreState.initialState,
+  client: ClientStoreState.initialState,
 };

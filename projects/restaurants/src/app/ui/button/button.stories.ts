@@ -2,7 +2,7 @@ import {moduleMetadata, storiesOf} from '@storybook/angular';
 
 import {ButtonModule} from './button.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ButtonType} from '@app/ui/button/button.component';
+import { ButtonType } from './button.component'
 
 const type = ButtonType.SUCCESS;
 

@@ -1,3 +1,3 @@
 export class UserResponse {
-  name: string;
+  name: string | undefined;
 }
