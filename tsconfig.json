@@ -24,6 +24,10 @@
         "dist/uikit/uikit",
         "dist/uikit"
       ],
+      "core": [
+        "dist/core/core",
+        "dist/core",
+      ]
     }
   },
   "angularCompilerOptions": {
