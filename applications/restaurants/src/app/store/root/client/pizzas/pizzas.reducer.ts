@@ -1,5 +1,5 @@
-import {Actions, ActionTypes} from './pizzas.actions';
-import {initialState, State} from './pizzas.state';
+import { Actions, ActionTypes } from './pizzas.actions';
+import { initialState, State } from './pizzas.state';
 
 export function reducer(state = initialState, action: Actions): State {
   switch (action.type) {
@@ -12,18 +12,18 @@ export function reducer(state = initialState, action: Actions): State {
       };
     }
     case ActionTypes.GetPizzasSuccess: {
-      return <State>{
+      return {
         ...state,
         pizzasResponse: action.payload.response.data,
-        loading: false
-      };
+        loading: false,
+      } as State;
     }
     case ActionTypes.GetPizzasFailure: {
       return {
         ...state,
         // @ts-ignore
         pizzasResponse: null,
-        loading: false
+        loading: false,
       };
     }
 

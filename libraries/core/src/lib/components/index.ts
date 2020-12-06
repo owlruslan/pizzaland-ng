@@ -1,5 +1,5 @@
-import { Unsubscribe } from './unsubscribe.interface'
+import { Unsubscribe } from './unsubscribe.interface';
 
 export {
   Unsubscribe,
-}
+};

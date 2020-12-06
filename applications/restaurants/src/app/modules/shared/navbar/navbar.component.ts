@@ -2,10 +2,10 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {Observable, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import { UserResponse } from '../../../../../../../libraries/core/src/lib/models/user/user-response.model'
-import { RootStoreState, UserStoreSelectors } from '../../../store/root'
-import { BasketStoreSelectors } from '../../../store/root/client'
-import { Unsubscribe } from '../../../../../../../libraries/core/src/lib/components/unsubscribe.interface'
+import { UserResponse } from '../../../../../../../libraries/core/src/lib/models/user/user-response.model';
+import { RootStoreState, UserStoreSelectors } from '../../../store/root';
+import { BasketStoreSelectors } from '../../../store/root/client';
+import { Unsubscribe } from '../../../../../../../libraries/core/src/lib/components/unsubscribe.interface';
 
 @Component({
   selector: 'app-navbar',

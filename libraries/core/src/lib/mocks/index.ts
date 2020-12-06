@@ -1,5 +1,5 @@
-import mockErrorResponse from './error/error-response.mock'
+import mockErrorResponse from './error/error-response.mock';
 
 export {
   mockErrorResponse,
-}
+};

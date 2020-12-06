@@ -5,5 +5,5 @@ import * as UserStoreState from './user.state';
 export {
   UserStoreActions,
   UserStoreSelectors,
-  UserStoreState
+  UserStoreState,
 };

@@ -1,8 +1,8 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {InputComponent} from './input.component';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { InputComponent } from './input.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('app.ui.v1.input.InputComponent', () => {
   let component: InputComponent;
@@ -18,10 +18,9 @@ describe('app.ui.v1.input.InputComponent', () => {
         NoopAnimationsModule,
       ],
       schemas: [
-        CUSTOM_ELEMENTS_SCHEMA
-      ]
-    })
-      .compileComponents();
+        CUSTOM_ELEMENTS_SCHEMA,
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

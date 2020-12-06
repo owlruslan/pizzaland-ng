@@ -1,14 +1,13 @@
-import {CommonModule} from '@angular/common';
-import {InjectionToken, NgModule} from '@angular/core';
-import {ActionReducerMap, StoreModule} from '@ngrx/store';
-import {EffectsModule} from '@ngrx/effects';
+import { CommonModule } from '@angular/common';
+import { InjectionToken, NgModule } from '@angular/core';
+import { ActionReducerMap, StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import * as ClientStoreState from './state';
 import * as UserStoreReducer from './user/user.reducer';
 import * as PizzasStoreReducer from './pizzas/pizzas.reducer';
 import * as BasketStoreReducer from './basket/basket.reducer';
-import {UserEffects} from './user/user.effects';
-import {PizzasEffects} from './pizzas/pizzas.effects';
-
+import { UserEffects } from './user/user.effects';
+import { PizzasEffects } from './pizzas/pizzas.effects';
 
 export const FEATURE_REDUCER_TOKEN = new InjectionToken<ActionReducerMap<ClientStoreState.State>>('Client Feature Reducers');
 

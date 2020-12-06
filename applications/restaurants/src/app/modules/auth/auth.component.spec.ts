@@ -1,11 +1,11 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {AuthComponent} from './auth.component';
-import {MockStore, provideMockStore} from '@ngrx/store/testing';
-import {ReactiveFormsModule} from '@angular/forms';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {UserLoginRequest} from '@app/models/user/user-login-request.model';
-import {UserStoreActions} from '@app/store/root';
+import { AuthComponent } from './auth.component';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { UserLoginRequest } from '@app/models/user/user-login-request.model';
+import { UserStoreActions } from '@app/store/root';
 
 describe('app.modules.auth.AuthComponent', () => {
   let component: AuthComponent;
@@ -15,18 +15,17 @@ describe('app.modules.auth.AuthComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthComponent ],
+      declarations: [AuthComponent],
       imports: [
-        ReactiveFormsModule
+        ReactiveFormsModule,
       ],
       providers: [
-        provideMockStore()
+        provideMockStore(),
       ],
       schemas: [
-        CUSTOM_ELEMENTS_SCHEMA
-      ]
-    })
-    .compileComponents();
+        CUSTOM_ELEMENTS_SCHEMA,
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -53,7 +52,7 @@ describe('app.modules.auth.AuthComponent', () => {
       const dispatchSpy = spyOn(mockStore, 'dispatch');
       const request = new UserLoginRequest();
       component.onSubmit();
-      expect(dispatchSpy).toHaveBeenCalledWith(new UserStoreActions.Login({request}));
+      expect(dispatchSpy).toHaveBeenCalledWith(new UserStoreActions.Login({ request }));
     });
   });
 });

@@ -1,4 +1,4 @@
-import { GetPizzasResponse } from '../../models/pizzas/get-pizzas-response.model'
+import { GetPizzasResponse } from '../../models';
 
 const mockGetPizzasResponse = new GetPizzasResponse();
 mockGetPizzasResponse.pizzas = [
@@ -22,7 +22,7 @@ mockGetPizzasResponse.pizzas = [
     description: 'PIZZA_DESCRIPTION_2',
     toppings: ['bacon', 'mushroom', 'chili', 'pepperoni'],
     price: 146,
-  }
+  },
 ];
 
 export default mockGetPizzasResponse;

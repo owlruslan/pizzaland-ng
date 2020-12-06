@@ -5,5 +5,5 @@ import * as PizzasStoreState from './pizzas.state';
 export {
   PizzasStoreActions,
   PizzasStoreSelectors,
-  PizzasStoreState
+  PizzasStoreState,
 };

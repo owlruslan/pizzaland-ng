@@ -1,10 +1,9 @@
-import {Action} from '@ngrx/store';
-import { ResponseError } from '../../../../../../../libraries/core/src/lib/models/response/response-error.model'
+import { Action } from '@ngrx/store';
+import { ResponseError } from '../../../../../../../libraries/core/src/lib/models/response/response-error.model';
 
 export enum ActionTypes {
   AddErrorResponse = '[Errors] Add Error Response',
 }
-
 
 export class AddErrorResponse implements Action {
   public readonly type = ActionTypes.AddErrorResponse;

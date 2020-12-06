@@ -1,5 +1,5 @@
-import { Observable } from 'rxjs'
-import { ResponseSuccess } from '../../../../../../libraries/core/src/lib/models/response/response-success.model'
+import { Observable } from 'rxjs';
+import { ResponseSuccess } from '../../../../../../libraries/core/src/lib/models/response/response-success.model';
 
 export interface SearchAPI {
 

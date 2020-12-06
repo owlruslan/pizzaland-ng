@@ -7,10 +7,10 @@ import {animate, query, stagger, style, transition, trigger} from '@angular/anim
 import {
   PizzasStoreActions,
   PizzasStoreSelectors,
-} from '../../store/root/client'
-import { GetPizzasResponse } from '../../../../../../libraries/core/src/lib/models/pizzas/get-pizzas-response.model'
-import { Unsubscribe } from '../../../../../../libraries/core/src/lib/components/unsubscribe.interface'
-import { RootStoreState } from '../../store/root'
+} from '../../store/root/client';
+import { GetPizzasResponse } from '../../../../../../libraries/core/src/lib/models/pizzas/get-pizzas-response.model';
+import { Unsubscribe } from '../../../../../../libraries/core/src/lib/components/unsubscribe.interface';
+import { RootStoreState } from '../../store/root';
 
 @Component({
   selector: 'app-pizzas',

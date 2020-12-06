@@ -1,6 +1,6 @@
-import {getSelectors, RouterReducerState} from '@ngrx/router-store';
-import {createFeatureSelector} from '@ngrx/store';
-import {Params} from '@angular/router';
+import { getSelectors, RouterReducerState } from '@ngrx/router-store';
+import { createFeatureSelector } from '@ngrx/store';
+import { Params } from '@angular/router';
 
 export interface RouterStateUrl {
   url: string;

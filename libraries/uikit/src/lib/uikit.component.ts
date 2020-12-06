@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
       uikit works!
     </p>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class UikitComponent implements OnInit {
 

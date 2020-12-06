@@ -1,14 +1,14 @@
-import { async, ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing'
+import { async, ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 
-import { SearchBarComponent } from './search-bar.component'
-import { mockSearchResults, SearchMockService } from '@app/services/search/search-mock.service'
-import { ReactiveFormsModule } from '@angular/forms'
-import { HttpClientTestingModule } from '@angular/common/http/testing'
-import { SearchService } from '@app/services/search/search.service'
+import { SearchBarComponent } from './search-bar.component';
+import { mockSearchResults, SearchMockService } from '@app/services/search/search-mock.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { SearchService } from '@app/services/search/search.service';
 
 fdescribe('SearchBarComponent', () => {
-  let component: SearchBarComponent
-  let fixture: ComponentFixture<SearchBarComponent>
+  let component: SearchBarComponent;
+  let fixture: ComponentFixture<SearchBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -21,28 +21,28 @@ fdescribe('SearchBarComponent', () => {
         {provide: SearchService, useClass: SearchMockService}
       ]
     })
-      .compileComponents()
-  })
+      .compileComponents();
+  });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchBarComponent)
-    component = fixture.componentInstance
-  })
+    fixture = TestBed.createComponent(SearchBarComponent);
+    component = fixture.componentInstance;
+  });
 
   it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+    expect(component).toBeTruthy();
+  });
 
   /**
    * TODO: Jasmine marbles tests, first state searchResults = [], after = [3 items...]
    */
   xdescribe('#search', () => {
     it('should set searchResults$ data from response', waitForAsync(() => {
-      component.search('')
+      component.search('');
       component.searchResults$.subscribe(value => {
         console.log(value);
-        expect(value.length).toEqual(3)
-      })
-    }))
-  })
-})
+        expect(value.length).toEqual(3);
+      });
+    }));
+  });
+});

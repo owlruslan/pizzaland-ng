@@ -1,5 +1,5 @@
-import { ClientStoreState } from './client'
-import { AppStoreState } from './app'
+import { ClientStoreState } from './client';
+import { AppStoreState } from './app';
 
 export interface State {
   app: AppStoreState.State;

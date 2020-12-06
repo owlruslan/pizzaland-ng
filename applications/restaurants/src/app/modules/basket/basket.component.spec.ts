@@ -1,11 +1,11 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {BasketComponent} from './basket.component';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {MockStore, provideMockStore} from '@ngrx/store/testing';
-import {MemoizedSelector} from '@ngrx/store';
-import {RootStoreState} from '@app/store/root';
-import {BasketStoreSelectors} from '@app/store/root/client';
+import { BasketComponent } from './basket.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { MemoizedSelector } from '@ngrx/store';
+import { RootStoreState } from '@app/store/root';
+import { BasketStoreSelectors } from '@app/store/root/client';
 import mockGetPizzasResponse from '@app/mocks/pizzas/get-pizzas-response.mock';
 
 describe('app.modules.basket.BasketComponent', () => {
@@ -19,22 +19,21 @@ describe('app.modules.basket.BasketComponent', () => {
   const initialState = {
     client: {
       basket: {
-        pizzasResponse: mockGetPizzasResponse
-      }
-    }
+        pizzasResponse: mockGetPizzasResponse,
+      },
+    },
   };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BasketComponent ],
+      declarations: [BasketComponent],
       providers: [
-        provideMockStore({initialState})
+        provideMockStore({ initialState }),
       ],
       schemas: [
-        CUSTOM_ELEMENTS_SCHEMA
-      ]
-    })
-    .compileComponents();
+        CUSTOM_ELEMENTS_SCHEMA,
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -43,11 +42,11 @@ describe('app.modules.basket.BasketComponent', () => {
     mockStore = TestBed.inject(MockStore);
     mockPizzasResponseSelector = mockStore.overrideSelector(
       BasketStoreSelectors.getPizzasResponseState,
-      null
+      null,
     );
     mockTotalSelector = mockStore.overrideSelector(
       BasketStoreSelectors.getTotalState,
-      null
+      null,
     );
 
     component = fixture.componentInstance;

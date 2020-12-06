@@ -1,8 +1,8 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {ButtonComponent} from './button.component';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { ButtonComponent } from './button.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('app.ui.v1.button.ButtonComponent', () => {
   let component: ButtonComponent;
@@ -18,10 +18,9 @@ describe('app.ui.v1.button.ButtonComponent', () => {
         NoopAnimationsModule,
       ],
       schemas: [
-        CUSTOM_ELEMENTS_SCHEMA
-      ]
-    })
-      .compileComponents();
+        CUSTOM_ELEMENTS_SCHEMA,
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

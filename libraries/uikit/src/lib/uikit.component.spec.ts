@@ -8,9 +8,8 @@ describe('UikitComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UikitComponent ]
-    })
-    .compileComponents();
+      declarations: [UikitComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -22,25 +22,25 @@ export class PizzaToppingsComponent implements ControlValueAccessor {
   value: string | string[] = [];
   focused: string | undefined;
 
-  onTouch: Function | undefined;
-  onModelChange: Function | undefined;
+  onTouch: (() => void | undefined) | undefined;
+  onModelChange: (() => void | undefined) | undefined;
 
-  registerOnChange(fn: Function | undefined) {
+  registerOnChange(fn: () => void | undefined): void {
     this.onModelChange = fn;
   }
 
-  registerOnTouched(fn: Function | undefined) {
+  registerOnTouched(fn: () => void | undefined): void {
     this.onTouch = fn;
   }
 
-  writeValue(value: any) {
+  writeValue(value: any): void {
     this.value = value;
   }
 
-  updateTopping(topping: string) {
+  updateTopping(topping: string): void {
     if (this.value.includes(topping)) {
       if (typeof this.value !== 'string') {
-        this.value = this.value.filter((x: string) => topping !== x)
+        this.value = this.value.filter((x: string) => topping !== x);
       }
     } else {
       // @ts-ignore
@@ -50,11 +50,11 @@ export class PizzaToppingsComponent implements ControlValueAccessor {
     this.onModelChange(this.value);
   }
 
-  onBlur(value: string) {
+  onBlur(value: string): void {
     this.focused = '';
   }
 
-  onFocus(value: string) {
+  onFocus(value: string): void {
     this.focused = value;
     // @ts-ignore
     this.onTouch();

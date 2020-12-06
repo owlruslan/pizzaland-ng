@@ -1,7 +1,6 @@
-import {UserStoreState} from './user';
-import { BasketStoreState } from './basket'
-import { PizzasStoreState } from './pizzas'
-
+import { UserStoreState } from './user';
+import { BasketStoreState } from './basket';
+import { PizzasStoreState } from './pizzas';
 
 export interface State {
   user: UserStoreState.State;

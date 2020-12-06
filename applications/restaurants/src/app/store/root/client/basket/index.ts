@@ -5,5 +5,5 @@ import * as BasketStoreState from './basket.state';
 export {
   BasketStoreActions,
   BasketStoreSelectors,
-  BasketStoreState
+  BasketStoreState,
 };

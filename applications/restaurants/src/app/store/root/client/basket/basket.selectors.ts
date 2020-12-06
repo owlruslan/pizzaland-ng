@@ -1,15 +1,14 @@
-import {createSelector} from '@ngrx/store';
-import { GetPizzasResponse } from '../../../../../../../../libraries/core/src/lib/models/pizzas/get-pizzas-response.model'
-import { State } from '../pizzas/pizzas.state'
-import { RootStoreState } from '../../index'
-
+import { createSelector } from '@ngrx/store';
+import { GetPizzasResponse } from '../../../../../../../../libraries/core/src/lib/models/pizzas/get-pizzas-response.model';
+import { State } from '../pizzas/pizzas.state';
+import { RootStoreState } from '../../index';
 
 export const getBasketState = (state: RootStoreState.State) => state.client.basket;
 
 export const getPizzasResponseState = createSelector(
   // @ts-ignore
   getBasketState,
-  (state: State) => state.pizzasResponse
+  (state: State) => state.pizzasResponse,
 );
 
 export const getTotalState = createSelector(
@@ -17,14 +16,12 @@ export const getTotalState = createSelector(
   // @ts-ignore
   (state: GetPizzasResponse) => {
     if (state.pizzas) {
-      return state.pizzas
-        .map(pizza => pizza.price)
-        .reduce(
+      return state.pizzas.map(pizza => pizza.price).reduce(
         // @ts-ignore
-        (accumulator, currentValue) => accumulator + currentValue
-        );
+        (accumulator, currentValue) => accumulator + currentValue,
+      );
     }
-  }
+  },
 );
 
 export const getPizzasCountState = createSelector(
@@ -34,5 +31,5 @@ export const getPizzasCountState = createSelector(
     if (state.pizzas) {
       return state.pizzas.length;
     }
-  }
+  },
 );

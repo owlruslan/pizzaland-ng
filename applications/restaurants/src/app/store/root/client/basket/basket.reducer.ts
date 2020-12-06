@@ -1,5 +1,5 @@
-import {Actions, ActionTypes} from './basket.actions';
-import {initialState, State} from './basket.state';
+import { Actions, ActionTypes } from './basket.actions';
+import { initialState, State } from './basket.state';
 
 export function reducer(state = initialState, action: Actions): State {
   switch (action.type) {
@@ -8,8 +8,8 @@ export function reducer(state = initialState, action: Actions): State {
         ...state,
         pizzasResponse: {
           // @ts-ignore
-          pizzas: [...state.pizzasResponse.pizzas, action.payload.pizza]
-        }
+          pizzas: [...state.pizzasResponse.pizzas, action.payload.pizza],
+        },
       };
     }
 

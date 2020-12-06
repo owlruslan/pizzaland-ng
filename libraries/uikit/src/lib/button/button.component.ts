@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 export enum ButtonType {
   DEFAULT = 'default',
@@ -6,7 +6,7 @@ export enum ButtonType {
 }
 
 @Component({
-  selector: 'app-ui-v1-button',
+  selector: 'lib-ui-v1-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
 })

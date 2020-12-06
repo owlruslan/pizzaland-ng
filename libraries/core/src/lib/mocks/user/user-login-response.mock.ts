@@ -1,4 +1,4 @@
-import { UserLoginResponse } from '../../models/user/user-login-response.model'
+import { UserLoginResponse } from '../../models/user/user-login-response.model';
 
 const mockUserLoginResponse = new UserLoginResponse();
 mockUserLoginResponse.token = 'TOKEN';

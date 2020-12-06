@@ -1,5 +1,5 @@
-import { UserResponse } from '../../../../../../../../libraries/core/src/lib/models/user/user-response.model'
-import { UserLoginResponse } from '../../../../../../../../libraries/core/src/lib/models/user/user-login-response.model'
+import { UserResponse } from '../../../../../../../../libraries/core/src/lib/models/user/user-response.model';
+import { UserLoginResponse } from '../../../../../../../../libraries/core/src/lib/models/user/user-login-response.model';
 
 export interface State {
   logined: boolean;
@@ -11,9 +11,9 @@ export const initialState: State = {
   logined: false,
   userTokenResponse: {
     token: 'TOKEN',
-    expiresAt: 'DATE'
+    expiresAt: 'DATE',
   },
   userResponse: {
-    name: 'Username'
-  }
+    name: 'Username',
+  },
 };

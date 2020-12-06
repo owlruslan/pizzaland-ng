@@ -1,30 +1,30 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
-import {select, Store} from '@ngrx/store';
-import {takeUntil} from 'rxjs/operators';
-import { Pizza } from '../../../../../../libraries/core/src/lib/models/pizzas/pizza.model'
-import { GetPizzasResponse } from '../../../../../../libraries/core/src/lib/models/pizzas/get-pizzas-response.model'
-import { BasketStoreSelectors } from '../../store/root/client'
-import { Unsubscribe } from '../../../../../../libraries/core/src/lib/components/unsubscribe.interface'
-import { RootStoreState } from '../../store/root'
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+import { takeUntil } from 'rxjs/operators';
+import { Pizza } from '../../../../../../libraries/core/src/lib/models/pizzas/pizza.model';
+import { GetPizzasResponse } from '../../../../../../libraries/core/src/lib/models/pizzas/get-pizzas-response.model';
+import { BasketStoreSelectors } from '../../store/root/client';
+import { Unsubscribe } from '../../../../../../libraries/core/src/lib/components/unsubscribe.interface';
+import { RootStoreState } from '../../store/root';
 
 @Component({
   selector: 'app-basket',
   templateUrl: './basket.component.html',
-  styleUrls: ['./basket.component.scss']
+  styleUrls: ['./basket.component.scss'],
 })
 export class BasketComponent implements OnInit, OnDestroy, Unsubscribe {
   readonly unsubscribe = new Subject<void>();
 
   pizzasResponse$: Observable<GetPizzasResponse> = this.store.pipe(
     select(BasketStoreSelectors.getPizzasResponseState),
-    takeUntil(this.unsubscribe)
+    takeUntil(this.unsubscribe),
   );
 
   total$: Observable<number> = this.store.pipe(
     // @ts-ignore
     select(BasketStoreSelectors.getTotalState),
-    takeUntil(this.unsubscribe)
+    takeUntil(this.unsubscribe),
   );
 
   // @ts-ignore
@@ -45,7 +45,7 @@ export class BasketComponent implements OnInit, OnDestroy, Unsubscribe {
     this.unsubscribe.next();
   }
 
-  onPizzaHover(pizza: Pizza) {
+  onPizzaHover(pizza: Pizza): void {
     this.activePizza$.next(pizza);
   }
 }

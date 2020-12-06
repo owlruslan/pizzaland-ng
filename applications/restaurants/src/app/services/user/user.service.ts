@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import { APIService } from '../../../../../../libraries/core/src/lib/services/api-service.interface'
-import { UserLoginResponse } from '../../../../../../libraries/core/src/lib/models/user/user-login-response.model'
-import { ResponseSuccess } from '../../../../../../libraries/core/src/lib/models/response/response-success.model'
-import { UserLoginRequest } from '../../../../../../libraries/core/src/lib/models/user/user-login-request.model'
-import { environment } from '../../../environments/environment'
+import { APIService } from '../../../../../../libraries/core/src/lib/services/api-service.interface';
+import { UserLoginResponse } from '../../../../../../libraries/core/src/lib/models/user/user-login-response.model';
+import { ResponseSuccess } from '../../../../../../libraries/core/src/lib/models/response/response-success.model';
+import { UserLoginRequest } from '../../../../../../libraries/core/src/lib/models/user/user-login-request.model';
+import { environment } from '../../../environments/environment';
 
 /**
  * Implementation of user APIs.

@@ -16,7 +16,7 @@ const initialState = {
   client: {
     pizzas: mockGetPizzasResponse
   }
-}
+};
 
 describe('app.modules.pizzas.PizzasComponent', () => {
   let component: PizzasComponent;

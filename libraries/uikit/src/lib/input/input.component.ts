@@ -1,7 +1,7 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-ui-v1-input',
+  selector: 'lib-ui-v1-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
 })

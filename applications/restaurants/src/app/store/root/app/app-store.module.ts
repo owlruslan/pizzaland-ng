@@ -1,7 +1,7 @@
-import {CommonModule} from '@angular/common';
-import {NgModule} from '@angular/core';
-import {StoreModule} from '@ngrx/store';
-import { AppStoreReducer } from './index'
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+import { AppStoreReducer } from './index';
 
 @NgModule({
   imports: [

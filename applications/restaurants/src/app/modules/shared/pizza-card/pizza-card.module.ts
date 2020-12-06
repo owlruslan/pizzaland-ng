@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PizzaCardComponent} from './pizza-card.component';
-import { PizzaSmallPreviewModule } from '../pizza-small-preview/pizza-small-preview.module'
-import { ButtonModule } from '../../../../../../../libraries/uikit/src/lib/button/button.module'
+import { PizzaSmallPreviewModule } from '../pizza-small-preview/pizza-small-preview.module';
+import { ButtonModule } from '../../../../../../../libraries/uikit/src/lib/button/button.module';
 
 
 @NgModule({

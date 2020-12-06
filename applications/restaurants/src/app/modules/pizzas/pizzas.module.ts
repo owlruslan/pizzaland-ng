@@ -1,13 +1,12 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import {PizzasRoutingModule} from './pizzas-routing.module';
-import {PizzasComponent} from './pizzas.component';
-import {ReactiveFormsModule} from '@angular/forms';
-import { PizzaCardModule } from '../shared/pizza-card/pizza-card.module'
-import { NavbarModule } from '../shared/navbar/navbar.module'
-import { PizzaToppingsModule } from '../shared/pizza-toppings/pizza-toppings.module'
-
+import { PizzasRoutingModule } from './pizzas-routing.module';
+import { PizzasComponent } from './pizzas.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PizzaCardModule } from '../shared/pizza-card/pizza-card.module';
+import { NavbarModule } from '../shared/navbar/navbar.module';
+import { PizzaToppingsModule } from '../shared/pizza-toppings/pizza-toppings.module';
 
 @NgModule({
   declarations: [PizzasComponent],
@@ -17,7 +16,7 @@ import { PizzaToppingsModule } from '../shared/pizza-toppings/pizza-toppings.mod
     NavbarModule,
     PizzaCardModule,
     PizzaToppingsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
 })
-export class PizzasModule { }
+export class PizzasModule {}
