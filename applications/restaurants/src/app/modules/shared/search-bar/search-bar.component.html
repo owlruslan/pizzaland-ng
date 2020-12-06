@@ -1,9 +1,9 @@
 <div class="search-bar"
      (click)="isViewActive = true; search()">
     <div class="search-bar__input">
-        <img src="/applications/restaurants/src/assets/icons/search-black-24dp.svg" *ngIf="!isSearching; else syncIcon">
+        <img src="/assets/icons/search-black-24dp.svg" *ngIf="!isSearching; else syncIcon">
         <ng-template #syncIcon>
-            <img src="/applications/restaurants/src/assets/icons/sync-24px.svg">
+            <img src="/assets/icons/sync-24px.svg">
         </ng-template>
         <form [formGroup]="searchForm">
             <input type="text" formControlName="searchQuery">
