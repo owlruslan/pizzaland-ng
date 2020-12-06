@@ -1,7 +1,7 @@
 import { moduleMetadata, storiesOf } from '@storybook/angular';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CardModule } from '@app/ui/card/card.module';
+import { CardModule } from './card.module';
 
 storiesOf('app.ui.Card', module).addDecorator(
   moduleMetadata({
