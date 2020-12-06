@@ -6,7 +6,7 @@ export enum ButtonType {
 }
 
 @Component({
-  selector: 'lib-ui-v1-button',
+  selector: 'uikit-ui-v1-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
 })

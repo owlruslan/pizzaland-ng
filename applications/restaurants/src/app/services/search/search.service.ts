@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { APIService } from '../../../../../../libraries/core/src/lib/services/api-service.interface';
-import { ResponseSuccess } from '../../../../../../libraries/core/src/lib/models/response/response-success.model';
+import { APIService } from '../../../../../../libraries/core/src/lib/services';
+import { ResponseSuccess } from '../../../../../../libraries/core/src/lib/models';
 import { SearchAPI } from './search-api';
 import { environment } from '../../../environments/environment';
 

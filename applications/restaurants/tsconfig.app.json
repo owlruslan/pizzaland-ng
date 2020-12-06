@@ -14,13 +14,4 @@
   "exclude": [
     "**/*.stories.*"
   ],
-  "core": [
-    "dist/core/core",
-    "dist/core",
-    "projects/core/src"
-  ],
-  "core/*": [
-    "dist/core/*",
-    "projects/core/src/*"
-  ]
 }

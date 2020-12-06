@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RootStoreState, UserStoreActions } from '../../store/root';
-import { UserLoginRequest } from '../../../../../../libraries/core/src/lib/models/user/user-login-request.model';
+import { UserLoginRequest } from '../../../../../../libraries/core/src/lib/models';
 
 @Component({
   selector: 'app-auth',
