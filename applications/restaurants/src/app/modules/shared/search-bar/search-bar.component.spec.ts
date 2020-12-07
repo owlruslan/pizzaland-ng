@@ -1,10 +1,10 @@
 import { async, ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 
 import { SearchBarComponent } from './search-bar.component';
-import { mockSearchResults, SearchMockService } from '@app/services/search/search-mock.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { SearchService } from '@app/services/search/search.service';
+import { SearchService } from '../../../services/search/search.service';
+import { SearchMockService } from '../../../services/search/search-mock.service';
 
 fdescribe('SearchBarComponent', () => {
   let component: SearchBarComponent;

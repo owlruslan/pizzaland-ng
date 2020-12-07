@@ -2,8 +2,8 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {PizzaCardComponent} from './pizza-card.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import mockPizza from '@app/mocks/pizzas/pizza.mock';
 import {provideMockStore} from '@ngrx/store/testing';
+import mockPizza from '../../../../../../../libraries/core/src/lib/mocks/pizzas/pizza.mock';
 
 describe('app.modules.shared.pizza-card.PizzaCardComponent', () => {
   let component: PizzaCardComponent;
@@ -36,6 +36,7 @@ describe('app.modules.shared.pizza-card.PizzaCardComponent', () => {
   });
 
   it('should set pizza', () => {
+    // @ts-ignore
     component.pizza$.next(null);
     component.pizza = mockPizza;
     expect(component.pizza).toEqual(mockPizza);

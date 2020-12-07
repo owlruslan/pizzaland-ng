@@ -5,12 +5,13 @@ import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {MockStore, provideMockStore} from '@ngrx/store/testing';
 import {FormBuilder} from '@angular/forms';
 import {MemoizedSelector} from '@ngrx/store';
-import {RootStoreState} from '@app/store/root';
-import {PizzasStoreSelectors} from '@app/store/root/client';
 import {cold} from 'jasmine-marbles';
-import mockGetPizzasResponse from '@app/mocks/pizzas/get-pizzas-response.mock';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {GetPizzasResponse} from '@app/models/pizzas/get-pizzas-response.model';
+import mockGetPizzasResponse from '../../../../../../libraries/core/src/lib/mocks/pizzas/get-pizzas-response.mock';
+import { PizzasStoreSelectors } from '../../store/root/client';
+import { GetPizzasResponse } from '../../../../../../dist/core/lib/models';
+import { RootStoreState } from '../../store/root';
+
 
 const initialState = {
   client: {

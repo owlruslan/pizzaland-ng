@@ -2,8 +2,8 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {PizzaPreviewComponent} from './pizza-preview.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import mockPizza from '@app/mocks/pizzas/pizza.mock';
 import {ReactiveFormsModule} from '@angular/forms';
+import mockPizza from '../../../../../../../libraries/core/src/lib/mocks/pizzas/pizza.mock';
 
 describe('app.modules.shared.pizza-preview.PizzaPreviewComponent', () => {
   let component: PizzaPreviewComponent;
@@ -34,6 +34,7 @@ describe('app.modules.shared.pizza-preview.PizzaPreviewComponent', () => {
   });
 
   it('should set pizza', () => {
+    // @ts-ignore
     component.pizza$.next(null);
     component.pizza = mockPizza;
     expect(component.pizza).toEqual(mockPizza);

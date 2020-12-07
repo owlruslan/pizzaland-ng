@@ -4,8 +4,9 @@ import { AuthComponent } from './auth.component';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { UserLoginRequest } from '@app/models/user/user-login-request.model';
-import { UserStoreActions } from '@app/store/root';
+import { UserStoreActions } from '../../store/root';
+import { UserLoginRequest } from '../../../../../../dist/core/lib/models';
+
 
 describe('app.modules.auth.AuthComponent', () => {
   let component: AuthComponent;

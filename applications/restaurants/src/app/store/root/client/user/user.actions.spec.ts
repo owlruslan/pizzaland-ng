@@ -1,13 +1,10 @@
 import { ActionTypes, Login, LoginFailure, LoginSuccess } from './user.actions';
-import { UserLoginRequest } from '@app/models/user/user-login-request.model';
-import { UserLoginResponse } from '@app/models/user/user-login-response.model';
-import { ResponseSuccess } from '@app/models/response/response-success.model';
-import { ResponseError } from '@app/models/response/response-error.model';
+import { ResponseError, ResponseSuccess, UserLoginRequest, UserLoginResponse } from '../../../../../../../../dist/core/lib/models';
 
 describe('app.store.root.client.user.Actions', () => {
   describe('Login', () => {
     it('should create an action', () => {
-      const payload: { request: UserLoginRequest } = null;
+      const payload: { request: UserLoginRequest } = { request: new UserLoginRequest() };
       const action = new Login(payload);
 
       expect({ ...action }).toEqual({
@@ -19,7 +16,7 @@ describe('app.store.root.client.user.Actions', () => {
 
   describe('LoginSuccess', () => {
     it('should create an action', () => {
-      const payload: { response: ResponseSuccess<UserLoginResponse> } = null;
+      const payload: { response: ResponseSuccess<UserLoginResponse> } = { response: new ResponseSuccess<UserLoginResponse>() };
       const action = new LoginSuccess(payload);
 
       expect({ ...action }).toEqual({
@@ -31,7 +28,7 @@ describe('app.store.root.client.user.Actions', () => {
 
   describe('LoginFailure', () => {
     it('should create an action', () => {
-      const payload: { response: ResponseError } = null;
+      const payload: { response: ResponseError } = { response: new ResponseError()};
       const action = new LoginFailure(payload);
 
       expect({ ...action }).toEqual({

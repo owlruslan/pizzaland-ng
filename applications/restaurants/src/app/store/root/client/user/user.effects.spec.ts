@@ -12,10 +12,9 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { Action } from '@ngrx/store';
 
 import { hot } from 'jasmine-marbles';
-import { UserService } from '@app/services/user/user.service';
-import { ResponseSuccess } from '@app/models/response/response-success.model';
-import { Login, LoginSuccess } from '@app/store/root/client/user/user.actions';
-import { UserLoginResponse } from '@app/models/user/user-login-response.model';
+import { ResponseSuccess, UserLoginRequest, UserLoginResponse } from '../../../../../../../../dist/core/lib/models';
+import { UserService } from '../../../../services/user/user.service';
+import { Login, LoginSuccess } from './user.actions';
 
 describe('app.store.root.client.user.UserEffects', () => {
   let actions$: Observable<Action>;
@@ -56,12 +55,12 @@ describe('app.store.root.client.user.UserEffects', () => {
   describe('login$', () => {
     it('should login', () => {
       const payload = {
-        request: null,
+        request: new UserLoginRequest(),
       };
       const action = new Login(payload);
 
-      const response: ResponseSuccess<UserLoginResponse> = {
-        data: null,
+      const response: ResponseSuccess<UserLoginResponse | undefined> = {
+        data: undefined,
         success: true,
       };
       const completion = new LoginSuccess({ response });

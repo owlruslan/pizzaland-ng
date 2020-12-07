@@ -5,10 +5,9 @@ import {HttpClientTestingModule, HttpTestingController, TestRequest} from '@angu
 import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import mockUserLoginRequest from '@app/mocks/user/user-login-request.mock';
-import {ResponseSuccess} from '@app/models/response/response-success.model';
-import {UserLoginResponse} from '@app/models/user/user-login-response.model';
-import mockUserLoginResponse from '@app/mocks/user/user-login-response.mock';
+import mockUserLoginResponse from '../../../../../../libraries/core/src/lib/mocks/user/user-login-response.mock';
+import mockUserLoginRequest from '../../../../../../libraries/core/src/lib/mocks/user/user-login-request.mock';
+import { ResponseSuccess, UserLoginResponse } from '../../../../../../dist/core/lib/models';
 
 describe('app.services.client.user.UserService', () => {
   let httpClient: HttpClient;
