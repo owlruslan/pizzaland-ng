@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'uikit',
+  selector: 'uikit-uikit',
   template: `
     <p>
       uikit works!
