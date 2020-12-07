@@ -9,8 +9,8 @@ import {cold} from 'jasmine-marbles';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import mockGetPizzasResponse from '../../../../../../libraries/core/src/lib/mocks/pizzas/get-pizzas-response.mock';
 import { PizzasStoreSelectors } from '../../store/root/client';
-import { GetPizzasResponse } from '../../../../../../dist/core/lib/models';
 import { RootStoreState } from '../../store/root';
+import { GetPizzasResponse } from '../../../../../../libraries/core/src/lib/models';
 
 
 const initialState = {
