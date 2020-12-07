@@ -140,7 +140,29 @@
         },
         {
             "name": "State",
-            "id": "interface-State-ae593d94345cb53a782a320f94a2891f-1",
+            "id": "interface-State-2dd36f2608c7b5526d3c69753005c8ac-1",
+            "file": "applications/restaurants/src/app/store/root/app/state.ts",
+            "type": "interface",
+            "sourceCode": "import { ResponseError } from '../../../../../../../libraries/core/src/lib/models/response/response-error.model';\n\nexport interface State {\n  errorResponse: ResponseError;\n}\n\nexport const initialState: State = {\n  errorResponse: new ResponseError(),\n};\n",
+            "properties": [
+                {
+                    "name": "errorResponse",
+                    "type": "ResponseError",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": [],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "State-1"
+        },
+        {
+            "name": "State",
+            "id": "interface-State-ae593d94345cb53a782a320f94a2891f-2",
             "file": "applications/restaurants/src/app/store/root/client/state.ts",
             "type": "interface",
             "sourceCode": "import { UserStoreState } from './user';\nimport { BasketStoreState } from './basket';\nimport { PizzasStoreState } from './pizzas';\n\nexport interface State {\n  user: UserStoreState.State;\n  pizzas: PizzasStoreState.State;\n  basket: BasketStoreState.State;\n}\n\nexport const initialState: State = {\n  user: UserStoreState.initialState,\n  pizzas: PizzasStoreState.initialState,\n  basket: BasketStoreState.initialState,\n};\n",
@@ -165,28 +187,6 @@
                     "optional": false,
                     "description": "",
                     "line": 6
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 150,
-            "methods": [],
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "State-1"
-        },
-        {
-            "name": "State",
-            "id": "interface-State-2dd36f2608c7b5526d3c69753005c8ac-2",
-            "file": "applications/restaurants/src/app/store/root/app/state.ts",
-            "type": "interface",
-            "sourceCode": "import { ResponseError } from '../../../../../../../libraries/core/src/lib/models/response/response-error.model';\n\nexport interface State {\n  errorResponse: ResponseError;\n}\n\nexport const initialState: State = {\n  errorResponse: new ResponseError(),\n};\n",
-            "properties": [
-                {
-                    "name": "errorResponse",
-                    "type": "ResponseError",
-                    "optional": false,
-                    "description": "",
-                    "line": 4
                 }
             ],
             "indexSignatures": [],
@@ -455,7 +455,7 @@
         },
         {
             "name": "PizzasService",
-            "id": "injectable-PizzasService-6a9d92a8b7fed4672d9545087c0c6c32",
+            "id": "injectable-PizzasService-5ac3238d3c871dc9c02a4052d1e44cba",
             "file": "applications/restaurants/src/app/services/pizzas/pizzas.service.ts",
             "properties": [
                 {
@@ -464,7 +464,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 13,
+                    "line": 14,
                     "modifierKind": [
                         132
                     ]
@@ -482,7 +482,7 @@
                     "optional": false,
                     "returnType": "Observable<ResponseSuccess<GetPizzasResponse>>",
                     "typeParameters": [],
-                    "line": 22,
+                    "line": 23,
                     "description": "<p>GET: /api/v1/pizzas\nGet Pizzas.</p>\n",
                     "jsdoctags": [
                         {
@@ -496,7 +496,7 @@
                 }
             ],
             "description": "<p>Implementation of pizzas APIs.</p>\n",
-            "sourceCode": "import {Injectable} from '@angular/core';\nimport {HttpClient, HttpHeaders} from '@angular/common/http';\nimport {Observable} from 'rxjs';\nimport { environment } from '../../../environments/environment';\nimport { APIService } from '../../../../../../dist/core/lib/services';\nimport { GetPizzasResponse, ResponseSuccess } from '../../../../../../dist/core/lib/models';\n\n/**\n * Implementation of pizzas APIs.\n */\n@Injectable({providedIn: 'root'})\nexport class PizzasService implements APIService {\n  readonly host = environment.host;\n\n  constructor(private http: HttpClient) {\n  }\n\n  /**\n   * GET: /api/v1/pizzas\n   * Get Pizzas.\n   */\n  getPizzas(token: string): Observable<ResponseSuccess<GetPizzasResponse>> {\n    return this.http.get<ResponseSuccess<GetPizzasResponse>>(`${this.host}/api/v1/pizzas`, {\n      headers: new HttpHeaders({Authorization: `Bearer ${token}`}),\n    });\n  }\n}\n",
+            "sourceCode": "import {Injectable} from '@angular/core';\nimport {HttpClient, HttpHeaders} from '@angular/common/http';\nimport {Observable} from 'rxjs';\nimport { environment } from '../../../environments/environment';\nimport { APIService } from '../../../../../../libraries/core/src/lib/services';\nimport { GetPizzasResponse, ResponseSuccess } from '../../../../../../libraries/core/src/lib/models';\n\n\n/**\n * Implementation of pizzas APIs.\n */\n@Injectable({providedIn: 'root'})\nexport class PizzasService implements APIService {\n  readonly host = environment.host;\n\n  constructor(private http: HttpClient) {\n  }\n\n  /**\n   * GET: /api/v1/pizzas\n   * Get Pizzas.\n   */\n  getPizzas(token: string): Observable<ResponseSuccess<GetPizzasResponse>> {\n    return this.http.get<ResponseSuccess<GetPizzasResponse>>(`${this.host}/api/v1/pizzas`, {\n      headers: new HttpHeaders({Authorization: `Bearer ${token}`}),\n    });\n  }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -506,7 +506,7 @@
                         "type": "HttpClient"
                     }
                 ],
-                "line": 13,
+                "line": 14,
                 "jsdoctags": [
                     {
                         "name": "http",
@@ -890,6 +890,43 @@
             ]
         },
         {
+            "name": "AppPage",
+            "id": "class-AppPage-bcafa94a99ce212ce287409d286454ad",
+            "file": "applications/restaurants/e2e/src/app.po.ts",
+            "type": "class",
+            "sourceCode": "import { browser, by, element } from 'protractor';\n\nexport class AppPage {\n  async navigateTo(): Promise<unknown> {\n    return browser.get(browser.baseUrl);\n  }\n\n  async getTitleText(): Promise<string> {\n    return element(by.css('restaurants-root .content span')).getText();\n  }\n}\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getTitleText",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<string>",
+                    "typeParameters": [],
+                    "line": 8,
+                    "modifierKind": [
+                        120
+                    ]
+                },
+                {
+                    "name": "navigateTo",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<unknown>",
+                    "typeParameters": [],
+                    "line": 4,
+                    "modifierKind": [
+                        120
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
             "name": "GetPizzas",
             "id": "class-GetPizzas-07bb8ca1c8b4c4e13dc7fbdd5ef46a98",
             "file": "applications/restaurants/src/app/store/root/client/pizzas/pizzas.actions.ts",
@@ -1060,10 +1097,10 @@
         },
         {
             "name": "Login",
-            "id": "class-Login-2b059745cb0630db5ad631a19ac5c626",
+            "id": "class-Login-73ed103c973e159cd12616580df7bc15",
             "file": "applications/restaurants/src/app/store/root/client/user/user.actions.ts",
             "type": "class",
-            "sourceCode": "import { Action } from '@ngrx/store';\nimport { UserLoginResponse } from '../../../../../../../../libraries/core/src/lib/models/user/user-login-response.model';\nimport { ResponseSuccess } from '../../../../../../../../libraries/core/src/lib/models/response/response-success.model';\nimport { ResponseError } from '../../../../../../../../libraries/core/src/lib/models/response/response-error.model';\nimport { UserLoginRequest } from '../../../../../../../../libraries/core/src/lib/models/user/user-login-request.model';\n\nexport enum ActionTypes {\n\n  // Login\n\n  Login = '[User] Login',\n  LoginSuccess = '[User] Login Success',\n  LoginFailure = '[User] Login Failure',\n}\n\n// Login\n\nexport class Login implements Action {\n  readonly type = ActionTypes.Login;\n\n  constructor(public payload: { request: UserLoginRequest }) {\n  }\n}\n\nexport class LoginSuccess implements Action {\n  readonly type = ActionTypes.LoginSuccess;\n\n  constructor(public payload: { response: ResponseSuccess<UserLoginResponse> }) {\n  }\n}\n\nexport class LoginFailure implements Action {\n  readonly type = ActionTypes.LoginFailure;\n\n  constructor(public payload: { response: ResponseError }) {\n  }\n}\n\nexport type Actions =\n\n// Login\n\n  | Login\n  | LoginSuccess\n  | LoginFailure;\n",
+            "sourceCode": "import { Action } from '@ngrx/store';\nimport { UserLoginResponse } from '../../../../../../../../libraries/core/src/lib/models';\nimport { ResponseSuccess } from '../../../../../../../../libraries/core/src/lib/models';\nimport { ResponseError } from '../../../../../../../../libraries/core/src/lib/models';\nimport { UserLoginRequest } from '../../../../../../../../libraries/core/src/lib/models';\n\nexport enum ActionTypes {\n\n  // Login\n\n  Login = '[User] Login',\n  LoginSuccess = '[User] Login Success',\n  LoginFailure = '[User] Login Failure',\n}\n\n// Login\n\nexport class Login implements Action {\n  readonly type = ActionTypes.Login;\n\n  constructor(public payload: { request: UserLoginRequest }) {\n  }\n}\n\nexport class LoginSuccess implements Action {\n  readonly type = ActionTypes.LoginSuccess;\n\n  constructor(public payload: { response: ResponseSuccess<UserLoginResponse> }) {\n  }\n}\n\nexport class LoginFailure implements Action {\n  readonly type = ActionTypes.LoginFailure;\n\n  constructor(public payload: { response: ResponseError }) {\n  }\n}\n\nexport type Actions =\n\n// Login\n\n  | Login\n  | LoginSuccess\n  | LoginFailure;\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1119,10 +1156,10 @@
         },
         {
             "name": "LoginFailure",
-            "id": "class-LoginFailure-2b059745cb0630db5ad631a19ac5c626",
+            "id": "class-LoginFailure-73ed103c973e159cd12616580df7bc15",
             "file": "applications/restaurants/src/app/store/root/client/user/user.actions.ts",
             "type": "class",
-            "sourceCode": "import { Action } from '@ngrx/store';\nimport { UserLoginResponse } from '../../../../../../../../libraries/core/src/lib/models/user/user-login-response.model';\nimport { ResponseSuccess } from '../../../../../../../../libraries/core/src/lib/models/response/response-success.model';\nimport { ResponseError } from '../../../../../../../../libraries/core/src/lib/models/response/response-error.model';\nimport { UserLoginRequest } from '../../../../../../../../libraries/core/src/lib/models/user/user-login-request.model';\n\nexport enum ActionTypes {\n\n  // Login\n\n  Login = '[User] Login',\n  LoginSuccess = '[User] Login Success',\n  LoginFailure = '[User] Login Failure',\n}\n\n// Login\n\nexport class Login implements Action {\n  readonly type = ActionTypes.Login;\n\n  constructor(public payload: { request: UserLoginRequest }) {\n  }\n}\n\nexport class LoginSuccess implements Action {\n  readonly type = ActionTypes.LoginSuccess;\n\n  constructor(public payload: { response: ResponseSuccess<UserLoginResponse> }) {\n  }\n}\n\nexport class LoginFailure implements Action {\n  readonly type = ActionTypes.LoginFailure;\n\n  constructor(public payload: { response: ResponseError }) {\n  }\n}\n\nexport type Actions =\n\n// Login\n\n  | Login\n  | LoginSuccess\n  | LoginFailure;\n",
+            "sourceCode": "import { Action } from '@ngrx/store';\nimport { UserLoginResponse } from '../../../../../../../../libraries/core/src/lib/models';\nimport { ResponseSuccess } from '../../../../../../../../libraries/core/src/lib/models';\nimport { ResponseError } from '../../../../../../../../libraries/core/src/lib/models';\nimport { UserLoginRequest } from '../../../../../../../../libraries/core/src/lib/models';\n\nexport enum ActionTypes {\n\n  // Login\n\n  Login = '[User] Login',\n  LoginSuccess = '[User] Login Success',\n  LoginFailure = '[User] Login Failure',\n}\n\n// Login\n\nexport class Login implements Action {\n  readonly type = ActionTypes.Login;\n\n  constructor(public payload: { request: UserLoginRequest }) {\n  }\n}\n\nexport class LoginSuccess implements Action {\n  readonly type = ActionTypes.LoginSuccess;\n\n  constructor(public payload: { response: ResponseSuccess<UserLoginResponse> }) {\n  }\n}\n\nexport class LoginFailure implements Action {\n  readonly type = ActionTypes.LoginFailure;\n\n  constructor(public payload: { response: ResponseError }) {\n  }\n}\n\nexport type Actions =\n\n// Login\n\n  | Login\n  | LoginSuccess\n  | LoginFailure;\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1178,10 +1215,10 @@
         },
         {
             "name": "LoginSuccess",
-            "id": "class-LoginSuccess-2b059745cb0630db5ad631a19ac5c626",
+            "id": "class-LoginSuccess-73ed103c973e159cd12616580df7bc15",
             "file": "applications/restaurants/src/app/store/root/client/user/user.actions.ts",
             "type": "class",
-            "sourceCode": "import { Action } from '@ngrx/store';\nimport { UserLoginResponse } from '../../../../../../../../libraries/core/src/lib/models/user/user-login-response.model';\nimport { ResponseSuccess } from '../../../../../../../../libraries/core/src/lib/models/response/response-success.model';\nimport { ResponseError } from '../../../../../../../../libraries/core/src/lib/models/response/response-error.model';\nimport { UserLoginRequest } from '../../../../../../../../libraries/core/src/lib/models/user/user-login-request.model';\n\nexport enum ActionTypes {\n\n  // Login\n\n  Login = '[User] Login',\n  LoginSuccess = '[User] Login Success',\n  LoginFailure = '[User] Login Failure',\n}\n\n// Login\n\nexport class Login implements Action {\n  readonly type = ActionTypes.Login;\n\n  constructor(public payload: { request: UserLoginRequest }) {\n  }\n}\n\nexport class LoginSuccess implements Action {\n  readonly type = ActionTypes.LoginSuccess;\n\n  constructor(public payload: { response: ResponseSuccess<UserLoginResponse> }) {\n  }\n}\n\nexport class LoginFailure implements Action {\n  readonly type = ActionTypes.LoginFailure;\n\n  constructor(public payload: { response: ResponseError }) {\n  }\n}\n\nexport type Actions =\n\n// Login\n\n  | Login\n  | LoginSuccess\n  | LoginFailure;\n",
+            "sourceCode": "import { Action } from '@ngrx/store';\nimport { UserLoginResponse } from '../../../../../../../../libraries/core/src/lib/models';\nimport { ResponseSuccess } from '../../../../../../../../libraries/core/src/lib/models';\nimport { ResponseError } from '../../../../../../../../libraries/core/src/lib/models';\nimport { UserLoginRequest } from '../../../../../../../../libraries/core/src/lib/models';\n\nexport enum ActionTypes {\n\n  // Login\n\n  Login = '[User] Login',\n  LoginSuccess = '[User] Login Success',\n  LoginFailure = '[User] Login Failure',\n}\n\n// Login\n\nexport class Login implements Action {\n  readonly type = ActionTypes.Login;\n\n  constructor(public payload: { request: UserLoginRequest }) {\n  }\n}\n\nexport class LoginSuccess implements Action {\n  readonly type = ActionTypes.LoginSuccess;\n\n  constructor(public payload: { response: ResponseSuccess<UserLoginResponse> }) {\n  }\n}\n\nexport class LoginFailure implements Action {\n  readonly type = ActionTypes.LoginFailure;\n\n  constructor(public payload: { response: ResponseError }) {\n  }\n}\n\nexport type Actions =\n\n// Login\n\n  | Login\n  | LoginSuccess\n  | LoginFailure;\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1366,6 +1403,46 @@
             "outputsClass": [],
             "hostBindings": [],
             "hostListeners": []
+        },
+        {
+            "name": "SearchMockService",
+            "id": "class-SearchMockService-aa84e158c900968226e9295ff59db0f1",
+            "file": "applications/restaurants/src/app/services/search/search-mock.service.ts",
+            "type": "class",
+            "sourceCode": "import { Observable, of } from 'rxjs';\nimport { delay } from 'rxjs/operators';\nimport { SearchAPI } from './search-api';\nimport { ResponseSuccess } from '../../../../../../libraries/core/src/lib/models';\n\nexport const mockSearchResults = ['Results1', 'Result2', 'Result3'];\n\nexport class SearchMockService implements SearchAPI {\n\n  getSearchResults(query: string): Observable<ResponseSuccess<any>> {\n    return of(new ResponseSuccess(mockSearchResults)).pipe(delay(1000));\n  }\n}\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getSearchResults",
+                    "args": [
+                        {
+                            "name": "query",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<ResponseSuccess<any>>",
+                    "typeParameters": [],
+                    "line": 10,
+                    "jsdoctags": [
+                        {
+                            "name": "query",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "implements": [
+                "SearchAPI"
+            ]
         },
         {
             "name": "UserLoginRequest",
@@ -4320,7 +4397,7 @@
                 "subtype": "variable",
                 "file": "applications/restaurants/src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true,\n  host: 'localhost'\n}"
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "environment",
@@ -4328,7 +4405,7 @@
                 "subtype": "variable",
                 "file": "applications/restaurants/src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false,\n  host: 'localhost'\n}"
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "FEATURE_REDUCER_TOKEN",
@@ -4446,17 +4523,17 @@
                 "name": "initialState",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "applications/restaurants/src/app/store/root/client/state.ts",
+                "file": "applications/restaurants/src/app/store/root/app/state.ts",
                 "type": "State",
-                "defaultValue": "{\n  user: UserStoreState.initialState,\n  pizzas: PizzasStoreState.initialState,\n  basket: BasketStoreState.initialState,\n}"
+                "defaultValue": "{\n  errorResponse: new ResponseError(),\n}"
             },
             {
                 "name": "initialState",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "applications/restaurants/src/app/store/root/app/state.ts",
+                "file": "applications/restaurants/src/app/store/root/client/state.ts",
                 "type": "State",
-                "defaultValue": "{\n  errorResponse: new ResponseError(),\n}"
+                "defaultValue": "{\n  user: UserStoreState.initialState,\n  pizzas: PizzasStoreState.initialState,\n  basket: BasketStoreState.initialState,\n}"
             },
             {
                 "name": "initialState",
@@ -4547,6 +4624,14 @@
                 "defaultValue": "{\n  id: '0',\n  name: 'Margherita',\n  description: 'PIZZA_DESCRIPTION_0',\n  toppings: ['anchovy', 'basil', 'mozzarella', 'tomato'],\n  price: 100,\n}"
             },
             {
+                "name": "mockSearchResults",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "applications/restaurants/src/app/services/search/search-mock.service.ts",
+                "type": "[]",
+                "defaultValue": "['Results1', 'Result2', 'Result3']"
+            },
+            {
                 "name": "mockUserLoginRequest",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4598,7 +4683,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "applications/restaurants/src/test.ts",
-                "type": "any"
+                "type": "literal type"
             },
             {
                 "name": "require",
@@ -4982,7 +5067,7 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "applications/restaurants/src/test.ts",
-                    "type": "any"
+                    "type": "literal type"
                 }
             ],
             "libraries/core/src/test.ts": [
@@ -5064,7 +5149,7 @@
                     "subtype": "variable",
                     "file": "applications/restaurants/src/environments/environment.prod.ts",
                     "type": "object",
-                    "defaultValue": "{\n  production: true,\n  host: 'localhost'\n}"
+                    "defaultValue": "{\n  production: true\n}"
                 }
             ],
             "applications/restaurants/src/environments/environment.ts": [
@@ -5074,7 +5159,7 @@
                     "subtype": "variable",
                     "file": "applications/restaurants/src/environments/environment.ts",
                     "type": "object",
-                    "defaultValue": "{\n  production: false,\n  host: 'localhost'\n}"
+                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "applications/restaurants/src/app/store/root/client/client-store.module.ts": [
@@ -5201,16 +5286,6 @@
                     "defaultValue": "{\n  app: AppStoreState.initialState,\n  client: ClientStoreState.initialState,\n}"
                 }
             ],
-            "applications/restaurants/src/app/store/root/client/state.ts": [
-                {
-                    "name": "initialState",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "applications/restaurants/src/app/store/root/client/state.ts",
-                    "type": "State",
-                    "defaultValue": "{\n  user: UserStoreState.initialState,\n  pizzas: PizzasStoreState.initialState,\n  basket: BasketStoreState.initialState,\n}"
-                }
-            ],
             "applications/restaurants/src/app/store/root/app/state.ts": [
                 {
                     "name": "initialState",
@@ -5219,6 +5294,16 @@
                     "file": "applications/restaurants/src/app/store/root/app/state.ts",
                     "type": "State",
                     "defaultValue": "{\n  errorResponse: new ResponseError(),\n}"
+                }
+            ],
+            "applications/restaurants/src/app/store/root/client/state.ts": [
+                {
+                    "name": "initialState",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "applications/restaurants/src/app/store/root/client/state.ts",
+                    "type": "State",
+                    "defaultValue": "{\n  user: UserStoreState.initialState,\n  pizzas: PizzasStoreState.initialState,\n  basket: BasketStoreState.initialState,\n}"
                 }
             ],
             "applications/restaurants/src/app/store/root/client/basket/basket.state.ts": [
@@ -5373,6 +5458,16 @@
                     "file": "libraries/core/src/lib/mocks/pizzas/pizza.mock.ts",
                     "type": "object",
                     "defaultValue": "{\n  id: '0',\n  name: 'Margherita',\n  description: 'PIZZA_DESCRIPTION_0',\n  toppings: ['anchovy', 'basil', 'mozzarella', 'tomato'],\n  price: 100,\n}"
+                }
+            ],
+            "applications/restaurants/src/app/services/search/search-mock.service.ts": [
+                {
+                    "name": "mockSearchResults",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "applications/restaurants/src/app/services/search/search-mock.service.ts",
+                    "type": "[]",
+                    "defaultValue": "['Results1', 'Result2', 'Result3']"
                 }
             ],
             "libraries/core/src/lib/mocks/user/user-login-request.mock.ts": [
@@ -5751,7 +5846,7 @@
         ]
     },
     "coverage": {
-        "count": 4,
+        "count": 3,
         "status": "low",
         "files": [
             {
@@ -5801,6 +5896,15 @@
                 "name": "require",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "applications/restaurants/e2e/src/app.po.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "AppPage",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -5948,6 +6052,25 @@
                 "name": "SearchAPI",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "applications/restaurants/src/app/services/search/search-mock.service.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "SearchMockService",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "applications/restaurants/src/app/services/search/search-mock.service.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mockSearchResults",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
