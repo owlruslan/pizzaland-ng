@@ -1,0 +1,18 @@
+<div class="search-bar"
+     (click)="isViewActive = true; search()">
+    <div class="search-bar__input">
+        <div class="title">Search</div>
+        <form [formGroup]="searchForm">
+            <input type="text" formControlName="searchQuery">
+        </form>
+    </div>
+    <div class="search-bar__results" *ngIf="isViewActive">
+        <ng-container *ngIf="(searchResults$ | async) as results">
+            <ul *ngIf="results.length > 0">
+                <li *ngFor="let result of results">
+                    {{result}}
+                </li>
+            </ul>
+        </ng-container>
+    </div>
+</div>

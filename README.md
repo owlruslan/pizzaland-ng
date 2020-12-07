@@ -1,6 +1,9 @@
 # Pizzaiols
+
 Catalog of pizza restaurants.
 The goal is to learn Angular stack.
+
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://storybook.js.org/)
 
 ## Stack
 * [Angular](https://angular.io/)

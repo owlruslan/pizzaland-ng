@@ -890,43 +890,6 @@
             ]
         },
         {
-            "name": "AppPage",
-            "id": "class-AppPage-bcafa94a99ce212ce287409d286454ad",
-            "file": "applications/restaurants/e2e/src/app.po.ts",
-            "type": "class",
-            "sourceCode": "import { browser, by, element } from 'protractor';\n\nexport class AppPage {\n  async navigateTo(): Promise<unknown> {\n    return browser.get(browser.baseUrl);\n  }\n\n  async getTitleText(): Promise<string> {\n    return element(by.css('restaurants-root .content span')).getText();\n  }\n}\n",
-            "properties": [],
-            "methods": [
-                {
-                    "name": "getTitleText",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "Promise<string>",
-                    "typeParameters": [],
-                    "line": 8,
-                    "modifierKind": [
-                        120
-                    ]
-                },
-                {
-                    "name": "navigateTo",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "Promise<unknown>",
-                    "typeParameters": [],
-                    "line": 4,
-                    "modifierKind": [
-                        120
-                    ]
-                }
-            ],
-            "indexSignatures": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "hostBindings": [],
-            "hostListeners": []
-        },
-        {
             "name": "GetPizzas",
             "id": "class-GetPizzas-07bb8ca1c8b4c4e13dc7fbdd5ef46a98",
             "file": "applications/restaurants/src/app/store/root/client/pizzas/pizzas.actions.ts",
@@ -1613,7 +1576,7 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "AppComponent-1",
-            "templateData": "<app-navbar></app-navbar>\n<router-outlet></router-outlet>\n"
+            "templateData": "<restaurants-navbar></restaurants-navbar>\n<router-outlet></router-outlet>\n"
         },
         {
             "name": "AuthComponent",
@@ -2224,14 +2187,14 @@
         },
         {
             "name": "NavbarComponent",
-            "id": "component-NavbarComponent-65d51366bacdde9021db9cf9bc6397b4",
+            "id": "component-NavbarComponent-1c30780f427d16a9297a6c2a6c4fbcbe",
             "file": "applications/restaurants/src/app/modules/shared/navbar/navbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-navbar",
+            "selector": "restaurants-navbar",
             "styleUrls": [
                 "./navbar.component.scss"
             ],
@@ -2294,7 +2257,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component, OnDestroy, OnInit} from '@angular/core';\nimport {select, Store} from '@ngrx/store';\nimport {Observable, Subject} from 'rxjs';\nimport {takeUntil} from 'rxjs/operators';\nimport { UserResponse } from '../../../../../../../libraries/core/src/lib/models/user/user-response.model';\nimport { RootStoreState, UserStoreSelectors } from '../../../store/root';\nimport { BasketStoreSelectors } from '../../../store/root/client';\nimport { Unsubscribe } from '../../../../../../../libraries/core/src/lib/components/unsubscribe.interface';\n\n@Component({\n  selector: 'app-navbar',\n  templateUrl: './navbar.component.html',\n  styleUrls: ['./navbar.component.scss']\n})\nexport class NavbarComponent implements OnInit, OnDestroy, Unsubscribe {\n  readonly unsubscribe = new Subject<void>();\n\n  userResponse$: Observable<UserResponse> = this.store.pipe(\n    select(UserStoreSelectors.getUserResponseState),\n    takeUntil(this.unsubscribe)\n  );\n\n  pizzasCount$: Observable<number> = this.store.pipe(\n    // @ts-ignore\n    select(BasketStoreSelectors.getPizzasCountState),\n    takeUntil(this.unsubscribe)\n  );\n\n  constructor(private store: Store<RootStoreState.State>) { }\n\n  ngOnInit(): void {\n    // TODO: dispatch get user response\n  }\n\n  ngOnDestroy(): void {\n    this.unsubscribe.next();\n  }\n}\n",
+            "sourceCode": "import {Component, OnDestroy, OnInit} from '@angular/core';\nimport {select, Store} from '@ngrx/store';\nimport {Observable, Subject} from 'rxjs';\nimport {takeUntil} from 'rxjs/operators';\nimport { UserResponse } from '../../../../../../../libraries/core/src/lib/models';\nimport { RootStoreState, UserStoreSelectors } from '../../../store/root';\nimport { BasketStoreSelectors } from '../../../store/root/client';\nimport { Unsubscribe } from '../../../../../../../libraries/core/src/lib/components';\n\n@Component({\n  selector: 'restaurants-navbar',\n  templateUrl: './navbar.component.html',\n  styleUrls: ['./navbar.component.scss']\n})\nexport class NavbarComponent implements OnInit, OnDestroy, Unsubscribe {\n  readonly unsubscribe = new Subject<void>();\n\n  userResponse$: Observable<UserResponse> = this.store.pipe(\n    select(UserStoreSelectors.getUserResponseState),\n    takeUntil(this.unsubscribe)\n  );\n\n  pizzasCount$: Observable<number> = this.store.pipe(\n    // @ts-ignore\n    select(BasketStoreSelectors.getPizzasCountState),\n    takeUntil(this.unsubscribe)\n  );\n\n  constructor(private store: Store<RootStoreState.State>) { }\n\n  ngOnInit(): void {\n    // TODO: dispatch get user response\n  }\n\n  ngOnDestroy(): void {\n    this.unsubscribe.next();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2328,7 +2291,7 @@
                 "OnDestroy",
                 "Unsubscribe"
             ],
-            "templateData": "<div class=\"navbar\">\n  <div class=\"navbar__logo\">\n    Pizzaiols\n    <svg width=\"20\" height=\"20\" viewBox=\"0 0 100 100\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"50\" cy=\"50\" r=\"47\" fill=\"white\" stroke=\"black\" stroke-width=\"6\"/>\n      <line x1=\"25\" y1=\"51\" x2=\"75\" y2=\"51\" stroke=\"black\" stroke-width=\"6\"/>\n      <line y1=\"-3\" x2=\"50\" y2=\"-3\" transform=\"matrix(0.707106 -0.707107 0.707106 0.707107 35 70.3554)\" stroke=\"black\"\n            stroke-width=\"6\"/>\n      <line x1=\"67.234\" y1=\"68.4767\" x2=\"31.8787\" y2=\"33.1213\" stroke=\"black\" stroke-width=\"6\"/>\n      <line x1=\"50\" y1=\"75\" x2=\"50\" y2=\"25\" stroke=\"black\" stroke-width=\"6\"/>\n    </svg>\n  </div>\n  <div class=\"navbar__menu\">\n    <div class=\"navbar__menu__item\" routerLink=\"/pizzas\" routerLinkActive=\"active\">Pizzas</div>\n    <div class=\"navbar__menu__item auth\">\n      {{ (userResponse$ | async)?.name }}\n      <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\">\n        <path\n          d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z\"/>\n        <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n      </svg>\n    </div>\n    <div class=\"navbar__menu__item basket\" routerLink=\"/basket\" routerLinkActive=\"active\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"32\" viewBox=\"0 0 24 24\" width=\"32\">\n        <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n        <path\n          d=\"M17.21 9l-4.38-6.56c-.19-.28-.51-.42-.83-.42-.32 0-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.92 1.46h13c.92 0 1.69-.62 1.93-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1h-4.79zM9 9l3-4.4L15 9H9zm3 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z\"/>\n      </svg>\n      <div class=\"basket__count\">\n        {{ pizzasCount$ | async }}\n      </div>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"navbar\">\n  <div class=\"navbar__logo\" routerLink=\"/\">\n    Pizzaiols\n    <svg width=\"20\" height=\"20\" viewBox=\"0 0 100 100\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"50\" cy=\"50\" r=\"47\" fill=\"white\" stroke=\"black\" stroke-width=\"6\"/>\n      <line x1=\"25\" y1=\"51\" x2=\"75\" y2=\"51\" stroke=\"black\" stroke-width=\"6\"/>\n      <line y1=\"-3\" x2=\"50\" y2=\"-3\" transform=\"matrix(0.707106 -0.707107 0.707106 0.707107 35 70.3554)\" stroke=\"black\"\n            stroke-width=\"6\"/>\n      <line x1=\"67.234\" y1=\"68.4767\" x2=\"31.8787\" y2=\"33.1213\" stroke=\"black\" stroke-width=\"6\"/>\n      <line x1=\"50\" y1=\"75\" x2=\"50\" y2=\"25\" stroke=\"black\" stroke-width=\"6\"/>\n    </svg>\n  </div>\n  <div class=\"navbar__menu\">\n    <div class=\"navbar__menu__item\" routerLink=\"/pizzas\" routerLinkActive=\"active\">Pizzas</div>\n    <div class=\"navbar__menu__item auth\">\n      {{ (userResponse$ | async)?.name }}\n      <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\">\n        <path\n          d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z\"/>\n        <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n      </svg>\n    </div>\n    <div class=\"navbar__menu__item basket\" routerLink=\"/basket\" routerLinkActive=\"active\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"32\" viewBox=\"0 0 24 24\" width=\"32\">\n        <path d=\"M0 0h24v24H0z\" fill=\"none\"/>\n        <path\n          d=\"M17.21 9l-4.38-6.56c-.19-.28-.51-.42-.83-.42-.32 0-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.92 1.46h13c.92 0 1.69-.62 1.93-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1h-4.79zM9 9l3-4.4L15 9H9zm3 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z\"/>\n      </svg>\n      <div class=\"basket__count\">\n        {{ pizzasCount$ | async }}\n      </div>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "PageComponent",
@@ -3083,15 +3046,186 @@
             "templateData": "<div class=\"pizza-toppings\">\n  <label\n    *ngFor=\"let topping of toppings\"\n    class=\"pizza-topping\"\n    [class.pizza-topping--active]=\"value.includes(topping)\"\n    [class.pizza-topping--focused]=\"focused === topping\">\n    <input\n      type=\"checkbox\"\n      [attr.name]=\"topping\"\n      [attr.value]=\"topping\"\n      (blur)=\"onBlur(topping)\"\n      (change)=\"updateTopping(topping)\"\n      (focus)=\"onFocus(topping)\"\n      [checked]=\"value.includes(topping)\">\n    <span class=\"pizza-topping__icon pizza-topping__icon--{{ topping }}\"></span>\n    {{ topping | titlecase }}\n  </label>\n</div>\n"
         },
         {
+            "name": "RestaurantCardComponent",
+            "id": "component-RestaurantCardComponent-63382007fcf0215877fb6d95237970a4",
+            "file": "applications/restaurants/src/app/modules/shared/restaurant-card/restaurant-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-pizza-card",
+            "styleUrls": [
+                "./restaurant-card.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./restaurant-card.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "pizza",
+                    "line": 28,
+                    "type": ""
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "buttonType",
+                    "defaultValue": "ButtonType.SUCCESS",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        132
+                    ]
+                },
+                {
+                    "name": "pizza$",
+                    "defaultValue": "new BehaviorSubject<Pizza>(null)",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "jsdoctags": [
+                        {
+                            "pos": 710,
+                            "end": 716,
+                            "flags": 0,
+                            "kind": 288,
+                            "atToken": {
+                                "pos": 710,
+                                "end": 711,
+                                "flags": 0,
+                                "kind": 57
+                            },
+                            "tagName": {
+                                "pos": 711,
+                                "end": 716,
+                                "flags": 0,
+                                "escapedText": "input"
+                            },
+                            "comment": "<p>: pizza - Pizza entity.</p>\n"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36
+                },
+                {
+                    "name": "onBuy",
+                    "args": [
+                        {
+                            "name": "pizza",
+                            "type": "Pizza"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39,
+                    "jsdoctags": [
+                        {
+                            "name": "pizza",
+                            "type": "Pizza",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { BehaviorSubject } from 'rxjs';\nimport { Store } from '@ngrx/store';\nimport { Pizza } from '../../../../../../../libraries/core/src/lib/models/pizzas/pizza.model';\nimport { RootStoreState } from '../../../store/root';\nimport { ButtonType } from '../../../../../../../libraries/uikit/src/lib/button/button.component';\nimport { BasketStoreActions } from '../../../store/root/client';\n\n@Component({\n  selector: 'app-pizza-card',\n  templateUrl: './restaurant-card.component.html',\n  styleUrls: ['./restaurant-card.component.scss'],\n})\nexport class RestaurantCardComponent implements OnInit {\n  readonly buttonType = ButtonType.SUCCESS;\n\n  /**\n   * @input: pizza - Pizza entity.\n   */\n    // @ts-ignore\n  pizza$ = new BehaviorSubject<Pizza>(null);\n\n  get pizza(): Pizza {\n    return this.pizza$.getValue();\n  }\n\n  @Input()\n  set pizza(value: Pizza) {\n    this.pizza$.next(value);\n  }\n\n  constructor(\n    private store: Store<RootStoreState.State>,\n  ) { }\n\n  ngOnInit(): void {\n  }\n\n  onBuy(pizza: Pizza): void {\n    this.store.dispatch(new BasketStoreActions.AddPizza({ pizza }));\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".pizza-card {\n  width: 300px;\n  height: 400px;\n  background-color: #ffffff;\n  cursor: pointer;\n  border-radius: 4px;\n  transition: 300ms ease-out;\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);\n\n  &:hover {\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);\n\n    .pizza-card__preview {\n      transform: scale(1.1);\n    }\n  }\n\n  &__price {\n    font-weight: 900;\n    color: #000000;\n    transition: 200ms;\n    margin-bottom: 20px;\n  }\n\n  &__preview {\n    height: 200px;\n    position: relative;\n    transition: transform 200ms ease-out;\n  }\n\n  &__info {\n    height: 100%;\n    bottom: 0;\n    padding: 10px;\n    box-sizing: border-box;\n\n    &__name {\n      font-weight: 900;\n      margin-bottom: 10px;\n    }\n\n    &__description {\n      font-size: 14px;\n      max-height: 46px;\n      overflow: hidden;\n    }\n\n    &__bottom {\n      display: flex;\n    }\n\n    &__buy-btn {\n      margin-top: 20px;\n      width: 100%;\n    }\n  }\n}\n",
+                    "styleUrl": "./restaurant-card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "store",
+                        "type": "Store<RootStoreState.State>"
+                    }
+                ],
+                "line": 30,
+                "jsdoctags": [
+                    {
+                        "name": "store",
+                        "type": "Store<RootStoreState.State>",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "pizza": {
+                    "name": "pizza",
+                    "setSignature": {
+                        "name": "pizza",
+                        "type": "void",
+                        "args": [
+                            {
+                                "name": "value",
+                                "type": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 28,
+                        "jsdoctags": [
+                            {
+                                "name": "value",
+                                "type": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    },
+                    "getSignature": {
+                        "name": "pizza",
+                        "type": "",
+                        "returnType": "Pizza",
+                        "line": 23
+                    }
+                }
+            },
+            "templateData": "<ng-container *ngIf=\"(pizza$ | async) as pizza\">\n  <div class=\"pizza-card\">\n    <div class=\"pizza-card__preview\">\n      <!--<app-pizza-small-preview\n        class=\"pizza\"\n        [toppings]=\"pizza?.toppings\"></app-pizza-small-preview>-->\n      <app-pizza-small-preview class=\"pizza\"></app-pizza-small-preview>\n    </div>\n    <div class=\"pizza-card__info\">\n      <div class=\"pizza-card__price\">{{ pizza.price  | currency: \"USD\" }}</div>\n      <div class=\"pizza-card__info__name\">{{ pizza.name }}</div>\n      <div class=\"pizza-card__info__description\">{{ pizza.description }}</div>\n      <div class=\"pizza-card__info__bottom\">\n        <uikit-ui-v1-button\n          class=\"pizza-card__info__buy-btn\"\n          title=\"Buy\"\n          [type]=\"buttonType\"\n          (click)=\"onBuy(pizza)\"></uikit-ui-v1-button>\n      </div>\n    </div>\n  </div>\n</ng-container>\n"
+        },
+        {
             "name": "RestaurantsComponent",
-            "id": "component-RestaurantsComponent-d5647bf56e53b6c44c005a42e9daa6e1",
+            "id": "component-RestaurantsComponent-427a8be90b8a1fbdfa90c8ea185ca2ff",
             "file": "applications/restaurants/src/app/modules/restaurants/restaurants.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-restaurants",
+            "selector": "restaurants-restaurants",
             "styleUrls": [
                 "./restaurants.component.scss"
             ],
@@ -3118,7 +3252,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-restaurants',\n  templateUrl: './restaurants.component.html',\n  styleUrls: ['./restaurants.component.scss']\n})\nexport class RestaurantsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'restaurants-restaurants',\n  templateUrl: './restaurants.component.html',\n  styleUrls: ['./restaurants.component.scss']\n})\nexport class RestaurantsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3136,7 +3270,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<app-navbar></app-navbar>\n<div class=\"search-container\">\n  <div class=\"search\">\n    <app-search-bar></app-search-bar>\n  </div>\n</div>\n\n\n"
+            "templateData": "<div class=\"search-container\">\n  <div class=\"search\">\n    <app-search-bar></app-search-bar>\n  </div>\n</div>\n<div class=\"restaurants\">\n\n</div>\n"
         },
         {
             "name": "SearchBarComponent",
@@ -3329,14 +3463,14 @@
         },
         {
             "name": "UikitComponent",
-            "id": "component-UikitComponent-06f27bd3949fa0ed4049dc60b333af27",
+            "id": "component-UikitComponent-265d52ba27603bc1270e56837ce4b0ff",
             "file": "libraries/uikit/src/lib/uikit.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "uikit",
+            "selector": "uikit-uikit",
             "styleUrls": [],
             "styles": [],
             "template": "<p>\n  uikit works!\n</p>\n",
@@ -3360,7 +3494,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'uikit',\n  template: `\n    <p>\n      uikit works!\n    </p>\n  `,\n  styles: [],\n})\nexport class UikitComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'uikit-uikit',\n  template: `\n    <p>\n      uikit works!\n    </p>\n  `,\n  styles: [],\n})\nexport class UikitComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -4147,6 +4281,50 @@
             ]
         },
         {
+            "name": "RestaurantCardModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "RestaurantCardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "PizzaSmallPreviewModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "RestaurantCardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "RestaurantsModule",
             "children": [
                 {
@@ -4584,6 +4762,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "applications/restaurants/src/app/modules/shared/restaurant-card/restaurant-card.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "LoggedOut",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4754,6 +4940,14 @@
                 "file": "stories/Page.stories.ts",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "applications/restaurants/src/app/modules/shared/restaurant-card/restaurant-card.stories.ts",
+                "type": "Story<RestaurantCardComponent>",
+                "defaultValue": "(args: RestaurantCardComponent) => ({\n  component: RestaurantCardComponent,\n  props: args,\n})"
             },
             {
                 "name": "type",
@@ -5430,6 +5624,24 @@
                     "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
                 }
             ],
+            "applications/restaurants/src/app/modules/shared/restaurant-card/restaurant-card.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "applications/restaurants/src/app/modules/shared/restaurant-card/restaurant-card.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "applications/restaurants/src/app/modules/shared/restaurant-card/restaurant-card.stories.ts",
+                    "type": "Story<RestaurantCardComponent>",
+                    "defaultValue": "(args: RestaurantCardComponent) => ({\n  component: RestaurantCardComponent,\n  props: args,\n})"
+                }
+            ],
             "libraries/core/src/lib/mocks/error/error-response.mock.ts": [
                 {
                     "name": "mockErrorResponse",
@@ -5899,15 +6111,6 @@
                 "status": "low"
             },
             {
-                "filePath": "applications/restaurants/e2e/src/app.po.ts",
-                "type": "class",
-                "linktype": "classe",
-                "name": "AppPage",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
                 "filePath": "applications/restaurants/src/app/app.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -6023,6 +6226,35 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "PIZZA_TOPPINGS_ACCESSOR",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "applications/restaurants/src/app/modules/shared/restaurant-card/restaurant-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RestaurantCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "applications/restaurants/src/app/modules/shared/restaurant-card/restaurant-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "applications/restaurants/src/app/modules/shared/restaurant-card/restaurant-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -10,25 +10,25 @@
           "style": "scss"
         }
       },
-      "root": "applications/dashboard",
-      "sourceRoot": "applications/dashboard/src",
+      "root": "projects/dashboard",
+      "sourceRoot": "projects/dashboard/src",
       "prefix": "dashboard",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/dashboard",
-            "index": "applications/dashboard/src/index.html",
-            "main": "applications/dashboard/src/main.ts",
-            "polyfills": "applications/dashboard/src/polyfills.ts",
-            "tsConfig": "applications/dashboard/tsconfig.app.json",
+            "index": "projects/dashboard/src/index.html",
+            "main": "projects/dashboard/src/main.ts",
+            "polyfills": "projects/dashboard/src/polyfills.ts",
+            "tsConfig": "projects/dashboard/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "applications/dashboard/src/favicon.ico",
-              "applications/dashboard/src/assets"
+              "projects/dashboard/src/favicon.ico",
+              "projects/dashboard/src/assets"
             ],
             "styles": [
-              "applications/dashboard/src/styles.scss"
+              "projects/dashboard/src/styles.scss"
             ],
             "scripts": []
           },
@@ -36,8 +36,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "applications/dashboard/src/environments/environment.ts",
-                  "with": "applications/dashboard/src/environments/environment.prod.ts"
+                  "replace": "projects/dashboard/src/environments/environment.ts",
+                  "with": "projects/dashboard/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -82,16 +82,16 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "applications/dashboard/src/test.ts",
-            "polyfills": "applications/dashboard/src/polyfills.ts",
-            "tsConfig": "applications/dashboard/tsconfig.spec.json",
-            "karmaConfig": "applications/dashboard/karma.conf.js",
+            "main": "projects/dashboard/src/test.ts",
+            "polyfills": "projects/dashboard/src/polyfills.ts",
+            "tsConfig": "projects/dashboard/tsconfig.spec.json",
+            "karmaConfig": "projects/dashboard/karma.conf.js",
             "assets": [
-              "applications/dashboard/src/favicon.ico",
-              "applications/dashboard/src/assets"
+              "projects/dashboard/src/favicon.ico",
+              "projects/dashboard/src/assets"
             ],
             "styles": [
-              "applications/dashboard/src/styles.scss"
+              "projects/dashboard/src/styles.scss"
             ],
             "scripts": []
           }
@@ -100,9 +100,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "applications/dashboard/tsconfig.app.json",
-              "applications/dashboard/tsconfig.spec.json",
-              "applications/dashboard/e2e/tsconfig.json"
+              "projects/dashboard/tsconfig.app.json",
+              "projects/dashboard/tsconfig.spec.json",
+              "projects/dashboard/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -112,7 +112,7 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "applications/dashboard/e2e/protractor.conf.js",
+            "protractorConfig": "projects/dashboard/e2e/protractor.conf.js",
             "devServerTarget": "dashboard:serve"
           },
           "configurations": {
@@ -125,36 +125,36 @@
     },
     "uikit": {
       "projectType": "library",
-      "root": "libraries/uikit",
-      "sourceRoot": "libraries/uikit/src",
+      "root": "projects/uikit",
+      "sourceRoot": "projects/uikit/src",
       "prefix": "uikit",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "libraries/uikit/tsconfig.lib.json",
-            "project": "libraries/uikit/ng-package.json"
+            "tsConfig": "projects/uikit/tsconfig.lib.json",
+            "project": "projects/uikit/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libraries/uikit/tsconfig.lib.prod.json"
+              "tsConfig": "projects/uikit/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "libraries/uikit/src/test.ts",
-            "tsConfig": "libraries/uikit/tsconfig.spec.json",
-            "karmaConfig": "libraries/uikit/karma.conf.js"
+            "main": "projects/uikit/src/test.ts",
+            "tsConfig": "projects/uikit/tsconfig.spec.json",
+            "karmaConfig": "projects/uikit/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libraries/uikit/tsconfig.lib.json",
-              "libraries/uikit/tsconfig.spec.json"
+              "projects/uikit/tsconfig.lib.json",
+              "projects/uikit/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -165,36 +165,36 @@
     },
     "core": {
       "projectType": "library",
-      "root": "libraries/core",
-      "sourceRoot": "libraries/core/src",
+      "root": "projects/core",
+      "sourceRoot": "projects/core/src",
       "prefix": "core",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "libraries/core/tsconfig.lib.json",
-            "project": "libraries/core/ng-package.json"
+            "tsConfig": "projects/core/tsconfig.lib.json",
+            "project": "projects/core/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libraries/core/tsconfig.lib.prod.json"
+              "tsConfig": "projects/core/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "libraries/core/src/test.ts",
-            "tsConfig": "libraries/core/tsconfig.spec.json",
-            "karmaConfig": "libraries/core/karma.conf.js"
+            "main": "projects/core/src/test.ts",
+            "tsConfig": "projects/core/tsconfig.spec.json",
+            "karmaConfig": "projects/core/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libraries/core/tsconfig.lib.json",
-              "libraries/core/tsconfig.spec.json"
+              "projects/core/tsconfig.lib.json",
+              "projects/core/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -210,25 +210,30 @@
           "style": "scss"
         }
       },
-      "root": "applications/restaurants",
-      "sourceRoot": "applications/restaurants/src",
+      "root": "projects/restaurants",
+      "sourceRoot": "projects/restaurants/src",
       "prefix": "restaurants",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/restaurants",
-            "index": "applications/restaurants/src/index.html",
-            "main": "applications/restaurants/src/main.ts",
-            "polyfills": "applications/restaurants/src/polyfills.ts",
-            "tsConfig": "applications/restaurants/tsconfig.app.json",
+            "index": "projects/restaurants/src/index.html",
+            "main": "projects/restaurants/src/main.ts",
+            "polyfills": "projects/restaurants/src/polyfills.ts",
+            "tsConfig": "projects/restaurants/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "applications/restaurants/src/favicon.ico",
-              "applications/restaurants/src/assets"
+              "projects/restaurants/src/favicon.ico",
+              "projects/restaurants/src/assets",
+              {
+                "glob": "**/*",
+                "input": "assets",
+                "output": "/assets"
+              }
             ],
             "styles": [
-              "applications/restaurants/src/styles.scss"
+              "projects/restaurants/src/styles.scss"
             ],
             "scripts": []
           },
@@ -236,8 +241,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "applications/restaurants/src/environments/environment.ts",
-                  "with": "applications/restaurants/src/environments/environment.prod.ts"
+                  "replace": "projects/restaurants/src/environments/environment.ts",
+                  "with": "projects/restaurants/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -282,16 +287,16 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "applications/restaurants/src/test.ts",
-            "polyfills": "applications/restaurants/src/polyfills.ts",
-            "tsConfig": "applications/restaurants/tsconfig.spec.json",
-            "karmaConfig": "applications/restaurants/karma.conf.js",
+            "main": "projects/restaurants/src/test.ts",
+            "polyfills": "projects/restaurants/src/polyfills.ts",
+            "tsConfig": "projects/restaurants/tsconfig.spec.json",
+            "karmaConfig": "projects/restaurants/karma.conf.js",
             "assets": [
-              "applications/restaurants/src/favicon.ico",
-              "applications/restaurants/src/assets"
+              "projects/restaurants/src/favicon.ico",
+              "projects/restaurants/src/assets"
             ],
             "styles": [
-              "applications/restaurants/src/styles.scss"
+              "projects/restaurants/src/styles.scss"
             ],
             "scripts": []
           }
@@ -300,9 +305,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "applications/restaurants/tsconfig.app.json",
-              "applications/restaurants/tsconfig.spec.json",
-              "applications/restaurants/e2e/tsconfig.json"
+              "projects/restaurants/tsconfig.app.json",
+              "projects/restaurants/tsconfig.spec.json",
+              "projects/restaurants/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -312,7 +317,7 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "applications/restaurants/e2e/protractor.conf.js",
+            "protractorConfig": "projects/restaurants/e2e/protractor.conf.js",
             "devServerTarget": "restaurants:serve"
           },
           "configurations": {
