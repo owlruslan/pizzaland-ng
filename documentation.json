@@ -1576,14 +1576,14 @@
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-2fec0ea76d64101ddefb3d1ddc78eabf-1",
+            "id": "component-AppComponent-98aa2a56e236cbfce39ed4aa1bdf3de5-1",
             "file": "applications/restaurants/src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-root",
+            "selector": "restaurants-root",
             "styleUrls": [
                 "./app.component.scss"
             ],
@@ -1601,7 +1601,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import {Component} from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n}\n",
+            "sourceCode": "import {Component} from '@angular/core';\n\n@Component({\n  selector: 'restaurants-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4397,7 +4397,7 @@
                 "subtype": "variable",
                 "file": "applications/restaurants/src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\n  production: true,\n  host: 'localhost'\n}"
             },
             {
                 "name": "environment",
@@ -4405,7 +4405,7 @@
                 "subtype": "variable",
                 "file": "applications/restaurants/src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\n  production: false,\n  host: 'localhost'\n}"
             },
             {
                 "name": "FEATURE_REDUCER_TOKEN",
@@ -5149,7 +5149,7 @@
                     "subtype": "variable",
                     "file": "applications/restaurants/src/environments/environment.prod.ts",
                     "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
+                    "defaultValue": "{\n  production: true,\n  host: 'localhost'\n}"
                 }
             ],
             "applications/restaurants/src/environments/environment.ts": [
@@ -5159,7 +5159,7 @@
                     "subtype": "variable",
                     "file": "applications/restaurants/src/environments/environment.ts",
                     "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
+                    "defaultValue": "{\n  production: false,\n  host: 'localhost'\n}"
                 }
             ],
             "applications/restaurants/src/app/store/root/client/client-store.module.ts": [
