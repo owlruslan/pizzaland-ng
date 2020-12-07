@@ -1,7 +1,7 @@
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { ResponseSuccess } from '../../../../../../dist/core/lib/models';
 import { SearchAPI } from './search-api';
+import { ResponseSuccess } from '../../../../../../libraries/core/src/lib/models';
 
 export const mockSearchResults = ['Results1', 'Result2', 'Result3'];
 

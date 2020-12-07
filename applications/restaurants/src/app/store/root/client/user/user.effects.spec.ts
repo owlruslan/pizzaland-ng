@@ -12,9 +12,9 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { Action } from '@ngrx/store';
 
 import { hot } from 'jasmine-marbles';
-import { ResponseSuccess, UserLoginRequest, UserLoginResponse } from '../../../../../../../../dist/core/lib/models';
 import { UserService } from '../../../../services/user/user.service';
 import { Login, LoginSuccess } from './user.actions';
+import { ResponseSuccess, UserLoginRequest, UserLoginResponse } from '../../../../../../../../libraries/core/src/lib/models';
 
 describe('app.store.root.client.user.UserEffects', () => {
   let actions$: Observable<Action>;
@@ -63,6 +63,7 @@ describe('app.store.root.client.user.UserEffects', () => {
         data: undefined,
         success: true,
       };
+      // @ts-ignore
       const completion = new LoginSuccess({ response });
 
       // Refer to 'Writing Marble Tests' for details on '--a-' syntax

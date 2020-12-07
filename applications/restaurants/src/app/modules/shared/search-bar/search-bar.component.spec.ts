@@ -6,7 +6,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { SearchService } from '../../../services/search/search.service';
 import { SearchMockService } from '../../../services/search/search-mock.service';
 
-fdescribe('SearchBarComponent', () => {
+describe('SearchBarComponent', () => {
   let component: SearchBarComponent;
   let fixture: ComponentFixture<SearchBarComponent>;
 
