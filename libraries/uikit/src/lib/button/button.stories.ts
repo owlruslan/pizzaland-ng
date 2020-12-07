@@ -15,11 +15,11 @@ storiesOf('app.ui.v1.button.ButtonComponent', module).addDecorator(
   }),
 ).add('default', () => {
   return {
-    template: `<app-ui-v1-button></app-ui-v1-button>`,
+    template: `<uikit-ui-v1-button></uikit-ui-v1-button>`,
   };
 }).add('success', () => {
   return {
-    template: `<app-ui-v1-button [type]="type"></app-ui-v1-button>`,
+    template: `<uikit-ui-v1-button [type]="type"></uikit-ui-v1-button>`,
     props: {
       type,
     },
