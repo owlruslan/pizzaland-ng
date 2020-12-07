@@ -8,7 +8,7 @@ import { BasketStoreSelectors } from '../../../store/root/client';
 import { Unsubscribe } from '../../../../../../../libraries/core/src/lib/components/unsubscribe.interface';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'restaurants-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
