@@ -1,0 +1,14 @@
+<div class="search-container">
+  <div class="search">
+    <app-search-bar></app-search-bar>
+  </div>
+</div>
+<div class="wrapper">
+  <h1>Restaurants</h1>
+  <div class="restaurants">
+    <restaurants-pizza-card
+      *ngFor="let restaurant of restaurants"
+      [routerLink]="restaurant"
+    ></restaurants-pizza-card>
+  </div>
+</div>

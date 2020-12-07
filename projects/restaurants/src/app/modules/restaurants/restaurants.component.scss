@@ -1,0 +1,23 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  height: 120px;
+  margin-bottom: 40px;
+}
+
+.search {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 680px;
+  width: 100%;
+}
+
+.restaurants {
+  margin: 24px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
+  grid-auto-rows: minmax(100px, auto);
+}

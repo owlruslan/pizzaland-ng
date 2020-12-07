@@ -1,5 +1,5 @@
 {
-  "extends": "../applications/dashboard/tsconfig.app.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "types": [
       "node"
@@ -10,7 +10,7 @@
     "../**/*.test.ts"
   ],
   "include": [
-    "../libraries/uikit/src/lib/**/*",
+    "../projects/**/*",
   ],
   "files": [
     "./typings.d.ts"
