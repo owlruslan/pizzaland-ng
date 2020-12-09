@@ -3,7 +3,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {PizzaCardComponent} from './pizza-card.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {provideMockStore} from '@ngrx/store/testing';
-import mockPizza from '../../../../../../core/src/lib/mocks/pizzas/pizza.mock';
+import mockPizza from '../../../mocks/pizzas/pizza.mock';
 
 describe('app.modules.shared.pizza-card.RestaurantCardComponent', () => {
   let component: PizzaCardComponent;

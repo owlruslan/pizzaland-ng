@@ -2,14 +2,14 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { takeUntil } from 'rxjs/operators';
-import { Pizza } from '../../../../../core/src/lib/models/pizzas/pizza.model';
-import { GetPizzasResponse } from '../../../../../core/src/lib/models/pizzas/get-pizzas-response.model';
+import { Pizza } from '../../../../../core/src/lib/models';
+import { GetPizzasResponse } from '../../../../../core/src/lib/models';
 import { BasketStoreSelectors } from '../../store/root/client';
-import { Unsubscribe } from '../../../../../core/src/lib/components/unsubscribe.interface';
+import { Unsubscribe } from '../../../../../core/src/lib/components';
 import { RootStoreState } from '../../store/root';
 
 @Component({
-  selector: 'app-basket',
+  selector: 'restaurants-basket',
   templateUrl: './basket.component.html',
   styleUrls: ['./basket.component.scss'],
 })

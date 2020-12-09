@@ -11,10 +11,6 @@ const routes: Routes = [
     loadChildren: () => import('./modules/pizzas/pizzas.module').then(mod => mod.PizzasModule),
   },
   {
-    path: 'auth',
-    loadChildren: () => import('./modules/auth/auth.module').then(mod => mod.AuthModule),
-  },
-  {
     path: 'basket',
     loadChildren: () => import('./modules/basket/basket.module').then(mod => mod.BasketModule),
   },

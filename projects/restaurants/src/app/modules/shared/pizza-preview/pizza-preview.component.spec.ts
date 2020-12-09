@@ -3,7 +3,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {PizzaPreviewComponent} from './pizza-preview.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
-import mockPizza from '../../../../../../core/src/lib/mocks/pizzas/pizza.mock';
+import mockPizza from '../../../mocks/pizzas/pizza.mock';
 
 describe('app.modules.shared.pizza-preview.PizzaPreviewComponent', () => {
   let component: PizzaPreviewComponent;
