@@ -6,7 +6,7 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { MemoizedSelector } from '@ngrx/store';
 import { BasketStoreSelectors } from '../../store/root/client';
 import { RootStoreState } from '../../store/root';
-import mockGetPizzasResponse from '../../../../../core/src/lib/mocks/pizzas/get-pizzas-response.mock';
+import mockGetPizzasResponse from '../../mocks/pizzas/get-pizzas-response.mock';
 
 describe('app.modules.basket.BasketComponent', () => {
   let component: BasketComponent;

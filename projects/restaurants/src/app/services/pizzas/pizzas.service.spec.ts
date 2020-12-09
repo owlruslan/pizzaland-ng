@@ -5,8 +5,8 @@ import {HttpClientTestingModule, HttpTestingController, TestRequest} from '@angu
 import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import mockUserToken from '../../../../../core/src/lib/mocks/user/user-token.mock';
-import mockGetPizzasResponse from '../../../../../core/src/lib/mocks/pizzas/get-pizzas-response.mock';
+import mockUserToken from '../../mocks/user/user-token.mock';
+import mockGetPizzasResponse from '../../mocks/pizzas/get-pizzas-response.mock';
 import { GetPizzasResponse, ResponseSuccess } from '../../../../../core/src/lib/models';
 
 describe('app.services.client.user.PizzasService', () => {

@@ -1,5 +1,5 @@
 import { GetPizzasResponse } from '../../../../../../../core/src/lib/models/pizzas/get-pizzas-response.model';
-import mockGetPizzasResponse from '../../../../../../../core/src/lib/mocks/pizzas/get-pizzas-response.mock';
+import mockGetPizzasResponse from '../../../../mocks/pizzas/get-pizzas-response.mock';
 
 export interface State {
   pizzasResponse: GetPizzasResponse;
