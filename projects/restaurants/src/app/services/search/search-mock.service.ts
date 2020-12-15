@@ -2,8 +2,19 @@ import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { SearchAPI } from './search-api';
 import { ResponseSuccess } from '../../../../../core/src/lib/models';
+import { Restaurant } from '../../../../../core/src/lib/models/restaurants/restaurant';
 
-export const mockSearchResults = ['Results1', 'Result2', 'Result3'];
+export const mockRestaurant: Restaurant = {
+  name: 'So Tasty pizza',
+  rating: 5.0,
+  address: 'Address mock'
+};
+
+export const mockSearchResults: Restaurant[] = [
+  mockRestaurant,
+  mockRestaurant,
+  mockRestaurant,
+];
 
 export class SearchMockService implements SearchAPI {
 
