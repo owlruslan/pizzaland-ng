@@ -10,7 +10,6 @@ import { SearchService } from '../../../services/search/search.service';
   styleUrls: ['./search-bar.component.scss'],
 })
 export class SearchBarComponent implements OnInit {
-
   public searchForm: FormGroup = this.formBuilder.group({
     searchQuery: [''],
   });
@@ -42,15 +41,18 @@ export class SearchBarComponent implements OnInit {
       toPromise().
       then((result: any) => {
         this.isSearching = false;
-        this.searchResults$.next(result.data);
+        this.searchResults$.next(result);
       });
+
+    this.searchResults$.subscribe((result: any) => {
+      console.log(result);
+    });
   }
 
   ngOnInit(): void {
     this.searchQuery.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged(),
-    ).subscribe(
-      (query: string) => this.search(query));
+    ).subscribe((query: string) => this.search(query));
   }
 }

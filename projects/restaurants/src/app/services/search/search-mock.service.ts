@@ -1,7 +1,6 @@
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { SearchAPI } from './search-api';
-import { ResponseSuccess } from '../../../../../core/src/lib/models';
 import { Restaurant } from '../../../../../core/src/lib/models/restaurants/restaurant';
 
 export const mockRestaurant: Restaurant = {
@@ -18,7 +17,7 @@ export const mockSearchResults: Restaurant[] = [
 
 export class SearchMockService implements SearchAPI {
 
-  getSearchResults(query: string): Observable<ResponseSuccess<any>> {
-    return of(new ResponseSuccess(mockSearchResults)).pipe(delay(1000));
+  getSearchResults(query: string): Observable<Restaurant[]> {
+    return of(mockSearchResults).pipe(delay(1000));
   }
 }
