@@ -8,7 +8,7 @@ import mockGetPizzasResponse from '../../mocks/pizzas/get-pizzas-response.mock';
 
 
 /**
- * Implementation of pizzas APIs.
+ * Implementation of restaurant APIs.
  */
 @Injectable({providedIn: 'root'})
 export class PizzasService implements APIService {
@@ -18,12 +18,12 @@ export class PizzasService implements APIService {
   }
 
   /**
-   * GET: /api/v1/pizzas
+   * GET: /api/v1/restaurant
    * Get Pizzas.
    */
   getPizzas(token: string): Observable<GetPizzasResponse> {
     return of(mockGetPizzasResponse);
-    /*return this.http.get<ResponseSuccess<GetPizzasResponse>>(`${this.host}/api/v1/pizzas`, {
+    /*return this.http.get<ResponseSuccess<GetPizzasResponse>>(`${this.host}/api/v1/restaurant`, {
       headers: new HttpHeaders({Authorization: `Bearer ${token}`}),
     });*/
   }

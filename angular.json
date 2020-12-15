@@ -329,5 +329,8 @@
       }
     }
   },
-  "defaultProject": "restaurants"
+  "defaultProject": "restaurants",
+  "cli": {
+    "analytics": "f5d98000-9020-440e-97ba-bffb8fb57a0d"
+  }
 }
