@@ -1,0 +1,30 @@
+ul {
+  list-style: none;
+  display: flex;
+  font-size: 14pt;
+  font-weight: bold;
+
+  li {
+    cursor: pointer;
+
+    a {
+      margin-right: 24px;
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin-right: 12px;
+      }
+
+      &:hover {
+        color: #1ea7fd;
+
+        svg path {
+          &:nth-child(2) {
+            fill: #1ea7fd;
+          }
+        }
+      }
+    }
+  }
+}
