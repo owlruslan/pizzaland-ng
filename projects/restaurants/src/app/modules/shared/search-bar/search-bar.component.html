@@ -10,7 +10,7 @@
         <ng-container *ngIf="(searchResults$ | async) as results">
             <ul *ngIf="results.length > 0">
                 <li *ngFor="let result of results">
-                    {{result.name}}
+                  <a [routerLink]="result.id">{{result?.name}}</a>
                 </li>
             </ul>
         </ng-container>
