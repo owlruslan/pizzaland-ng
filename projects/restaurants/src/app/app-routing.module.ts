@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'restaurants',
     loadChildren: () => import('./modules/restaurants/restaurants.module').then(mod => mod.RestaurantsModule),
   },
   {
-    path: ':id',
-    loadChildren: () => import('./modules/pizzas/pizzas.module').then(mod => mod.PizzasModule),
+    path: 'restaurants/:id',
+    loadChildren: () => import('./modules/restaurant/restaurant.module').then(mod => mod.RestaurantModule),
   },
   {
     path: 'basket',
@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '',
+    redirectTo: 'restaurants',
     pathMatch: 'full',
   },
 ];

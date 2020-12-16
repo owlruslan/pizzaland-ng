@@ -5,12 +5,11 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { SearchService } from '../../../services/search/search.service';
 
 @Component({
-  selector: 'app-search-bar',
+  selector: 'restaurants-search-bar',
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss'],
 })
 export class SearchBarComponent implements OnInit {
-
   public searchForm: FormGroup = this.formBuilder.group({
     searchQuery: [''],
   });
@@ -20,13 +19,11 @@ export class SearchBarComponent implements OnInit {
   public searchResults$ = new BehaviorSubject([]);
 
   private get searchQuery(): FormControl {
-    // @ts-ignore
     return this.searchForm.controls.searchQuery as FormControl;
   }
 
   @HostListener('document:click', ['$event'])
-  // tslint:disable-next-line:typedef
-  clicked(event: { target: any }) {
+  clicked(event: { target: any }): void {
     if (!this.elementRef.nativeElement.contains(event.target)) {
       this.isViewActive = false;
     }
@@ -44,15 +41,18 @@ export class SearchBarComponent implements OnInit {
       toPromise().
       then((result: any) => {
         this.isSearching = false;
-        this.searchResults$.next(result.data);
+        this.searchResults$.next(result);
       });
+
+    this.searchResults$.subscribe((result: any) => {
+      console.log(result);
+    });
   }
 
   ngOnInit(): void {
     this.searchQuery.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged(),
-    ).subscribe(
-      (query: string) => this.search(query));
+    ).subscribe((query: string) => this.search(query));
   }
 }

@@ -14,8 +14,8 @@ import { RootStoreState } from '../../store/root';
 
 @Component({
   selector: 'restaurants-pizzas',
-  templateUrl: './pizzas.component.html',
-  styleUrls: ['./pizzas.component.scss'],
+  templateUrl: './restaurant.component.html',
+  styleUrls: ['./restaurant.component.scss'],
   animations: [
     trigger('listAnimation', [
       transition('* <=> *', [
@@ -27,7 +27,7 @@ import { RootStoreState } from '../../store/root';
     ])
   ]
 })
-export class PizzasComponent implements OnInit, AfterContentChecked, OnDestroy, Unsubscribe {
+export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestroy, Unsubscribe {
   readonly unsubscribe = new Subject<void>();
 
   form = this.fb.group({

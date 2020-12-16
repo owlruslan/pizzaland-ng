@@ -1,6 +1,6 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {PizzasComponent} from './pizzas.component';
+import {RestaurantComponent} from './restaurant.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {MockStore, provideMockStore} from '@ngrx/store/testing';
 import {FormBuilder} from '@angular/forms';
@@ -19,16 +19,16 @@ const initialState = {
   }
 };
 
-describe('app.modules.pizzas.PizzasComponent', () => {
-  let component: PizzasComponent;
-  let fixture: ComponentFixture<PizzasComponent>;
+describe('app.modules.restaurant.RestaurantComponent', () => {
+  let component: RestaurantComponent;
+  let fixture: ComponentFixture<RestaurantComponent>;
 
   let mockStore: MockStore;
   let mockPizzasResponseSelector: MemoizedSelector<RootStoreState.State, GetPizzasResponse>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PizzasComponent ],
+      declarations: [ RestaurantComponent ],
       imports: [
         NoopAnimationsModule
       ],
@@ -44,7 +44,7 @@ describe('app.modules.pizzas.PizzasComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PizzasComponent);
+    fixture = TestBed.createComponent(RestaurantComponent);
 
     mockStore = TestBed.inject(MockStore);
     mockPizzasResponseSelector = mockStore.overrideSelector(
@@ -66,7 +66,7 @@ describe('app.modules.pizzas.PizzasComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('#pizzas', () => {
+  describe('#restaurant', () => {
     it('should return right data', () => {
       component.form.controls.toppings.setValue(['anchovy']);
       component.pizzas$ = cold('-a', {

@@ -19,6 +19,6 @@ storiesOf('Restaurants / Modules / Shared / RestaurantCard', module)
   )
   .add('default', () => {
     return {
-      template: `<restaurants-pizza-card></restaurants-pizza-card>`
+      template: `<restaurants-restaurant-card></restaurants-restaurant-card>`
     };
   });

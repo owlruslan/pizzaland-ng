@@ -11,6 +11,10 @@
   margin: 20px auto;
   justify-content: space-between;
 
+  &__left {
+    display: flex;
+  }
+
   &__logo {
     display: flex;
     align-items: flex-start;

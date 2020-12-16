@@ -16,6 +16,5 @@ import { PizzaPreviewModule } from '../shared/pizza-preview/pizza-preview.module
     PizzaCardModule,
     PizzaPreviewModule,
   ],
-  exports: [BasketComponent],
 })
 export class BasketModule {}
