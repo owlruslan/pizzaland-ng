@@ -1,8 +1,8 @@
 import { Action } from '@ngrx/store';
-import { UserLoginResponse } from '../../../../../../../core/src/lib/models';
-import { ResponseSuccess } from '../../../../../../../core/src/lib/models';
-import { ResponseError } from '../../../../../../../core/src/lib/models';
-import { UserLoginRequest } from '../../../../../../../core/src/lib/models';
+import { UserLoginResponse } from '../../../../models';
+import { ResponseSuccess } from '../../../../models';
+import { ResponseError } from '../../../../models';
+import { UserLoginRequest } from '../../../../models';
 
 export enum ActionTypes {
 

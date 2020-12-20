@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { Restaurant } from '../../../../../core/src/lib/models/restaurants/restaurant';
+import { Restaurant } from '../../models/restaurants/restaurant';
 
 export interface SearchAPI {
 

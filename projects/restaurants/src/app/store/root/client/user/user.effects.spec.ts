@@ -14,7 +14,7 @@ import { Action } from '@ngrx/store';
 import { hot } from 'jasmine-marbles';
 import { UserService } from '../../../../services/user/user.service';
 import { Login, LoginSuccess } from './user.actions';
-import { ResponseSuccess, UserLoginRequest, UserLoginResponse } from '../../../../../../../core/src/lib/models';
+import { ResponseSuccess, UserLoginRequest, UserLoginResponse } from '../../../../models';
 
 describe('app.store.root.client.user.UserEffects', () => {
   let actions$: Observable<Action>;

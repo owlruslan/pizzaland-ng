@@ -4,3 +4,4 @@ export interface Restaurant {
   rating: number;
   address: string;
 }
+

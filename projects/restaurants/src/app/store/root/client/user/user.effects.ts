@@ -5,10 +5,10 @@ import { RootStoreState } from '../../index';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { ActionTypes, Login, LoginFailure, LoginSuccess } from './user.actions';
 import { of } from 'rxjs';
-import { UserLoginResponse } from '../../../../../../../core/src/lib/models/user/user-login-response.model';
-import { ResponseSuccess } from '../../../../../../../core/src/lib/models/response/response-success.model';
+import { UserLoginResponse } from '../../../../models/user/user-login-response.model';
+import { ResponseSuccess } from '../../../../models/response/response-success.model';
 import { UserService } from '../../../../services/user/user.service';
-import { ResponseError } from '../../../../../../../core/src/lib/models/response/response-error.model';
+import { ResponseError } from '../../../../models/response/response-error.model';
 import { AppStoreActions } from '../../app';
 
 /**

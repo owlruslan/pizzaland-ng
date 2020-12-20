@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { Pizza } from '../../../../../../core/src/lib/models';
+import { Pizza } from '../../../models';
 import { RootStoreState } from '../../../store/root';
 import { ButtonType } from '../../../../../../uikit/src/lib/button/button.component';
 import { BasketStoreActions } from '../../../store/root/client';

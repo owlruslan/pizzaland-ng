@@ -1,5 +1,5 @@
 import { createSelector } from '@ngrx/store';
-import { GetPizzasResponse } from '../../../../../../../core/src/lib/models/pizzas/get-pizzas-response.model';
+import { GetPizzasResponse } from '../../../../models/pizzas/get-pizzas-response.model';
 import { State } from '../pizzas/pizzas.state';
 import { RootStoreState } from '../../index';
 

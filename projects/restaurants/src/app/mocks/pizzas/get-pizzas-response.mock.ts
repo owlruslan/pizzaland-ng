@@ -1,4 +1,4 @@
-import { GetPizzasResponse } from '../../../../../core/src/lib/models';
+import { GetPizzasResponse } from '../../models';
 
 const mockGetPizzasResponse = new GetPizzasResponse();
 mockGetPizzasResponse.pizzas = [

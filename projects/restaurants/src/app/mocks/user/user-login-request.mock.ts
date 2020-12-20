@@ -1,4 +1,4 @@
-import { UserLoginRequest } from '../../../../../core/src/lib/models';
+import { UserLoginRequest } from '../../models';
 
 const mockUserLoginRequest = new UserLoginRequest();
 mockUserLoginRequest.username = 'USERNAME';

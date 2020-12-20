@@ -7,7 +7,7 @@ import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import mockUserToken from '../../mocks/user/user-token.mock';
 import mockGetPizzasResponse from '../../mocks/pizzas/get-pizzas-response.mock';
-import { GetPizzasResponse, ResponseSuccess } from '../../../../../core/src/lib/models';
+import { GetPizzasResponse, ResponseSuccess } from '../../models';
 
 describe('app.services.client.user.PizzasService', () => {
   let httpClient: HttpClient;
