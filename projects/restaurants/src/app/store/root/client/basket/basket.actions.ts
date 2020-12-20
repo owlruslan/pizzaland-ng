@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Pizza } from '../../../../../../../core/src/lib/models/pizzas/pizza.model';
+import { Pizza } from '../../../../models/pizzas/pizza.model';
 
 export enum ActionTypes {
   AddPizza = '[Basket] Add Pizza',

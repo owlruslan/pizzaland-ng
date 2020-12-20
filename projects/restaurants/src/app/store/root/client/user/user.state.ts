@@ -1,5 +1,5 @@
-import { UserResponse } from '../../../../../../../core/src/lib/models/user/user-response.model';
-import { UserLoginResponse } from '../../../../../../../core/src/lib/models/user/user-login-response.model';
+import { UserResponse } from '../../../../models/user/user-response.model';
+import { UserLoginResponse } from '../../../../models/user/user-login-response.model';
 
 export interface State {
   logined: boolean;

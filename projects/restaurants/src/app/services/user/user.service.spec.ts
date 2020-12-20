@@ -7,7 +7,7 @@ import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import mockUserLoginResponse from '../../mocks/user/user-login-response.mock';
 import mockUserLoginRequest from '../../mocks/user/user-login-request.mock';
-import { ResponseSuccess, UserLoginResponse } from '../../../../../core/src/lib/models';
+import { ResponseSuccess, UserLoginResponse } from '../../models';
 
 describe('app.services.client.user.UserService', () => {
   let httpClient: HttpClient;

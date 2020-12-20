@@ -5,11 +5,11 @@ import { RootStoreState } from '../../index';
 import { catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { ActionTypes, GetPizzas, GetPizzasFailure, GetPizzasSuccess } from './pizzas.actions';
 import { of } from 'rxjs';
-import { ResponseSuccess } from '../../../../../../../core/src/lib/models';
-import { ResponseError } from '../../../../../../../core/src/lib/models';
+import { ResponseSuccess } from '../../../../models';
+import { ResponseError } from '../../../../models';
 import { AppStoreActions } from '../../app';
 import { PizzasService } from '../../../../services/pizzas/pizzas.service';
-import { GetPizzasResponse } from '../../../../../../../core/src/lib/models';
+import { GetPizzasResponse } from '../../../../models';
 import { getUserTokenState } from '../user/user.selectors';
 
 /**

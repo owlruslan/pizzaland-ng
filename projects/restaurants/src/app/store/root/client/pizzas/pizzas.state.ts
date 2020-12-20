@@ -1,4 +1,4 @@
-import { GetPizzasResponse } from '../../../../../../../core/src/lib/models/pizzas/get-pizzas-response.model';
+import { GetPizzasResponse } from '../../../../models/pizzas/get-pizzas-response.model';
 
 export interface State {
   pizzasResponse: GetPizzasResponse;

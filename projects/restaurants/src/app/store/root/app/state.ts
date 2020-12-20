@@ -1,4 +1,4 @@
-import { ResponseError } from '../../../../../../core/src/lib/models/response/response-error.model';
+import { ResponseError } from '../../../models/response/response-error.model';
 
 export interface State {
   errorResponse: ResponseError;

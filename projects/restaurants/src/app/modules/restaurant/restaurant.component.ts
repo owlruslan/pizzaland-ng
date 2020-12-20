@@ -8,7 +8,7 @@ import {
   PizzasStoreActions,
   PizzasStoreSelectors,
 } from '../../store/root/client';
-import { GetPizzasResponse } from '../../../../../core/src/lib/models';
+import { GetPizzasResponse } from '../../models';
 import { Unsubscribe } from '../../../../../core/src/lib/components';
 import { RootStoreState } from '../../store/root';
 

@@ -2,9 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { APIService } from '../../../../../core/src/lib/services/api-service.interface';
-import { UserLoginResponse } from '../../../../../core/src/lib/models/user/user-login-response.model';
-import { ResponseSuccess } from '../../../../../core/src/lib/models/response/response-success.model';
-import { UserLoginRequest } from '../../../../../core/src/lib/models/user/user-login-request.model';
+import { UserLoginResponse } from '../../models/user/user-login-response.model';
+import { ResponseSuccess } from '../../models/response/response-success.model';
+import { UserLoginRequest } from '../../models/user/user-login-request.model';
 import { environment } from '../../../environments/environment';
 
 /**

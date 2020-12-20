@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { APIService } from '../../../../../core/src/lib/services';
 import { SearchAPI } from './search-api';
 import { environment } from '../../../environments/environment';
-import { Restaurant } from '../../../../../core/src/lib/models/restaurants/restaurant';
+import { Restaurant } from '../../models/restaurants/restaurant';
 
 /**
  * Implementation of Search APIs.

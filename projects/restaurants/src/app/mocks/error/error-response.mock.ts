@@ -1,4 +1,4 @@
-import { ResponseError } from '../../../../../core/src/lib/models';
+import { ResponseError } from '../../models';
 
 const mockErrorResponse = new ResponseError();
 mockErrorResponse.error = 'Error';

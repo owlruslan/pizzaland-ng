@@ -1,5 +1,5 @@
 import { ActionTypes, Login, LoginFailure, LoginSuccess } from './user.actions';
-import { ResponseError, ResponseSuccess, UserLoginRequest, UserLoginResponse } from '../../../../../../../core/src/lib/models';
+import { ResponseError, ResponseSuccess, UserLoginRequest, UserLoginResponse } from '../../../../models';
 
 describe('app.store.root.client.user.Actions', () => {
   describe('Login', () => {

@@ -8,6 +8,8 @@ import { SearchService } from '../../services/search/search.service';
 import { SearchBarModule } from '../shared/search-bar/search-bar.module';
 import { RestaurantCardModule } from '../shared/restaurant-card/restaurant-card.module';
 import { SearchMockService } from '../../services/search/search-mock.service';
+import { RestaurantsMockService } from '../../services/restaurants/restaurants-mock.service';
+import { RestaurantsService } from '../../services/restaurants/restaurants.service';
 
 @NgModule({
   declarations: [RestaurantsComponent],
@@ -20,6 +22,7 @@ import { SearchMockService } from '../../services/search/search-mock.service';
   ],
   providers: [
     { provide: SearchService, useClass: SearchMockService },
+    { provide: RestaurantsService, useClass: RestaurantsMockService },
   ],
 })
 export class RestaurantsModule {}

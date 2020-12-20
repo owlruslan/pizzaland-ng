@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { APIService } from '../../../../../core/src/lib/services';
-import { GetPizzasResponse, ResponseSuccess } from '../../../../../core/src/lib/models';
+import { GetPizzasResponse, ResponseSuccess } from '../../models';
 import mockGetPizzasResponse from '../../mocks/pizzas/get-pizzas-response.mock';
 
 

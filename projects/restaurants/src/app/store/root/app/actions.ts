@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { ResponseError } from '../../../../../../core/src/lib/models/response/response-error.model';
+import { ResponseError } from '../../../models/response/response-error.model';
 
 export enum ActionTypes {
   AddErrorResponse = '[Errors] Add Error Response',
