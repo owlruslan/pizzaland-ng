@@ -16,7 +16,7 @@ export class SearchBarComponent implements OnInit {
   public isViewActive = false;
   public isSearching = false;
 
-  public searchResults$ = new BehaviorSubject([]);
+  public searchResults$: BehaviorSubject<any> = new BehaviorSubject([]);
 
   private get searchQuery(): FormControl {
     return this.searchForm.controls.searchQuery as FormControl;
