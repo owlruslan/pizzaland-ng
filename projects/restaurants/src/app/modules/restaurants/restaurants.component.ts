@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RestaurantsService } from '../../services/restaurants/restaurants.service';
 import { Observable } from 'rxjs';
 import { Restaurant } from '../../models/restaurants/restaurant';
