@@ -8,7 +8,7 @@
   <div class="restaurants">
     <restaurants-restaurant-card
       *ngFor="let restaurant of restaurants | async"
-      [routerLink]="restaurant.toString()"
+      [routerLink]="restaurant?.id"
       [model]="restaurant"
     ></restaurants-restaurant-card>
   </div>
