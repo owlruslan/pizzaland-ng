@@ -6,8 +6,10 @@ import * as ClientStoreState from './state';
 import * as UserStoreReducer from './user/user.reducer';
 import * as PizzasStoreReducer from './pizzas/pizzas.reducer';
 import * as BasketStoreReducer from './basket/basket.reducer';
+import * as RestaurantsStoreReducer from './restaurants/restaurants.reducer';
 import { UserEffects } from './user/user.effects';
 import { PizzasEffects } from './pizzas/pizzas.effects';
+import { RestaurantsEffects } from './restaurants/restaurants.effects';
 
 export const FEATURE_REDUCER_TOKEN = new InjectionToken<ActionReducerMap<ClientStoreState.State>>('Client Feature Reducers');
 
@@ -20,6 +22,7 @@ export function getReducers(): ActionReducerMap<ClientStoreState.State> {
     pizzas: PizzasStoreReducer.reducer,
     // @ts-ignore
     basket: BasketStoreReducer.reducer,
+    restaurants: RestaurantsStoreReducer.reducer,
   };
 }
 
@@ -29,6 +32,7 @@ export function getReducers(): ActionReducerMap<ClientStoreState.State> {
     EffectsModule.forFeature([
       UserEffects,
       PizzasEffects,
+      RestaurantsEffects,
     ]),
     StoreModule.forFeature('client', FEATURE_REDUCER_TOKEN),
   ],
