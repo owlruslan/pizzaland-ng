@@ -1,6 +1,6 @@
-import { loadRestaurants, loadRestaurantsError, loadRestaurantsSuccess, RestaurantsActions } from './restaurants.actions';
-import { initialState, State } from './restaurants.state';
-import { Action, createReducer, on } from '@ngrx/store';
+import {loadRestaurants, loadRestaurantsError, loadRestaurantsSuccess} from './restaurants.actions';
+import {initialState, State} from './restaurants.state';
+import {Action, createReducer, on} from '@ngrx/store';
 
 const scoreboardReducer = createReducer(
   initialState,
