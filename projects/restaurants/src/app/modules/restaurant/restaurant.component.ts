@@ -10,6 +10,7 @@ import {Unsubscribe} from '../../../../../core/src/lib/components';
 import {RootStoreState} from '../../store/root';
 import {RestaurantsService} from '../../services/restaurants/restaurants.service';
 import {Restaurant} from '../../models/restaurants/restaurant';
+import {CursorType} from '../shared/restaurant-card/restaurant-card.component';
 
 @Component({
   selector: 'restaurants-pizzas',
@@ -27,6 +28,7 @@ import {Restaurant} from '../../models/restaurants/restaurant';
   ]
 })
 export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestroy, Unsubscribe {
+  readonly cursorTypes = CursorType;
   readonly unsubscribe = new Subject<void>();
 
   readonly restaurant: Observable<Restaurant> = this.restaurantsService.getRestaurant('0');
@@ -75,8 +77,6 @@ export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestr
 
   ngOnInit(): void {
     this.store.dispatch(new PizzasStoreActions.GetPizzas());
-
-    this.restaurant.subscribe(x => console.log(x));
   }
 
   ngAfterContentChecked(): void {
