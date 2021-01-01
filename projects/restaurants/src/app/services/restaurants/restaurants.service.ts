@@ -19,4 +19,9 @@ export class RestaurantsService implements APIService, RestaurantsAPI {
     const params = new HttpParams().set('query', query || '');
     return this.http.get<Restaurant[]>(`${this.host}/api/v1/restaurants`, { params });
   }
+
+  getRestaurant(id: string): Observable<Restaurant> {
+    const params = new HttpParams().set('id', id || '');
+    return this.http.get<Restaurant>(`${this.host}/api/v1/restaurant`, { params });
+  }
 }

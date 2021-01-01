@@ -4,13 +4,12 @@ import {select, Store} from '@ngrx/store';
 import {map, takeUntil} from 'rxjs/operators';
 import {FormBuilder} from '@angular/forms';
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
-import {
-  PizzasStoreActions,
-  PizzasStoreSelectors,
-} from '../../store/root/client';
-import { GetPizzasResponse } from '../../models';
-import { Unsubscribe } from '../../../../../core/src/lib/components';
-import { RootStoreState } from '../../store/root';
+import {PizzasStoreActions, PizzasStoreSelectors,} from '../../store/root/client';
+import {GetPizzasResponse} from '../../models';
+import {Unsubscribe} from '../../../../../core/src/lib/components';
+import {RootStoreState} from '../../store/root';
+import {RestaurantsService} from '../../services/restaurants/restaurants.service';
+import {Restaurant} from '../../models/restaurants/restaurant';
 
 @Component({
   selector: 'restaurants-pizzas',
@@ -29,6 +28,8 @@ import { RootStoreState } from '../../store/root';
 })
 export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestroy, Unsubscribe {
   readonly unsubscribe = new Subject<void>();
+
+  readonly restaurant: Observable<Restaurant> = this.restaurantsService.getRestaurant('0');
 
   form = this.fb.group({
     toppings: [[]]
@@ -67,12 +68,15 @@ export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestr
 
   constructor(
     private store: Store<RootStoreState.State>,
+    private restaurantsService: RestaurantsService,
     private fb: FormBuilder
   ) {
   }
 
   ngOnInit(): void {
     this.store.dispatch(new PizzasStoreActions.GetPizzas());
+
+    this.restaurant.subscribe(x => console.log(x));
   }
 
   ngAfterContentChecked(): void {

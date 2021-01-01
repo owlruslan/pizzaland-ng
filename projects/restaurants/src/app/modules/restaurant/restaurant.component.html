@@ -1,6 +1,9 @@
 <div class="container" [formGroup]="form">
   <restaurants-breadcrumbs class="breadcrumbs" path="restaurants"></restaurants-breadcrumbs>
-  <restaurants-restaurant-card [style]="{'height': '340px'}"></restaurants-restaurant-card>
+  <restaurants-restaurant-card
+    [style]="{'height': '340px'}"
+    [model]="restaurant | async"
+  ></restaurants-restaurant-card>
   <h1>Pizzas</h1>
   <div class="filter">
     <app-pizza-toppings formControlName="toppings"></app-pizza-toppings>
