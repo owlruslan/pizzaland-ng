@@ -8,4 +8,8 @@ export class RestaurantsMockService implements RestaurantsAPI {
   getRestaurants(query?: string): Observable<Restaurant[]> {
     return of(mockRestaurants);
   }
+
+  getRestaurant(id: string): Observable<Restaurant> {
+    return of(mockRestaurants[+id]);
+  }
 }

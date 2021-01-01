@@ -8,4 +8,10 @@ export interface RestaurantsAPI {
    * Get restaurants list.
    */
   getRestaurants(query?: string): Observable<Restaurant[]>;
+
+  /**
+   * GET: /api/v1/restaurant
+   * Get restaurant by id.
+   */
+  getRestaurant(id: string): Observable<Restaurant>;
 }
