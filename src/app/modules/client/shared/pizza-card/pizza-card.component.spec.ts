@@ -1,17 +1,17 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {RestaurantCardComponent} from './restaurant-card.component';
+import {PizzaCardComponent} from './pizza-card.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {provideMockStore} from '@ngrx/store/testing';
-import mockPizza from '../../../mocks/pizzas/pizza.mock';
+import mockPizza from '../../../../mocks/pizzas/pizza.mock';
 
 describe('app.modules.shared.pizza-card.RestaurantCardComponent', () => {
-  let component: RestaurantCardComponent;
-  let fixture: ComponentFixture<RestaurantCardComponent>;
+  let component: PizzaCardComponent;
+  let fixture: ComponentFixture<PizzaCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RestaurantCardComponent ],
+      declarations: [ PizzaCardComponent ],
       providers: [
         provideMockStore()
       ],
@@ -20,7 +20,7 @@ describe('app.modules.shared.pizza-card.RestaurantCardComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RestaurantCardComponent);
+    fixture = TestBed.createComponent(PizzaCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

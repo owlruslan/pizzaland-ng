@@ -7,10 +7,10 @@ import {FormBuilder} from '@angular/forms';
 import {MemoizedSelector} from '@ngrx/store';
 import {cold} from 'jasmine-marbles';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import mockGetPizzasResponse from '../../mocks/pizzas/get-pizzas-response.mock';
-import { PizzasStoreSelectors } from '../../store/root/client';
-import { RootStoreState } from '../../store/root';
-import { GetPizzasResponse } from '../../models';
+import mockGetPizzasResponse from '../../../mocks/pizzas/get-pizzas-response.mock';
+import { PizzasStoreSelectors } from '../../../store/root/client';
+import { RootStoreState } from '../../../store/root';
+import { GetPizzasResponse } from '../../../models';
 
 
 const initialState = {

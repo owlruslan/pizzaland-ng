@@ -12,7 +12,7 @@ $topping-size: 10%;
   }
 
   &__board {
-    background: url("~src/assets/toppings/board.svg") no-repeat 0 20px;
+    background: url("../../../../../assets/toppings/board.svg") no-repeat 0 20px;
     background-size: contain;
     width: 200px;
     height: 200px;
@@ -23,7 +23,7 @@ $topping-size: 10%;
   }
 
   &__base {
-    background: url("~src/assets/toppings/base.svg") no-repeat;
+    background: url("../../../../../assets/toppings/base.svg") no-repeat;
     background-size: contain;
     width: 160px;
     height: 100px;
@@ -46,7 +46,7 @@ $topping-size: 10%;
     background-size: contain;
 
     &--anchovy {
-      background-image: url("~src/assets/toppings/anchovy.svg");
+      background-image: url("../../../../../assets/toppings/anchovy.svg");
       width: $topping-size;
       height: $topping-size;
 
@@ -71,7 +71,7 @@ $topping-size: 10%;
     }
 
     &--bacon {
-      background-image: url("~src/assets/toppings/bacon.svg");
+      background-image: url("../../../../../assets/toppings/bacon.svg");
       width: $topping-size;
       height: $topping-size;
 
@@ -102,7 +102,7 @@ $topping-size: 10%;
     }
 
     &--basil {
-      background-image: url("~src/assets/toppings/basil.svg");
+      background-image: url("../../../../../assets/toppings/basil.svg");
       width: $topping-size;
       height: $topping-size;
 
@@ -127,7 +127,7 @@ $topping-size: 10%;
     }
 
     &--chili {
-      background-image: url("~src/assets/toppings/chili.svg");
+      background-image: url("../../../../../assets/toppings/chili.svg");
       width: $topping-size;
       height: $topping-size;
 
@@ -158,7 +158,7 @@ $topping-size: 10%;
     }
 
     &--mozzarella {
-      background-image: url("~src/assets/toppings/mozzarella.svg");
+      background-image: url("../../../../../assets/toppings/mozzarella.svg");
       width: $topping-size;
       height: $topping-size;
 
@@ -183,7 +183,7 @@ $topping-size: 10%;
     }
 
     &--mushroom {
-      background-image: url("~src/assets/toppings/mushroom.svg");
+      background-image: url("../../../../../assets/toppings/mushroom.svg");
       width: $topping-size;
       height: $topping-size;
 
@@ -214,7 +214,7 @@ $topping-size: 10%;
     }
 
     &--olive {
-      background-image: url("~src/assets/toppings/olive.svg");
+      background-image: url("../../../../../assets/toppings/olive.svg");
       width: $topping-size;
       height: $topping-size;
 
@@ -245,7 +245,7 @@ $topping-size: 10%;
     }
 
     &--onion {
-      background-image: url("~src/assets/toppings/onion.svg");
+      background-image: url("../../../../../assets/toppings/onion.svg");
       width: $topping-size;
       height: $topping-size;
 
@@ -276,7 +276,7 @@ $topping-size: 10%;
     }
 
     &--pepper {
-      background-image: url("~src/assets/toppings/pepper.svg");
+      background-image: url("../../../../../assets/toppings/pepper.svg");
       width: 20px;
       height: 20px;
 
@@ -307,7 +307,7 @@ $topping-size: 10%;
     }
 
     &--pepperoni {
-      background-image: url("~src/assets/toppings/pepperoni.svg");
+      background-image: url("../../../../../assets/toppings/pepperoni.svg");
       width: 20px;
       height: 20px;
 
@@ -338,7 +338,7 @@ $topping-size: 10%;
     }
 
     &--sweetcorn {
-      background-image: url("~src/assets/toppings/sweetcorn.svg");
+      background-image: url("../../../../../assets/toppings/sweetcorn.svg");
       width: 20px;
       height: 20px;
 
@@ -363,7 +363,7 @@ $topping-size: 10%;
     }
 
     &--tomato {
-      background-image: url("~src/assets/toppings/tomato.svg");
+      background-image: url("../../../../../assets/toppings/tomato.svg");
       width: 20px;
       height: 20px;
 

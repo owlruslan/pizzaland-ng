@@ -4,13 +4,13 @@ import {select, Store} from '@ngrx/store';
 import {map, takeUntil} from 'rxjs/operators';
 import {FormBuilder} from '@angular/forms';
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
-import {PizzasStoreActions, PizzasStoreSelectors,} from '../../store/root/client';
-import {GetPizzasResponse} from '../../models';
-import {RootStoreState} from '../../store/root';
-import {RestaurantsService} from '../../services/restaurants/restaurants.service';
-import {Restaurant} from '../../models/restaurants/restaurant';
+import {PizzasStoreActions, PizzasStoreSelectors,} from '../../../store/root/client';
+import {GetPizzasResponse} from '../../../models';
+import {RootStoreState} from '../../../store/root';
+import {RestaurantsService} from '../../../services/restaurants/restaurants.service';
+import {Restaurant} from '../../../models/restaurants/restaurant';
 import {CursorType} from '../shared/restaurant-card/restaurant-card.component';
-import {Unsubscribe} from '../../components/unsubscribe.interface';
+import {Unsubscribe} from '../../../components/unsubscribe.interface';
 
 @Component({
   selector: 'app-pizzas',
