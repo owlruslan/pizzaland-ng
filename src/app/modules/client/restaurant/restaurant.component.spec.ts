@@ -11,6 +11,7 @@ import mockGetPizzasResponse from '../../../mocks/pizzas/get-pizzas-response.moc
 import { PizzasStoreSelectors } from '../../../store/root/client';
 import { RootStoreState } from '../../../store/root';
 import { GetPizzasResponse } from '../../../models';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 
 const initialState = {
@@ -30,7 +31,8 @@ describe('app.modules.restaurant.RestaurantComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ RestaurantComponent ],
       imports: [
-        NoopAnimationsModule
+        NoopAnimationsModule,
+        HttpClientTestingModule
       ],
       providers: [
         provideMockStore({initialState}),

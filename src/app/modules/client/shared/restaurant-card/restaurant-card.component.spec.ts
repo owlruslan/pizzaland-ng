@@ -3,7 +3,6 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {RestaurantCardComponent} from './restaurant-card.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {provideMockStore} from '@ngrx/store/testing';
-import mockPizza from '../../../../mocks/pizzas/pizza.mock';
 
 describe('app.modules.shared.pizza-card.RestaurantCardComponent', () => {
   let component: RestaurantCardComponent;
@@ -33,17 +32,5 @@ describe('app.modules.shared.pizza-card.RestaurantCardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should set pizza', () => {
-    // @ts-ignore
-    component.pizza$.next(null);
-    component.pizza = mockPizza;
-    expect(component.pizza).toEqual(mockPizza);
-  });
-
-  it('should get pizza', () => {
-    component.pizza = mockPizza;
-    expect(component.pizza).toEqual(mockPizza);
   });
 });
