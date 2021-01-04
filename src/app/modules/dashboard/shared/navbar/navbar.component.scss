@@ -1,0 +1,90 @@
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar {
+  display: flex;
+  max-width: 1280px;
+  width: 100%;
+  margin: 20px auto;
+  justify-content: space-between;
+
+  &__left {
+    display: flex;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: flex-start;
+    margin-right: 60px;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 42px;
+
+    &:hover {
+      svg {
+        animation: rotate 3s linear infinite;
+      }
+    }
+
+    svg {
+      margin-left: 2px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    font-size: 18px;
+
+    &__item {
+      cursor: pointer;
+      font-weight: 900;
+      margin-right: 30px;
+      transition: 200ms ease-out;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      &.active {
+        color: #FF0154;
+
+        svg {
+          fill: #FF0154;
+        }
+      }
+
+      &.auth {
+        svg {
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+}
+
+.basket {
+  position: relative;
+  width: 44px;
+  height: 44px;
+
+  &__count {
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    font-size: 14px;
+    position: absolute;
+    background-color: #FF0154;
+    color: #ffffff;
+    border-radius: 16px;
+    font-weight: 900;
+  }
+}

@@ -14,8 +14,5 @@ import {ClientRoutingModule} from './client-routing.module';
     ClientRoutingModule,
     NavbarModule,
   ],
-  providers: [
-    { provide: RestaurantsService, useClass: RestaurantsMockService },
-  ],
 })
 export class ClientModule { }

@@ -6,6 +6,8 @@ import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RootStoreModule} from './store/root';
+import {RestaurantsService} from './services/restaurants/restaurants.service';
+import {RestaurantsMockService} from './services/restaurants/restaurants-mock.service';
 
 
 @NgModule({
@@ -18,6 +20,9 @@ import {RootStoreModule} from './store/root';
     BrowserAnimationsModule,
     AppRoutingModule,
     RootStoreModule,
+  ],
+  providers: [
+    { provide: RestaurantsService, useClass: RestaurantsMockService },
   ],
   bootstrap: [AppComponent]
 })
