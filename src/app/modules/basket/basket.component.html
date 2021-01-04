@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Basket</h1>
+  <app-pizza-preview [pizza]="activePizza$ | async"></app-pizza-preview>
+  <div class="pizzas">
+    <ng-container *ngFor="let pizza of (pizzasResponse$ | async)?.pizzas">
+      <app-pizza-card
+        [pizza]="pizza"
+        class="pizza-card"
+        (mouseenter)="onPizzaHover(pizza)">
+      </app-pizza-card>
+    </ng-container>
+  </div>
+  <div class="total">
+    <div class="total__title">
+      Total
+    </div>
+    <div class="total__value">
+      {{ total$ | async | currency: 'USD'}}
+    </div>
+  </div>
+</div>
+
