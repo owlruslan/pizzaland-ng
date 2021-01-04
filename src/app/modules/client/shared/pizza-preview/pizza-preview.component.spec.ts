@@ -1,26 +1,24 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {PizzaCardComponent} from './pizza-card.component';
+import {PizzaPreviewComponent} from './pizza-preview.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {provideMockStore} from '@ngrx/store/testing';
-import mockPizza from '../../../mocks/pizzas/pizza.mock';
+import {ReactiveFormsModule} from '@angular/forms';
+import mockPizza from '../../../../mocks/pizzas/pizza.mock';
 
-describe('app.modules.shared.pizza-card.RestaurantCardComponent', () => {
-  let component: PizzaCardComponent;
-  let fixture: ComponentFixture<PizzaCardComponent>;
+describe('app.modules.shared.pizza-preview.PizzaPreviewComponent', () => {
+  let component: PizzaPreviewComponent;
+  let fixture: ComponentFixture<PizzaPreviewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PizzaCardComponent ],
-      providers: [
-        provideMockStore()
-      ],
+      declarations: [ PizzaPreviewComponent ],
+      imports: [ReactiveFormsModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PizzaCardComponent);
+    fixture = TestBed.createComponent(PizzaPreviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -4,9 +4,9 @@ import { BasketComponent } from './basket.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { MemoizedSelector } from '@ngrx/store';
-import { BasketStoreSelectors } from '../../store/root/client';
-import { RootStoreState } from '../../store/root';
-import mockGetPizzasResponse from '../../mocks/pizzas/get-pizzas-response.mock';
+import { BasketStoreSelectors } from '../../../store/root/client';
+import { RootStoreState } from '../../../store/root';
+import mockGetPizzasResponse from '../../../mocks/pizzas/get-pizzas-response.mock';
 
 describe('app.modules.basket.BasketComponent', () => {
   let component: BasketComponent;

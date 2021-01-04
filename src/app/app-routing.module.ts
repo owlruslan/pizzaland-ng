@@ -1,28 +1,19 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'restaurants',
-    loadChildren: () => import('./modules/restaurants/restaurants.module').then(mod => mod.RestaurantsModule),
-  },
-  {
-    path: 'restaurants/:id',
-    loadChildren: () => import('./modules/restaurant/restaurant.module').then(mod => mod.RestaurantModule),
-  },
-  {
-    path: 'basket',
-    loadChildren: () => import('./modules/basket/basket.module').then(mod => mod.BasketModule),
-  },
-  {
     path: '',
-    redirectTo: 'restaurants',
-    pathMatch: 'full',
+    loadChildren: () => import('./modules/client/client.module').then(mod => mod.ClientModule),
   },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./modules/dashboard/dashboard.module').then(mod => mod.DashboardModule),
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {enableTracing: true})],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
