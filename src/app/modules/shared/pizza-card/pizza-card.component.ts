@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { Pizza } from '../../../../models';
-import { RootStoreState } from '../../../../store/root';
-import { BasketStoreActions } from '../../../../store/root/client';
-import {ButtonType} from '../../../../uikit/button/button.component';
+import { Pizza } from '../../../models';
+import { RootStoreState } from '../../../store/root';
+import { BasketStoreActions } from '../../../store/root/client';
+import {ButtonType} from '../../../uikit/button/button.component';
 
 @Component({
   selector: 'app-pizza-card',

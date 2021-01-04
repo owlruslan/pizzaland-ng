@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/angular/types-6-0';
 import { RestaurantCardComponent } from './restaurant-card.component';
 
 export default {
-  title: 'Restaurants / Modules / Shared / Restaurant Card',
+  title: 'Modules / Shared / Restaurant Card',
   component: RestaurantCardComponent,
 } as Meta;
 

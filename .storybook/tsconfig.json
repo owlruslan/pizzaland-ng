@@ -10,7 +10,7 @@
     "../**/*.test.ts"
   ],
   "include": [
-    "../projects/**/*",
+    "../src/**/*",
   ],
   "files": [
     "./typings.d.ts"

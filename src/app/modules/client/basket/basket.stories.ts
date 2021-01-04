@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BasketModule } from './basket.module';
 import { BasketComponent } from './basket.component';
 
-storiesOf('Restaurants / Modules / Basket', module).addDecorator(
+storiesOf('Modules / Basket', module).addDecorator(
   moduleMetadata({
     imports: [
       RouterTestingModule,

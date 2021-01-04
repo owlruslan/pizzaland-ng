@@ -3,7 +3,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { PizzaPreviewModule } from './pizza-preview.module';
 
-storiesOf('Restaurants / Modules / Shared / PizzaPreview', module)
+storiesOf('Modules / Shared / PizzaPreview', module)
   .addDecorator(
     moduleMetadata({
       imports: [

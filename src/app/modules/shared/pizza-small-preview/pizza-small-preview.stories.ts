@@ -1,22 +1,24 @@
 import {moduleMetadata, storiesOf} from '@storybook/angular';
 import {RouterTestingModule} from '@angular/router/testing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { PizzaToppingsModule } from './pizza-toppings.module';
+import { PizzaSmallPreviewModule } from './pizza-small-preview.module';
 
-storiesOf('Restaurants / Modules / Shared / Pizza Toppings', module)
+storiesOf('Modules / Shared / PizzaSmallPreview', module)
   .addDecorator(
     moduleMetadata({
       imports: [
         RouterTestingModule,
         BrowserAnimationsModule,
-        PizzaToppingsModule,
+        PizzaSmallPreviewModule,
       ],
     }),
   )
   .add('default', () => {
     return {
       template: `
-        <app-pizza-toppings></app-pizza-toppings>
+        <div style="position: relative; max-width: 240px;width: 240px;height: 200px;">
+            <app-pizza-small-preview></app-pizza-small-preview>
+        </div>
       `
     };
   });
