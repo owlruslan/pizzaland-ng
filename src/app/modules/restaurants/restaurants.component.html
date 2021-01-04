@@ -1,0 +1,10 @@
+ <div class="wrapper">
+  <h1>Restaurants</h1>
+  <div class="restaurants">
+    <app-restaurant-card
+      *ngFor="let restaurant of restaurants | async"
+      [routerLink]="restaurant?.id"
+      [model]="restaurant"
+    ></app-restaurant-card>
+  </div>
+</div>
