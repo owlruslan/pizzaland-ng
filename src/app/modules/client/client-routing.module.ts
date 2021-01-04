@@ -8,17 +8,22 @@ const routes: Routes = [
     component: ClientComponent,
     children: [
       {
-        path: '',
+        path: 'restaurants',
         loadChildren: () => import('./restaurants/restaurants.module').then(mod => mod.RestaurantsModule),
       },
       {
-        path: ':id',
+        path: 'restaurants/:id',
         loadChildren: () => import('./restaurant/restaurant.module').then(mod => mod.RestaurantModule),
       },
       {
         path: 'basket',
         loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule),
       },
+      {
+        path: '',
+        redirectTo: 'restaurants',
+        pathMatch: 'full'
+      }
     ]
   }
 ];
