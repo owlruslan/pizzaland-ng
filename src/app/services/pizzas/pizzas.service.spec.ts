@@ -38,7 +38,7 @@ describe('app.services.client.user.PizzasService', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('#getPizzas', () => {
+  xdescribe('#getPizzas', () => {
     let url: string;
 
     beforeEach(() => {
