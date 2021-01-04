@@ -4,7 +4,7 @@ import {provideMockStore} from '@ngrx/store/testing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { PizzaCardModule } from './pizza-card.module';
 
-storiesOf('Restaurants / Modules / Shared / RestaurantCard', module)
+storiesOf('Modules / Shared / RestaurantCard', module)
   .addDecorator(
     moduleMetadata({
       imports: [

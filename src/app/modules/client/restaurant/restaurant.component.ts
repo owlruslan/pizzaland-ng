@@ -9,7 +9,7 @@ import {GetPizzasResponse} from '../../../models';
 import {RootStoreState} from '../../../store/root';
 import {RestaurantsService} from '../../../services/restaurants/restaurants.service';
 import {Restaurant} from '../../../models/restaurants/restaurant';
-import {CursorType} from '../shared/restaurant-card/restaurant-card.component';
+import {CursorType} from '../../shared/restaurant-card/restaurant-card.component';
 import {Unsubscribe} from '../../../components/unsubscribe.interface';
 
 @Component({

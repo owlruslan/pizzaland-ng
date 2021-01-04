@@ -4,7 +4,7 @@ import {provideMockStore} from '@ngrx/store/testing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NavbarModule } from './navbar.module';
 
-storiesOf('Restaurants / Modules / Shared / Navbar', module)
+storiesOf('Modules / Dashboard / Shared / Navbar', module)
   .addDecorator(
     moduleMetadata({
       imports: [
