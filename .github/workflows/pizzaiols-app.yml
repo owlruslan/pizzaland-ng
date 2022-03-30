@@ -29,7 +29,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm ci
-      - run: npm build --if-present
-      - run: npm test
+          cache: 'yarn'
+          cache-dependency-path: src/pizzaiols-app/yarn.lock
+      - run: yarn
+      - run: yarn build --if-present
+      - run: yarn test
