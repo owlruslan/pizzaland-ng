@@ -1,27 +1,30 @@
-# PizzaiolsApp
+# Pizzaiols
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+Catalog of pizza restaurants.
+The goal is to learn Angular stack.
 
-## Development server
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://storybook.js.org/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Stack
+* [Angular](https://angular.io/)
+    * [TypeScript](https://www.typescriptlang.org/)
+    * [SCSS](https://sass-lang.com/)
+    * [NgRx](https://ngrx.io/)
+* [Storybook](https://storybook.js.org/)
 
-## Code scaffolding
+## Install
+Run command `yarn`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Run
+* Spotify application `yarn start`
+* Tests `yarn test`
+* Storybook `yarn storybook`
 
-## Build
+**Links**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* [How to build a micro-frontends architecture, with Angular and Webpack Module Federation](https://medium.com/agorapulse-stories/building-a-micro-frontends-architecture-in-2021-with-angular-and-webpack-module-federation-50d073617645)
+* [Micro-frontend example project from github](https://github.com/benorama/mfe-advanced-demo)
+* [Multi Framework(version) Micro Frontends with Module Federation and Web Components](https://github.com/manfredsteyer/multi-framework-micro-frontend)
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Author
+[Ruslan Usmanov](https://github.com/nonameengineer)

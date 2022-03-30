@@ -1,8 +1,14 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RootStoreModule} from './store/root';
+import {RestaurantsService} from './services/restaurants/restaurants.service';
+import {RestaurantsMockService} from './services/restaurants/restaurants-mock.service';
+
 
 @NgModule({
   declarations: [
@@ -10,9 +16,14 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    RootStoreModule,
   ],
-  providers: [],
+  providers: [
+    { provide: RestaurantsService, useClass: RestaurantsMockService },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

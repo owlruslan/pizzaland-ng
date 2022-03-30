@@ -44,7 +44,7 @@ export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestr
 
   // @ts-ignore
   pizzas$: Observable<any[]> = combineLatest([
-    this.form.controls.toppings.valueChanges,
+    this.form.controls['toppings'].valueChanges,
     this.pizzasResponse$
   ]).pipe(
     map((results) => {
@@ -80,7 +80,7 @@ export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestr
   }
 
   ngAfterContentChecked(): void {
-    this.form.controls.toppings.enable();
+    this.form.controls['toppings'].enable();
   }
 
 
