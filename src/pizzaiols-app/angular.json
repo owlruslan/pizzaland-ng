@@ -1,150 +1,111 @@
 {
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
-  "defaultProject": "pizzaiols",
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
-      },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
-    }
-  },
+  "newProjectRoot": "projects",
   "projects": {
-    "pizzaiols": {
+    "pizzaiols-app": {
       "projectType": "application",
-      "root": "apps/pizzaiols",
-      "sourceRoot": "apps/pizzaiols/src",
-      "prefix": "pizzaiols",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/pizzaiols",
-            "index": "apps/pizzaiols/src/index.html",
-            "main": "apps/pizzaiols/src/main.ts",
-            "polyfills": "apps/pizzaiols/src/polyfills.ts",
-            "tsConfig": "apps/pizzaiols/tsconfig.app.json",
-            "aot": true,
+            "outputPath": "dist/pizzaiols-app",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
-              "apps/pizzaiols/src/favicon.ico",
-              "apps/pizzaiols/src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
-            "styles": ["apps/pizzaiols/src/styles.scss"],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/pizzaiols/src/environments/environment.ts",
-                  "with": "apps/pizzaiols/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
-              ]
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "pizzaiols:build"
-          },
           "configurations": {
             "production": {
-              "browserTarget": "pizzaiols:build:production"
+              "browserTarget": "pizzaiols-app:build:production"
+            },
+            "development": {
+              "browserTarget": "pizzaiols-app:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pizzaiols:build"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/pizzaiols/src/**/*.ts",
-              "apps/pizzaiols/src/**/*.html"
-            ]
+            "browserTarget": "pizzaiols-app:build"
           }
         },
         "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/pizzaiols"],
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "jestConfig": "apps/pizzaiols/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "pizzaiols-e2e": {
-      "root": "apps/pizzaiols-e2e",
-      "sourceRoot": "apps/pizzaiols-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/pizzaiols-e2e/cypress.json",
-            "tsConfig": "apps/pizzaiols-e2e/tsconfig.e2e.json",
-            "devServerTarget": "pizzaiols:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "pizzaiols:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/pizzaiols-e2e/**/*.{js,ts}"]
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
           }
         }
       }
     }
-  }
+  },
+  "defaultProject": "pizzaiols-app"
 }
