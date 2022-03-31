@@ -1,0 +1,9 @@
+services:
+
+  # Frontend
+
+  pizzaiols-app:
+    build: ./src/pizzaiols-app
+    image: pizzaiols-app
+    ports:
+      - 4200:4200
