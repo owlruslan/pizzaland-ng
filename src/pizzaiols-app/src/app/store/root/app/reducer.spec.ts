@@ -1,3 +1,3 @@
-describe('root.client.store.errors.Errors Reducer', () => {
+describe('root.pages.store.errors.Errors Reducer', () => {
 
 });

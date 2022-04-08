@@ -16,7 +16,7 @@ import { UserService } from '../../../../services/user/user.service';
 import { Login, LoginSuccess } from './user.actions';
 import { ResponseSuccess, UserLoginRequest, UserLoginResponse } from '../../../../models';
 
-describe('app.store.root.client.user.UserEffects', () => {
+describe('app.store.root.pages.user.UserEffects', () => {
   let actions$: Observable<Action>;
   let effects: UserEffects;
 

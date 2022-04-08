@@ -1,14 +1,30 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {AppComponent} from "./app.component";
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./modules/client/client.module').then(mod => mod.ClientModule),
-  },
-  {
-    path: 'dashboard',
-    loadChildren: () => import('./modules/dashboard/dashboard.module').then(mod => mod.DashboardModule),
+    component: AppComponent,
+    children: [
+      {
+        path: 'restaurants',
+        loadChildren: () => import('./pages/restaurants/restaurants.module').then(mod => mod.RestaurantsModule),
+      },
+      {
+        path: 'restaurants/:id',
+        loadChildren: () => import('./pages/restaurant/restaurant.module').then(mod => mod.RestaurantModule),
+      },
+      {
+        path: 'basket',
+        loadChildren: () => import('./pages/basket/basket.module').then(mod => mod.BasketModule),
+      },
+      {
+        path: '',
+        redirectTo: 'restaurants',
+        pathMatch: 'full'
+      }
+    ]
   }
 ];
 

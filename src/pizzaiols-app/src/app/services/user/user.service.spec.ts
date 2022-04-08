@@ -9,7 +9,7 @@ import mockUserLoginResponse from '../../mocks/user/user-login-response.mock';
 import mockUserLoginRequest from '../../mocks/user/user-login-request.mock';
 import { ResponseSuccess, UserLoginResponse } from '../../models';
 
-describe('app.services.client.user.UserService', () => {
+describe('app.services.pages.user.UserService', () => {
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
 

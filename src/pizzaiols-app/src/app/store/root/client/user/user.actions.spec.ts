@@ -1,7 +1,7 @@
 import { ActionTypes, Login, LoginFailure, LoginSuccess } from './user.actions';
 import { ResponseError, ResponseSuccess, UserLoginRequest, UserLoginResponse } from '../../../../models';
 
-describe('app.store.root.client.user.Actions', () => {
+describe('app.store.root.pages.user.Actions', () => {
   describe('Login', () => {
     it('should create an action', () => {
       const payload: { request: UserLoginRequest } = { request: new UserLoginRequest() };
