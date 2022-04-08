@@ -17,7 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'basket',
-        loadChildren: () => import('./pages/basket/basket.module').then(mod => mod.BasketModule),
+        loadChildren: () => import('./pages/cart/cart.module').then(mod => mod.CartModule),
       },
       {
         path: '',

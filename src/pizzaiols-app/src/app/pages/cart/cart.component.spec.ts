@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BasketComponent } from './basket.component';
+import { CartComponent } from './cart.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { MemoizedSelector } from '@ngrx/store';
@@ -8,9 +8,9 @@ import { BasketStoreSelectors } from '../../store/root/client';
 import { RootStoreState } from '../../store/root';
 import mockGetPizzasResponse from '../../mocks/pizzas/get-pizzas-response.mock';
 
-describe('app.modules.basket.BasketComponent', () => {
-  let component: BasketComponent;
-  let fixture: ComponentFixture<BasketComponent>;
+describe('app.modules.cart.CartComponent', () => {
+  let component: CartComponent;
+  let fixture: ComponentFixture<CartComponent>;
 
   let mockStore: MockStore;
   let mockPizzasResponseSelector: MemoizedSelector<RootStoreState.State, any>;
@@ -26,7 +26,7 @@ describe('app.modules.basket.BasketComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [BasketComponent],
+      declarations: [CartComponent],
       providers: [
         provideMockStore({ initialState }),
       ],
@@ -37,7 +37,7 @@ describe('app.modules.basket.BasketComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BasketComponent);
+    fixture = TestBed.createComponent(CartComponent);
 
     mockStore = TestBed.inject(MockStore);
     mockPizzasResponseSelector = mockStore.overrideSelector(

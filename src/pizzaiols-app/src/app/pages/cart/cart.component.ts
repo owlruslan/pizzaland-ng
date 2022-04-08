@@ -9,11 +9,11 @@ import { RootStoreState } from '../../store/root';
 import {Unsubscribe} from '../../components/unsubscribe.interface';
 
 @Component({
-  selector: 'app-basket',
-  templateUrl: './basket.component.html',
-  styleUrls: ['./basket.component.scss'],
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.scss'],
 })
-export class BasketComponent implements OnInit, OnDestroy, Unsubscribe {
+export class CartComponent implements OnInit, OnDestroy, Unsubscribe {
   readonly unsubscribe = new Subject<void>();
 
   pizzasResponse$: Observable<GetPizzasResponse> = this.store.pipe(
