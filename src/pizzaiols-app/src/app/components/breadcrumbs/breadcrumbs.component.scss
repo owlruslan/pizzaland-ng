@@ -6,6 +6,7 @@ ul {
 
   li {
     cursor: pointer;
+    transition: 200ms linear;
 
     a {
       margin-right: 24px;
@@ -16,12 +17,16 @@ ul {
         margin-right: 12px;
       }
 
+      svg path, span {
+        transition: 200ms;
+      }
+
       &:hover {
-        color: #1ea7fd;
+        color: var(--primary-color);
 
         svg path {
           &:nth-child(2) {
-            fill: #1ea7fd;
+            fill: var(--primary-color);
           }
         }
       }
