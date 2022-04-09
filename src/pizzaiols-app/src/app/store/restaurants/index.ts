@@ -7,3 +7,5 @@ export {
   restaurantsStoreSelectors,
   restaurantsStoreState,
 };
+
+export * from './restaurants-store.module';

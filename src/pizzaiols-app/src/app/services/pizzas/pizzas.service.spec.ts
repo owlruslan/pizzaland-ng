@@ -9,7 +9,7 @@ import {GetPizzasResponse, ResponseSuccess} from '../../models';
 
 import {PizzasService} from './pizzas.service';
 
-describe('app.services.pages.user.PizzasService', () => {
+describe('PizzasService', () => {
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
 
@@ -17,8 +17,8 @@ describe('app.services.pages.user.PizzasService', () => {
 
   const unsubscribe = new Subject<void>();
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       providers: [PizzasService]
     });
@@ -26,7 +26,7 @@ describe('app.services.pages.user.PizzasService', () => {
     httpClient = TestBed.inject(HttpClient);
     httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(PizzasService);
-  }));
+  });
 
   afterEach(() => {
     // After every test, assert that there are no more pending requests.

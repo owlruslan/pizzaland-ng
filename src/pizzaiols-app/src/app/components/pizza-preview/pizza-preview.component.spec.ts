@@ -5,17 +5,17 @@ import mockPizza from '../../mocks/pizzas/pizza.mock';
 
 import {PizzaPreviewComponent} from './pizza-preview.component';
 
-describe('app.modules.shared.pizza-preview.PizzaPreviewComponent', () => {
+describe('PizzaPreviewComponent', () => {
   let component: PizzaPreviewComponent;
   let fixture: ComponentFixture<PizzaPreviewComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [PizzaPreviewComponent],
       imports: [ReactiveFormsModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PizzaPreviewComponent);

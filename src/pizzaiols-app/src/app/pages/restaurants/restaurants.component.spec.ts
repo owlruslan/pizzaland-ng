@@ -7,13 +7,12 @@ describe('RestaurantsComponent', () => {
   let component: RestaurantsComponent;
   let fixture: ComponentFixture<RestaurantsComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [RestaurantsComponent],
       imports: [HttpClientTestingModule]
-    })
-      .compileComponents();
-  }));
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(RestaurantsComponent);

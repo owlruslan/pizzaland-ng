@@ -7,3 +7,5 @@ export {
   userStoreSelectors,
   userStoreState,
 };
+
+export * from './user-store.module';

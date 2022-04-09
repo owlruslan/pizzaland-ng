@@ -1,4 +1,4 @@
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {MemoizedSelector} from '@ngrx/store';
 import {MockStore, provideMockStore} from '@ngrx/store/testing';
@@ -8,7 +8,7 @@ import {State} from "../../store/user/user.state";
 
 import {NavbarComponent} from './navbar.component';
 
-describe('app.modules.shared.navbar.NavbarComponent', () => {
+describe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
 
@@ -16,18 +16,15 @@ describe('app.modules.shared.navbar.NavbarComponent', () => {
   let mockUserResponseSelector: MemoizedSelector<State, any>;
   let mockPizzasCountSelector: MemoizedSelector<State, any>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [NavbarComponent],
       providers: [
         provideMockStore()
       ],
-      schemas: [
-        CUSTOM_ELEMENTS_SCHEMA
-      ]
-    })
-      .compileComponents();
-  }));
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NavbarComponent);

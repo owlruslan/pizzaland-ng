@@ -9,13 +9,12 @@ describe('PizzaToppingsComponent', () => {
 
   const fn = () => {};
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [PizzaToppingsComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
-    })
-      .compileComponents();
-  }));
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PizzaToppingsComponent);

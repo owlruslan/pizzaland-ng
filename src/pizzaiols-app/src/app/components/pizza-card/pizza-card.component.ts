@@ -3,7 +3,7 @@ import {Store} from '@ngrx/store';
 import {BehaviorSubject} from 'rxjs';
 import {Pizza} from '../../models';
 import {cartStoreActions} from "../../store/cart";
-import {ButtonType} from '../../uikit/button/button.component';
+import {ButtonType} from '../../ui/button/button.component';
 
 
 @Component({

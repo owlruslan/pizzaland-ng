@@ -1,6 +1,6 @@
 import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {FormBuilder} from '@angular/forms';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MemoizedSelector} from '@ngrx/store';
@@ -27,8 +27,8 @@ xdescribe('RestaurantComponent', () => {
   let mockStore: MockStore;
   let mockPizzasResponseSelector: MemoizedSelector<State, GetPizzasResponse>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [RestaurantComponent],
       imports: [
         NoopAnimationsModule,
@@ -38,12 +38,9 @@ xdescribe('RestaurantComponent', () => {
         provideMockStore({initialState}),
         FormBuilder
       ],
-      schemas: [
-        CUSTOM_ELEMENTS_SCHEMA
-      ]
-    })
-      .compileComponents();
-  }));
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(RestaurantComponent);

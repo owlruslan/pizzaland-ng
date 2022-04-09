@@ -7,3 +7,5 @@ export {
   pizzasStoreSelectors,
   pizzasStoreState,
 };
+
+export * from './pizzas-store.module';

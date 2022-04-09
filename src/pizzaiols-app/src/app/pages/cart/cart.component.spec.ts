@@ -24,8 +24,8 @@ xdescribe('CartComponent', () => {
     },
   };
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [CartComponent],
       providers: [
         provideMockStore({initialState}),
@@ -34,7 +34,7 @@ xdescribe('CartComponent', () => {
         CUSTOM_ELEMENTS_SCHEMA,
       ],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CartComponent);

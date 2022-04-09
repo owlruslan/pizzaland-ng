@@ -1,16 +1,16 @@
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
-import {ButtonComponent} from './button.component';
+import {InputComponent} from './input.component';
 
-describe('app.ui.v1.button.ButtonComponent', () => {
-  let component: ButtonComponent;
-  let fixture: ComponentFixture<ButtonComponent>;
+describe('InputComponent', () => {
+  let component: InputComponent;
+  let fixture: ComponentFixture<InputComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ButtonComponent],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [InputComponent],
       imports: [
         NoopAnimationsModule,
       ],
@@ -21,10 +21,10 @@ describe('app.ui.v1.button.ButtonComponent', () => {
         CUSTOM_ELEMENTS_SCHEMA,
       ],
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ButtonComponent);
+    fixture = TestBed.createComponent(InputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
