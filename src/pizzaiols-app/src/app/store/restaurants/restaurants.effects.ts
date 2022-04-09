@@ -10,7 +10,7 @@ import {loadRestaurants, loadRestaurantsSuccess} from './restaurants.actions';
 
 @Injectable()
 export class RestaurantsEffects {
-  private token$ = this.store.pipe(select(getUserTokenState));
+  token$ = this.store.pipe(select(getUserTokenState));
 
   loadRestaurants$ = createEffect(() => this.actions$.pipe(
     ofType(loadRestaurants.type),

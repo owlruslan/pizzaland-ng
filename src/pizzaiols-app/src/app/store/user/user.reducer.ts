@@ -1,29 +1,15 @@
-import {Actions, ActionTypes} from './user.actions';
+import {Action, createReducer, on} from "@ngrx/store";
+import {login, loginFailure, loginSuccess} from "./user.actions";
 import {initialState, State} from './user.state';
 
-export function reducer(state = initialState, action: Actions): State {
-  switch (action.type) {
 
-    // Login
-    case ActionTypes.Login: {
-      return {
-        ...state,
-      };
-    }
-    case ActionTypes.LoginSuccess: {
-      return {
-        ...state,
-      };
-    }
-    case ActionTypes.LoginFailure: {
-      return {
-        ...state,
-      };
-    }
+const userReducer = createReducer(
+  initialState,
+  on(login, state => ({...state})),
+  on(loginSuccess, (state, {response}) => ({...state})),
+  on(loginFailure, state => ({...state})),
+);
 
-    default: {
-      return state;
-    }
-  }
-
+export function reducer(state: State | undefined, action: Action): State {
+  return userReducer(state, action);
 }

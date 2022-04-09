@@ -1,7 +1,7 @@
 import {UserLoginResponse} from '../../models';
 import {UserResponse} from '../../models';
 
-export const FEATURE_KEY = `shared/user`;
+export const FEATURE_KEY = `user`;
 
 export interface State {
   logined: boolean;

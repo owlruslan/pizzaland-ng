@@ -1,40 +1,7 @@
-import {Action} from '@ngrx/store';
-import {GetPizzasResponse} from '../../models';
-import {ResponseError} from '../../models';
+import {createAction, props} from '@ngrx/store';
+import {GetPizzasResponse, ResponseError} from '../../models';
+import {FEATURE_KEY} from "../cart/cart.state";
 
-export enum ActionTypes {
-
-  // Get Pizzas
-
-  GetPizzas = '[Pizzas] Get Pizzas',
-  GetPizzasSuccess = '[Pizzas] Get Pizzas Success',
-  GetPizzasFailure = '[Pizzas] Get Pizzas Failure',
-}
-
-// GetPizzas
-
-export class GetPizzas implements Action {
-  readonly type = ActionTypes.GetPizzas;
-}
-
-export class GetPizzasSuccess implements Action {
-  readonly type = ActionTypes.GetPizzasSuccess;
-
-  constructor(public payload: { response: GetPizzasResponse }) {
-  }
-}
-
-export class GetPizzasFailure implements Action {
-  readonly type = ActionTypes.GetPizzasFailure;
-
-  constructor(public payload: { response: ResponseError }) {
-  }
-}
-
-export type Actions =
-
-// GetPizzas
-
-  | GetPizzas
-  | GetPizzasSuccess
-  | GetPizzasFailure;
+export const getPizzas = createAction(`${FEATURE_KEY}/getPizzas`);
+export const getPizzasSuccess = createAction(`${FEATURE_KEY}/getPizzasSuccess`, props<{ response: GetPizzasResponse }>());
+export const getPizzasFailure = createAction(`${FEATURE_KEY}/getPizzasFailure`, props<{ response: ResponseError }>());

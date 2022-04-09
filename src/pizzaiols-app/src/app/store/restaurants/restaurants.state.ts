@@ -1,6 +1,6 @@
 import {Restaurant} from '../../models/restaurants/restaurant';
 
-export const FEATURE_KEY = `shared/restaurants`;
+export const FEATURE_KEY = `restaurants`;
 
 export interface State {
   restaurants: Restaurant[];

@@ -2,7 +2,7 @@ import {Action, createReducer, on} from '@ngrx/store';
 import {loadRestaurants, loadRestaurantsError, loadRestaurantsSuccess} from './restaurants.actions';
 import {initialState, State} from './restaurants.state';
 
-const scoreboardReducer = createReducer(
+const restaurantsReducer = createReducer(
   initialState,
   on(loadRestaurants, state => ({...state})),
   on(loadRestaurantsSuccess, (state, {response}) => ({...state, restaurants: response})),
@@ -10,5 +10,5 @@ const scoreboardReducer = createReducer(
 );
 
 export function reducer(state: State | undefined, action: Action): State {
-  return scoreboardReducer(state, action);
+  return restaurantsReducer(state, action);
 }

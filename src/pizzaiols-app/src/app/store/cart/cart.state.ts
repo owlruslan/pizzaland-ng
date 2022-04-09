@@ -1,7 +1,7 @@
 import mockGetPizzasResponse from "../../mocks/pizzas/get-pizzas-response.mock";
 import {Pizza} from "../../models";
 
-export const FEATURE_KEY = `shared/cart`;
+export const FEATURE_KEY = `cart`;
 
 export interface State {
   pizzas: Pizza[];

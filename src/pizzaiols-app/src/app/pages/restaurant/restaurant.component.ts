@@ -74,7 +74,7 @@ export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestr
   }
 
   ngOnInit(): void {
-    this.store.dispatch(new pizzasStoreActions.GetPizzas());
+    this.store.dispatch(pizzasStoreActions.getPizzas());
   }
 
   ngAfterContentChecked(): void {

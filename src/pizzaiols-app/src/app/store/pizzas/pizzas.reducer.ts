@@ -1,35 +1,36 @@
-import {Actions, ActionTypes} from './pizzas.actions';
+import {Action, createReducer, on} from "@ngrx/store";
+import {getPizzas, getPizzasFailure, getPizzasSuccess} from "./pizzas.actions";
 import {initialState, State} from './pizzas.state';
 
-export function reducer(state = initialState, action: Actions): State {
-  switch (action.type) {
 
-    // Login
-    case ActionTypes.GetPizzas: {
+const pizzasReducer = createReducer(
+  initialState,
+  on(getPizzas, (state) => {
       return {
         ...state,
         loading: true,
       };
     }
-    case ActionTypes.GetPizzasSuccess: {
+  ),
+  on(getPizzasSuccess, (state, {response}) => {
       return {
         ...state,
-        pizzasResponse: action.payload.response,
-        loading: false,
-      } as State;
-    }
-    case ActionTypes.GetPizzasFailure: {
-      return {
-        ...state,
-        // @ts-ignore
-        pizzasResponse: null,
+        pizzasResponse: response,
         loading: false,
       };
     }
-
-    default: {
-      return state;
+  ),
+  // @ts-ignore
+  on(getPizzasFailure, (state, {response}) => {
+      return {
+        ...state,
+        pizzasResponse: null,
+        loading: false,
+      }
     }
-  }
+  ),
+);
 
+export function reducer(state: State | undefined, action: Action): State {
+  return pizzasReducer(state, action);
 }

@@ -1,6 +1,6 @@
 import {GetPizzasResponse} from '../../models';
 
-export const FEATURE_KEY = `shared/pizzas`;
+export const FEATURE_KEY = `pizzas`;
 
 export interface State {
   pizzasResponse: GetPizzasResponse;

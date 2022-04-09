@@ -6,30 +6,20 @@ import {catchError, map, switchMap, withLatestFrom} from 'rxjs/operators';
 import {GetPizzasResponse, ResponseError} from '../../models';
 import {PizzasService} from '../../services/pizzas/pizzas.service';
 import {getUserTokenState} from '../user/user.selectors';
-import {ActionTypes, GetPizzas, GetPizzasFailure, GetPizzasSuccess} from './pizzas.actions';
+import {getPizzas, getPizzasFailure, getPizzasSuccess} from './pizzas.actions';
 
-/**
- * Provides Pizzas Store Effects.
- */
+
 @Injectable()
 export class PizzasEffects {
-
   getPizzas$ = createEffect(() => this.actions$.pipe(
-    ofType<GetPizzas>(ActionTypes.GetPizzas),
+    ofType(getPizzas),
     withLatestFrom(this.store.pipe(select(getUserTokenState))),
-    switchMap(([action, token]) => {
-        // @ts-ignore
-        return this.pizzasService.getPizzas(token).pipe(
-          map((response: GetPizzasResponse) =>
-            new GetPizzasSuccess({response}),
-          ),
-          catchError((errResponse: ResponseError) => of(errResponse).pipe(
-            switchMap((response: ResponseError) => [
-              new GetPizzasFailure({response}),
-            ]),
-          )),
-        );
-      },
+    switchMap(([action, token]) => this.pizzasService.getPizzas(token || '').pipe(
+        map((response: GetPizzasResponse) => getPizzasSuccess({response}),),
+        catchError((errResponse: ResponseError) => of(errResponse).pipe(
+          switchMap((response: ResponseError) => [getPizzasFailure({response})]),
+        )),
+      )
     ),
   ));
 

@@ -1,42 +1,8 @@
-import {Action} from '@ngrx/store';
+import {createAction, props} from '@ngrx/store';
 import {ResponseError, ResponseSuccess, UserLoginRequest, UserLoginResponse} from '../../models';
+import {FEATURE_KEY} from './user.state';
 
-export enum ActionTypes {
 
-  // Login
-
-  Login = '[User] Login',
-  LoginSuccess = '[User] Login Success',
-  LoginFailure = '[User] Login Failure',
-}
-
-// Login
-
-export class Login implements Action {
-  readonly type = ActionTypes.Login;
-
-  constructor(public payload: { request: UserLoginRequest }) {
-  }
-}
-
-export class LoginSuccess implements Action {
-  readonly type = ActionTypes.LoginSuccess;
-
-  constructor(public payload: { response: ResponseSuccess<UserLoginResponse> }) {
-  }
-}
-
-export class LoginFailure implements Action {
-  readonly type = ActionTypes.LoginFailure;
-
-  constructor(public payload: { response: ResponseError }) {
-  }
-}
-
-export type Actions =
-
-// Login
-
-  | Login
-  | LoginSuccess
-  | LoginFailure;
+export const login = createAction(`${FEATURE_KEY}/login`, props<{ request: UserLoginRequest }>());
+export const loginSuccess = createAction(`${FEATURE_KEY}/loginSuccess`, props<{ response: ResponseSuccess<UserLoginResponse> }>());
+export const loginFailure = createAction(`${FEATURE_KEY}/loginError`, props<{ response: ResponseError }>());
