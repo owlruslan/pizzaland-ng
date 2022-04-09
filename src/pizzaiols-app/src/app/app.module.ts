@@ -11,10 +11,10 @@ import {AppComponent} from './app.component';
 import {NavbarModule} from "./components/navbar/navbar.module";
 import {RestaurantsMockService} from './services/restaurants/restaurants-mock.service';
 import {RestaurantsService} from './services/restaurants/restaurants.service';
-import {CartStoreModule} from "./store/cart";
-import {PizzasStoreModule} from "./store/pizzas/pizzas-store.module";
-import {RestaurantsStoreModule} from "./store/restaurants/restaurants-store.module";
-import {UserStoreModule} from "./store/user/user-store.module";
+import {CartStoreModule} from "./store";
+import {PizzasStoreModule} from "./store";
+import {RestaurantsStoreModule} from "./store";
+import {UserStoreModule} from "./store";
 
 
 @NgModule({
@@ -34,7 +34,7 @@ import {UserStoreModule} from "./store/user/user-store.module";
     PizzasStoreModule,
     RestaurantsStoreModule,
     UserStoreModule,
-    StoreDevtoolsModule.instrument({name: 'Pizzaiols'}),
+    StoreDevtoolsModule.instrument(),
   ],
   providers: [
     {provide: RestaurantsService, useClass: RestaurantsMockService},

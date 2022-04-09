@@ -1,5 +1,5 @@
-import {UserLoginResponse} from '../../models/user/user-login-response.model';
-import {UserResponse} from '../../models/user/user-response.model';
+import {UserLoginResponse} from '../../models';
+import {UserResponse} from '../../models';
 
 export const FEATURE_KEY = `shared/user`;
 

@@ -3,9 +3,9 @@ import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Store} from '@ngrx/store';
 import {of} from 'rxjs';
 import {catchError, map, switchMap} from 'rxjs/operators';
-import {ResponseError} from '../../models/response/response-error.model';
-import {ResponseSuccess} from '../../models/response/response-success.model';
-import {UserLoginResponse} from '../../models/user/user-login-response.model';
+import {ResponseError} from '../../models';
+import {ResponseSuccess} from '../../models';
+import {UserLoginResponse} from '../../models';
 import {UserService} from '../../services/user/user.service';
 import {ActionTypes, Login, LoginFailure, LoginSuccess} from './user.actions';
 

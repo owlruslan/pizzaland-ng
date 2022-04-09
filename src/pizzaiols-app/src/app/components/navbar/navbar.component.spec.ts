@@ -1,5 +1,5 @@
-import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {MemoizedSelector} from '@ngrx/store';
 import {MockStore, provideMockStore} from '@ngrx/store/testing';
 import {cartStoreSelectors} from "../../store/cart";

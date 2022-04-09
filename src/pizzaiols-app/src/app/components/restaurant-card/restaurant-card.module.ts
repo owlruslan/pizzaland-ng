@@ -1,6 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {ButtonModule} from '../../ui/button/button.module';
+import {ButtonModule} from '../../ui';
 import {PizzaSmallPreviewModule} from '../pizza-small-preview/pizza-small-preview.module';
 import {RestaurantCardComponent} from './restaurant-card.component';
 

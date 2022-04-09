@@ -1,6 +1,6 @@
 import {Action} from '@ngrx/store';
-import {GetPizzasResponse} from '../../models/pizzas/get-pizzas-response.model';
-import {ResponseError} from '../../models/response/response-error.model';
+import {GetPizzasResponse} from '../../models';
+import {ResponseError} from '../../models';
 
 export enum ActionTypes {
 

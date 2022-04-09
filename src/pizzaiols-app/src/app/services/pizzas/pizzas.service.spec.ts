@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
-import {async, TestBed} from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import mockGetPizzasResponse from '../../mocks/pizzas/get-pizzas-response.mock';

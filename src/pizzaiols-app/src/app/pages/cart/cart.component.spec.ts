@@ -1,5 +1,5 @@
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {MemoizedSelector} from '@ngrx/store';
 import {MockStore, provideMockStore} from '@ngrx/store/testing';
 import mockGetPizzasResponse from '../../mocks/pizzas/get-pizzas-response.mock';

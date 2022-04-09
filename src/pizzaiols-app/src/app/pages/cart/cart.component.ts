@@ -20,8 +20,7 @@ export class CartComponent implements OnInit, OnDestroy, Unsubscribe {
   );
 
   total$: Observable<number> = this.store.pipe(
-    // @ts-ignore
-    select(BasketStoreSelectors.getTotalState),
+    select(cartStoreSelectors.getTotalState),
     takeUntil(this.unsubscribe),
   );
 

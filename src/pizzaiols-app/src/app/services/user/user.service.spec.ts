@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
 import {NO_ERRORS_SCHEMA} from "@angular/core";
-import {async, TestBed} from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import mockUserLoginRequest from '../../mocks/user/user-login-request.mock';
