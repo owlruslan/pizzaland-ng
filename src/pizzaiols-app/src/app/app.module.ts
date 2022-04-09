@@ -8,7 +8,7 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {NavbarModule} from "./pages/shared/navbar/navbar.module";
+import {NavbarModule} from "./components/navbar/navbar.module";
 import {RestaurantsMockService} from './services/restaurants/restaurants-mock.service';
 import {RestaurantsService} from './services/restaurants/restaurants.service';
 import {CartStoreModule} from "./store/cart";
