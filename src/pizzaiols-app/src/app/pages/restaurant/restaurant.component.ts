@@ -4,13 +4,12 @@ import {select, Store} from '@ngrx/store';
 import {map, takeUntil} from 'rxjs/operators';
 import {FormBuilder} from '@angular/forms';
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
-import {PizzasStoreActions, PizzasStoreSelectors,} from '../../store/root/client';
 import {GetPizzasResponse} from '../../models';
-import {RootStoreState} from '../../store/root';
 import {RestaurantsService} from '../../services/restaurants/restaurants.service';
 import {Restaurant} from '../../models/restaurants/restaurant';
 import {CursorType} from '../../components/restaurant-card/restaurant-card.component';
 import {Unsubscribe} from '../../components/unsubscribe.interface';
+import {pizzasStoreActions, pizzasStoreSelectors} from "../../store/pizzas";
 
 @Component({
   selector: 'app-pizzas',
@@ -38,7 +37,7 @@ export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestr
   });
 
   pizzasResponse$: Observable<GetPizzasResponse> = this.store.pipe(
-    select(PizzasStoreSelectors.getPizzasResponseState),
+    select(pizzasStoreSelectors.getPizzasResponseState),
     takeUntil(this.unsubscribe)
   );
 
@@ -64,19 +63,19 @@ export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestr
   );
 
   loading$: Observable<boolean> = this.store.pipe(
-    select(PizzasStoreSelectors.getLoadingState),
+    select(pizzasStoreSelectors.getLoadingState),
     takeUntil(this.unsubscribe)
   );
 
   constructor(
-    private store: Store<RootStoreState.State>,
+    private store: Store,
     private restaurantsService: RestaurantsService,
     private fb: FormBuilder
   ) {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(new PizzasStoreActions.GetPizzas());
+    this.store.dispatch(new pizzasStoreActions.GetPizzas());
   }
 
   ngAfterContentChecked(): void {

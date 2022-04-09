@@ -8,39 +8,30 @@ import {RestaurantModule} from "./pages/restaurant/restaurant.module";
 import {RestaurantsModule} from "./pages/restaurants/restaurants.module";
 
 
+export const expectLazyLoadModule = async (route: Route | undefined, module: unknown): Promise<any> => {
+  if (typeof route?.loadChildren === 'function') {
+    expect(await route.loadChildren()).toEqual(module)
+  }
+}
+
 describe('AppRoutingModule', () => {
   let router: Router;
 
   beforeEach(async () => {
-    TestBed.configureTestingModule({
-      imports: [AppRoutingModule, RouterTestingModule]
-    });
-
+    TestBed.configureTestingModule({imports: [AppRoutingModule, RouterTestingModule]});
     router = TestBed.inject(Router);
   });
 
   it('should load restaurants', async () => {
-    const route: Route | undefined = router.config.find(rc => rc.path === 'restaurants');
-
-    if (typeof route?.loadChildren === 'function') {
-      expect(await route.loadChildren()).toEqual(RestaurantsModule)
-    }
+    await expectLazyLoadModule(router.config.find(rc => rc.path === 'restaurants'), RestaurantsModule);
   });
 
   it('should load restaurant', async () => {
-    const route: Route | undefined = router.config.find(rc => rc.path === 'restaurant/:id');
-
-    if (typeof route?.loadChildren === 'function') {
-      expect(await route.loadChildren()).toEqual(RestaurantModule)
-    }
+    await expectLazyLoadModule(router.config.find(rc => rc.path === 'restaurant/:id'), RestaurantModule);
   });
 
   it('should load cart', async () => {
-    const route: Route | undefined = router.config.find(rc => rc.path === 'cart');
-
-    if (typeof route?.loadChildren === 'function') {
-      expect(await route.loadChildren()).toEqual(CartModule)
-    }
+    await expectLazyLoadModule(router.config.find(rc => rc.path === 'cart'), CartModule);
   });
 
   it('should load restaurants on first load', async () => {

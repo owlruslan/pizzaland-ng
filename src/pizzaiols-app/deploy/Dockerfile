@@ -39,7 +39,7 @@ COPY . .
 # Run angular tests
 RUN $(npm bin)/ng test --karmaConfig=karma-headless.conf.js --progress=true --watch=false --reporters
 
-# Build the angular root in production mode and store the artifacts in dist folder
+# Build the angular root in production mode and cart the artifacts in dist folder
 RUN $(npm bin)/ng build --prod --aot
 
 # Stage 2: Setup

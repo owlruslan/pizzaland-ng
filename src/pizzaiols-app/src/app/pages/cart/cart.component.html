@@ -2,7 +2,7 @@
   <h1>Basket</h1>
   <app-pizza-preview [pizza]="activePizza$ | async"></app-pizza-preview>
   <div class="pizzas">
-    <ng-container *ngFor="let pizza of (pizzasResponse$ | async)?.pizzas">
+    <ng-container *ngFor="let pizza of (pizzas$ | async)">
       <app-pizza-card
         [pizza]="pizza"
         class="pizza-card"

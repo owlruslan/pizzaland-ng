@@ -1,14 +1,20 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {EffectsModule} from "@ngrx/effects";
+import {StoreModule} from "@ngrx/store";
+import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HttpClientModule} from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NavbarModule} from "./pages/shared/navbar/navbar.module";
-import {RootStoreModule} from './store/root';
-import {RestaurantsService} from './services/restaurants/restaurants.service';
 import {RestaurantsMockService} from './services/restaurants/restaurants-mock.service';
+import {RestaurantsService} from './services/restaurants/restaurants.service';
+import {CartStoreModule} from "./store/cart";
+import {PizzasStoreModule} from "./store/pizzas/pizzas-store.module";
+import {RestaurantsStoreModule} from "./store/restaurants/restaurants-store.module";
+import {UserStoreModule} from "./store/user/user-store.module";
 
 
 @NgModule({
@@ -20,8 +26,15 @@ import {RestaurantsMockService} from './services/restaurants/restaurants-mock.se
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    RootStoreModule,
     NavbarModule,
+    // Store
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    CartStoreModule,
+    PizzasStoreModule,
+    RestaurantsStoreModule,
+    UserStoreModule,
+    StoreDevtoolsModule.instrument({ name: 'Pizzaiols' }),
   ],
   providers: [
     { provide: RestaurantsService, useClass: RestaurantsMockService },

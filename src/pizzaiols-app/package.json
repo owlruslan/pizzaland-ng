@@ -35,18 +35,18 @@
   },
   "devDependencies": {
     "@angular-builders/jest": "latest",
-    "@angular-devkit/build-angular": "~13.1.2",
+    "@angular-devkit/build-angular": "^13.3.2",
     "@angular/cli": "~13.1.2",
     "@angular/compiler-cli": "~13.1.0",
     "@babel/core": "^7.17.9",
-    "@briebug/jest-schematic": "4.0.0",
+    "@briebug/jest-schematic": "^2.1.1",
     "@compodoc/compodoc": "^1.1.19",
     "@cypress/schematic": "1.6.0",
     "@storybook/addon-actions": "^6.4.20",
     "@storybook/addon-essentials": "^6.4.20",
     "@storybook/addon-interactions": "^6.4.20",
     "@storybook/addon-links": "^6.4.20",
-    "@storybook/angular": "^6.4.20",
+    "@storybook/angular": "^6.1.21",
     "@storybook/builder-webpack5": "^6.4.20",
     "@storybook/manager-webpack5": "^6.4.20",
     "@storybook/testing-library": "^0.0.9",
@@ -55,6 +55,7 @@
     "babel-loader": "^8.2.4",
     "cypress": "latest",
     "jest": "latest",
+    "jest-marbles": "^3.0.2",
     "typescript": "~4.5.2"
   }
 }

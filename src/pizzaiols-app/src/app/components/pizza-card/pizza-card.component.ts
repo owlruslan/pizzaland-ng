@@ -1,24 +1,21 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { Pizza } from '../../models';
-import { RootStoreState } from '../../store/root';
-import { BasketStoreActions } from '../../store/root/client';
+import {Component, Input} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {BehaviorSubject} from 'rxjs';
+import {Pizza} from '../../models';
+import {cartStoreActions} from "../../store/cart";
 import {ButtonType} from '../../uikit/button/button.component';
+
 
 @Component({
   selector: 'app-pizza-card',
   templateUrl: './pizza-card.component.html',
   styleUrls: ['./pizza-card.component.scss'],
 })
-export class PizzaCardComponent implements OnInit {
+export class PizzaCardComponent {
   readonly buttonType = ButtonType.SUCCESS;
 
-  /**
-   * @input: pizza - Pizza entity.
-   */
-    // @ts-ignore
-  pizza$ = new BehaviorSubject<Pizza>(null);
+  // @ts-ignore
+  pizza$ = new BehaviorSubject<Pizza>(undefined);
 
   get pizza(): Pizza {
     return this.pizza$.getValue();
@@ -29,14 +26,9 @@ export class PizzaCardComponent implements OnInit {
     this.pizza$.next(value);
   }
 
-  constructor(
-    private store: Store<RootStoreState.State>,
-  ) { }
-
-  ngOnInit(): void {
-  }
+  constructor(private store: Store) { }
 
   onBuy(pizza: Pizza): void {
-    this.store.dispatch(new BasketStoreActions.AddPizza({ pizza }));
+    this.store.dispatch(cartStoreActions.add({pizza}));
   }
 }
