@@ -1,4 +1,4 @@
-import { Restaurant } from '../../models/restaurants/restaurant';
+import {Restaurant} from '../../models/restaurants/restaurant';
 
 export const FEATURE_KEY = `shared/restaurants`;
 

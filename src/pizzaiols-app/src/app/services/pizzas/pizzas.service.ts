@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {environment} from '../../../environments/environment';
-import {GetPizzasResponse} from '../../models';
 import mockGetPizzasResponse from '../../mocks/pizzas/get-pizzas-response.mock';
+import {GetPizzasResponse} from '../../models';
 import {APIService} from '../api-service.interface';
 
 

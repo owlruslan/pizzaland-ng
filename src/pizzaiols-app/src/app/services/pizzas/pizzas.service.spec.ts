@@ -1,13 +1,13 @@
-import {async, TestBed} from '@angular/core/testing';
-
-import {PizzasService} from './pizzas.service';
-import {HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
 import {HttpClient} from '@angular/common/http';
+import {HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
+import {async, TestBed} from '@angular/core/testing';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import mockUserToken from '../../mocks/user/user-token.mock';
 import mockGetPizzasResponse from '../../mocks/pizzas/get-pizzas-response.mock';
-import { GetPizzasResponse, ResponseSuccess } from '../../models';
+import mockUserToken from '../../mocks/user/user-token.mock';
+import {GetPizzasResponse, ResponseSuccess} from '../../models';
+
+import {PizzasService} from './pizzas.service';
 
 describe('app.services.pages.user.PizzasService', () => {
   let httpClient: HttpClient;

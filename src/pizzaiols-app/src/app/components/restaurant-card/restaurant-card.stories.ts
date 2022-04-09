@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/angular/types-6-0';
+import {Meta, Story} from '@storybook/angular/types-6-0';
 
-import { RestaurantCardComponent } from './restaurant-card.component';
+import {RestaurantCardComponent} from './restaurant-card.component';
 
 export default {
   title: 'Modules / Shared / Restaurant Card',
@@ -13,5 +13,4 @@ const Template: Story<RestaurantCardComponent> = (args: RestaurantCardComponent)
 });
 
 export const Default = Template.bind({});
-Default.args = {
-};
+Default.args = {};

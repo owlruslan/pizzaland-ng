@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {NavbarComponent} from './navbar.component';
+import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
+import {NavbarComponent} from './navbar.component';
 
 
 @NgModule({
@@ -12,4 +12,4 @@ import {RouterModule} from '@angular/router';
   ],
   exports: [NavbarComponent]
 })
-export class NavbarModule { }
+export class NavbarModule {}

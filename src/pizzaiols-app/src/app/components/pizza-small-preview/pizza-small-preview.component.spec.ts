@@ -1,7 +1,7 @@
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {PizzaSmallPreviewComponent} from './pizza-small-preview.component';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 describe('app.modules.shared.pizza-small-preview.PizzaSmallPreviewComponent', () => {
   let component: PizzaSmallPreviewComponent;
@@ -9,10 +9,10 @@ describe('app.modules.shared.pizza-small-preview.PizzaSmallPreviewComponent', ()
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PizzaSmallPreviewComponent ],
+      declarations: [PizzaSmallPreviewComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

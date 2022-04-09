@@ -1,5 +1,5 @@
-import { createAction, props } from '@ngrx/store';
-import { Restaurant } from '../../models/restaurants/restaurant';
+import {createAction, props} from '@ngrx/store';
+import {Restaurant} from '../../models/restaurants/restaurant';
 
 const PREFIX = '[Restaurants]';
 

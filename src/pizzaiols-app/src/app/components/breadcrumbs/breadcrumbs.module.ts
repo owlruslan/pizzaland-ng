@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BreadcrumbsComponent } from './breadcrumbs.component';
-import { RouterModule } from '@angular/router';
-
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {BreadcrumbsComponent} from './breadcrumbs.component';
 
 
 @NgModule({
@@ -13,4 +12,4 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [BreadcrumbsComponent]
 })
-export class BreadcrumbsModule { }
+export class BreadcrumbsModule {}

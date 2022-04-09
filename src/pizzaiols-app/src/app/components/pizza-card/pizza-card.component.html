@@ -9,10 +9,10 @@
       <div class="pizza-card__info__description">{{ pizza.description }}</div>
       <div class="pizza-card__info__bottom">
         <uikit-ui-v1-button
-          class="pizza-card__info__buy-btn"
-          title="Buy"
+          (click)="onBuy(pizza)"
           [type]="buttonType"
-          (click)="onBuy(pizza)"></uikit-ui-v1-button>
+          class="pizza-card__info__buy-btn"
+          title="Buy"></uikit-ui-v1-button>
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Restaurant } from '../../models/restaurants/restaurant';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {Restaurant} from '../../models/restaurants/restaurant';
 
 export enum CursorType {
   Default,

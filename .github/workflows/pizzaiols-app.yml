@@ -33,3 +33,4 @@ jobs:
           cache-dependency-path: src/pizzaiols-app/yarn.lock
       - run: yarn
       - run: yarn build
+      - run: yarn test

@@ -1,9 +1,9 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
-import {PizzaPreviewComponent} from './pizza-preview.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {ReactiveFormsModule} from '@angular/forms';
 import mockPizza from '../../mocks/pizzas/pizza.mock';
+
+import {PizzaPreviewComponent} from './pizza-preview.component';
 
 describe('app.modules.shared.pizza-preview.PizzaPreviewComponent', () => {
   let component: PizzaPreviewComponent;
@@ -11,7 +11,7 @@ describe('app.modules.shared.pizza-preview.PizzaPreviewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PizzaPreviewComponent ],
+      declarations: [PizzaPreviewComponent],
       imports: [ReactiveFormsModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();

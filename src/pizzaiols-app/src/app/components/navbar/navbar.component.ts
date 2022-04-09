@@ -2,10 +2,10 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {Observable, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {Unsubscribe} from '../unsubscribe.interface';
 import {UserResponse} from '../../models';
 import {cartStoreSelectors} from "../../store/cart";
 import {userStoreSelectors} from "../../store/user";
+import {Unsubscribe} from '../unsubscribe.interface';
 
 @Component({
   selector: 'app-navbar',

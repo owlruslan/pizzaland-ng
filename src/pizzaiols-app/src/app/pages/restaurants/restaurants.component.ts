@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { RestaurantsService } from '../../services/restaurants/restaurants.service';
-import { Observable } from 'rxjs';
-import { Restaurant } from '../../models/restaurants/restaurant';
+import {Component} from '@angular/core';
+import {Observable} from 'rxjs';
+import {Restaurant} from '../../models/restaurants/restaurant';
+import {RestaurantsService} from '../../services/restaurants/restaurants.service';
 
 @Component({
   selector: 'app-restaurants',

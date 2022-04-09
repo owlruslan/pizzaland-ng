@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {UserLoginResponse} from '../../models/user/user-login-response.model';
+import {environment} from '../../../environments/environment';
 import {ResponseSuccess} from '../../models/response/response-success.model';
 import {UserLoginRequest} from '../../models/user/user-login-request.model';
-import {environment} from '../../../environments/environment';
+import {UserLoginResponse} from '../../models/user/user-login-response.model';
 import {APIService} from '../api-service.interface';
 
 /**

@@ -1,7 +1,7 @@
-import {moduleMetadata, storiesOf} from '@storybook/angular';
-import {RouterTestingModule} from '@angular/router/testing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { PizzaToppingsModule } from './pizza-toppings.module';
+import {RouterTestingModule} from '@angular/router/testing';
+import {moduleMetadata, storiesOf} from '@storybook/angular';
+import {PizzaToppingsModule} from './pizza-toppings.module';
 
 storiesOf('Modules / Shared / Pizza Toppings', module)
   .addDecorator(

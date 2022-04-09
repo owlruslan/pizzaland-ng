@@ -1,8 +1,8 @@
-import { moduleMetadata, storiesOf } from '@storybook/angular';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {moduleMetadata, storiesOf} from '@storybook/angular';
+import {ButtonType} from './button.component';
 
-import { ButtonModule } from './button.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ButtonType } from './button.component';
+import {ButtonModule} from './button.module';
 
 const type = ButtonType.SUCCESS;
 

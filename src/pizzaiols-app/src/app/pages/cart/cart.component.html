@@ -4,9 +4,9 @@
   <div class="pizzas">
     <ng-container *ngFor="let pizza of (pizzas$ | async)">
       <app-pizza-card
+        (mouseenter)="onPizzaHover(pizza)"
         [pizza]="pizza"
-        class="pizza-card"
-        (mouseenter)="onPizzaHover(pizza)">
+        class="pizza-card">
       </app-pizza-card>
     </ng-container>
   </div>

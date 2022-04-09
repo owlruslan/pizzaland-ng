@@ -1,8 +1,5 @@
-import { Action } from '@ngrx/store';
-import { UserLoginResponse } from '../../models';
-import { ResponseSuccess } from '../../models';
-import { ResponseError } from '../../models';
-import { UserLoginRequest } from '../../models';
+import {Action} from '@ngrx/store';
+import {ResponseError, ResponseSuccess, UserLoginRequest, UserLoginResponse} from '../../models';
 
 export enum ActionTypes {
 

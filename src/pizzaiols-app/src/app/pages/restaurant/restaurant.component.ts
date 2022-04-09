@@ -1,14 +1,14 @@
-import {AfterContentChecked, Component, OnDestroy, OnInit} from '@angular/core';
-import {combineLatest, Observable, Subject} from 'rxjs';
-import {select, Store} from '@ngrx/store';
-import {map, takeUntil} from 'rxjs/operators';
-import {FormBuilder} from '@angular/forms';
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
-import {GetPizzasResponse} from '../../models';
-import {RestaurantsService} from '../../services/restaurants/restaurants.service';
-import {Restaurant} from '../../models/restaurants/restaurant';
+import {AfterContentChecked, Component, OnDestroy, OnInit} from '@angular/core';
+import {FormBuilder} from '@angular/forms';
+import {select, Store} from '@ngrx/store';
+import {combineLatest, Observable, Subject} from 'rxjs';
+import {map, takeUntil} from 'rxjs/operators';
 import {CursorType} from '../../components/restaurant-card/restaurant-card.component';
 import {Unsubscribe} from '../../components/unsubscribe.interface';
+import {GetPizzasResponse} from '../../models';
+import {Restaurant} from '../../models/restaurants/restaurant';
+import {RestaurantsService} from '../../services/restaurants/restaurants.service';
 import {pizzasStoreActions, pizzasStoreSelectors} from "../../store/pizzas";
 
 @Component({

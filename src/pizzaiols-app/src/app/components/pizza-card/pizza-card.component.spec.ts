@@ -1,23 +1,23 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
-import {PizzaCardComponent} from './pizza-card.component';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {provideMockStore} from '@ngrx/store/testing';
 import mockPizza from '../../mocks/pizzas/pizza.mock';
 
-describe('app.modules.shared.pizza-card.RestaurantCardComponent', () => {
+import {PizzaCardComponent} from './pizza-card.component';
+
+xdescribe('PizzaCardComponent', () => {
   let component: PizzaCardComponent;
   let fixture: ComponentFixture<PizzaCardComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ PizzaCardComponent ],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [PizzaCardComponent],
       providers: [
         provideMockStore()
       ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PizzaCardComponent);

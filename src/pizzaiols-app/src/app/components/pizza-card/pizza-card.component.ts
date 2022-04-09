@@ -17,6 +17,8 @@ export class PizzaCardComponent {
   // @ts-ignore
   pizza$ = new BehaviorSubject<Pizza>(undefined);
 
+  constructor(private store: Store) { }
+
   get pizza(): Pizza {
     return this.pizza$.getValue();
   }
@@ -25,8 +27,6 @@ export class PizzaCardComponent {
   set pizza(value: Pizza) {
     this.pizza$.next(value);
   }
-
-  constructor(private store: Store) { }
 
   onBuy(pizza: Pizza): void {
     this.store.dispatch(cartStoreActions.add({pizza}));

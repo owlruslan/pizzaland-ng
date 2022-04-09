@@ -1,7 +1,7 @@
-import { RestaurantsAPI } from './restaurants-api';
-import { Observable, of } from 'rxjs';
-import { Restaurant } from '../../models/restaurants/restaurant';
+import {Observable, of} from 'rxjs';
 import mockRestaurants from '../../mocks/restaurants/restaurants.mock';
+import {Restaurant} from '../../models/restaurants/restaurant';
+import {RestaurantsAPI} from './restaurants-api';
 
 export class RestaurantsMockService implements RestaurantsAPI {
 

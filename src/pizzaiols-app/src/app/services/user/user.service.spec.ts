@@ -1,13 +1,13 @@
-import {async, TestBed} from '@angular/core/testing';
-
-import {UserService} from './user.service';
-import {HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
 import {HttpClient} from '@angular/common/http';
+import {HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
+import {async, TestBed} from '@angular/core/testing';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import mockUserLoginResponse from '../../mocks/user/user-login-response.mock';
 import mockUserLoginRequest from '../../mocks/user/user-login-request.mock';
-import { ResponseSuccess, UserLoginResponse } from '../../models';
+import mockUserLoginResponse from '../../mocks/user/user-login-response.mock';
+import {ResponseSuccess, UserLoginResponse} from '../../models';
+
+import {UserService} from './user.service';
 
 describe('app.services.pages.user.UserService', () => {
   let httpClient: HttpClient;

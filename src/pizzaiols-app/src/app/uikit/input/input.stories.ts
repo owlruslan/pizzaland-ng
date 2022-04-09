@@ -1,7 +1,7 @@
-import { moduleMetadata, storiesOf } from '@storybook/angular';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {moduleMetadata, storiesOf} from '@storybook/angular';
 
-import { InputModule } from './input.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {InputModule} from './input.module';
 
 storiesOf('UI Kit / Input', module).addDecorator(
   moduleMetadata({

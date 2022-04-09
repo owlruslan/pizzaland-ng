@@ -21,11 +21,11 @@ export class PizzasEffects {
         // @ts-ignore
         return this.pizzasService.getPizzas(token).pipe(
           map((response: GetPizzasResponse) =>
-            new GetPizzasSuccess({ response }),
+            new GetPizzasSuccess({response}),
           ),
           catchError((errResponse: ResponseError) => of(errResponse).pipe(
             switchMap((response: ResponseError) => [
-              new GetPizzasFailure({ response }),
+              new GetPizzasFailure({response}),
             ]),
           )),
         );

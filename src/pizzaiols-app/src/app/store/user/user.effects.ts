@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Store } from '@ngrx/store';
-import { catchError, map, switchMap } from 'rxjs/operators';
-import { ActionTypes, Login, LoginFailure, LoginSuccess } from './user.actions';
-import { of } from 'rxjs';
-import { UserLoginResponse } from '../../models/user/user-login-response.model';
-import { ResponseSuccess } from '../../models/response/response-success.model';
-import { UserService } from '../../services/user/user.service';
-import { ResponseError } from '../../models/response/response-error.model';
+import {Injectable} from '@angular/core';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
+import {Store} from '@ngrx/store';
+import {of} from 'rxjs';
+import {catchError, map, switchMap} from 'rxjs/operators';
+import {ResponseError} from '../../models/response/response-error.model';
+import {ResponseSuccess} from '../../models/response/response-success.model';
+import {UserLoginResponse} from '../../models/user/user-login-response.model';
+import {UserService} from '../../services/user/user.service';
+import {ActionTypes, Login, LoginFailure, LoginSuccess} from './user.actions';
 
 /**
  * Provides User Store Effects.
@@ -26,11 +26,11 @@ export class UserEffects {
     switchMap(action =>
       this.userService.login(action.payload.request).pipe(
         map((response: ResponseSuccess<UserLoginResponse>) =>
-          new LoginSuccess({ response }),
+          new LoginSuccess({response}),
         ),
         catchError((errResponse: ResponseError) => of(errResponse).pipe(
           switchMap((response: ResponseError) => [
-            new LoginFailure({ response }),
+            new LoginFailure({response}),
           ]),
         )),
       ),

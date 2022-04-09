@@ -1,6 +1,5 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-import {GetPizzasResponse, Pizza} from "../../models";
-import { FEATURE_KEY, State } from './cart.state';
+import {createFeatureSelector, createSelector} from '@ngrx/store';
+import {FEATURE_KEY, State} from './cart.state';
 
 export const getState = createFeatureSelector<State>(FEATURE_KEY);
 

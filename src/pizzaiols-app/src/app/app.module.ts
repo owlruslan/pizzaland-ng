@@ -34,11 +34,11 @@ import {UserStoreModule} from "./store/user/user-store.module";
     PizzasStoreModule,
     RestaurantsStoreModule,
     UserStoreModule,
-    StoreDevtoolsModule.instrument({ name: 'Pizzaiols' }),
+    StoreDevtoolsModule.instrument({name: 'Pizzaiols'}),
   ],
   providers: [
-    { provide: RestaurantsService, useClass: RestaurantsMockService },
+    {provide: RestaurantsService, useClass: RestaurantsMockService},
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
