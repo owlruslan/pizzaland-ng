@@ -20,7 +20,7 @@ const initialState = {
   }
 };
 
-xdescribe('RestaurantComponent', () => {
+describe('RestaurantComponent', () => {
   let component: RestaurantComponent;
   let fixture: ComponentFixture<RestaurantComponent>;
 
@@ -36,8 +36,9 @@ xdescribe('RestaurantComponent', () => {
       ],
       providers: [
         provideMockStore({initialState}),
-        FormBuilder
+        FormBuilder,
       ],
+      teardown: { destroyAfterEach: false },
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   });
@@ -53,12 +54,6 @@ xdescribe('RestaurantComponent', () => {
 
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  afterEach(() => {
-    if (fixture.nativeElement && 'remove' in fixture.nativeElement) {
-      (fixture.nativeElement as HTMLElement).remove();
-    }
   });
 
   it('should create', () => {

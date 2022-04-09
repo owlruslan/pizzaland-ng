@@ -1,24 +1,16 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {Observable, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {UserResponse} from '../../models';
 import {cartStoreSelectors} from "../../store/cart";
-import {userStoreSelectors} from "../../store/user";
-import {Unsubscribe} from '../unsubscribe.interface';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit, OnDestroy, Unsubscribe {
+export class NavbarComponent implements OnDestroy {
   readonly unsubscribe = new Subject<void>();
-
-  userResponse$: Observable<UserResponse> = this.store.pipe(
-    select(userStoreSelectors.getUserResponseState),
-    takeUntil(this.unsubscribe)
-  );
 
   pizzasCount$: Observable<number> = this.store.pipe(
     select(cartStoreSelectors.getPizzasCountState),
@@ -26,10 +18,6 @@ export class NavbarComponent implements OnInit, OnDestroy, Unsubscribe {
   );
 
   constructor(private store: Store) { }
-
-  ngOnInit(): void {
-    // TODO: dispatch get user response
-  }
 
   ngOnDestroy(): void {
     this.unsubscribe.next();

@@ -1,6 +1,7 @@
 import {animate, animateChild, query, style, transition, trigger} from '@angular/animations';
 import {Component, Input} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
+import {Pizza} from "../../models";
 
 export const SLIDE_ANIMATION = trigger('slide', [
   transition(':enter', [
@@ -24,6 +25,11 @@ export const DROP_ANIMATION = trigger('drop', [
   ]),
 ]);
 
+const TOPPINGS = [
+  'anchovy', 'bacon', 'basil', 'chili', 'mozzarella', 'mushroom',
+  'olive', 'onion', 'pepper', 'pepperoni', 'sweetcorn', 'tomato'
+];
+
 @Component({
   selector: 'app-pizza-preview',
   animations: [DROP_ANIMATION, SLIDE_ANIMATION],
@@ -31,11 +37,8 @@ export const DROP_ANIMATION = trigger('drop', [
   styleUrls: ['./pizza-preview.component.scss']
 })
 export class PizzaPreviewComponent {
-  pizza$ = new BehaviorSubject<any[]>([]);
-  toppings = [
-    'anchovy', 'bacon', 'basil', 'chili', 'mozzarella', 'mushroom',
-    'olive', 'onion', 'pepper', 'pepperoni', 'sweetcorn', 'tomato'
-  ];
+  pizza$ = new BehaviorSubject<Pizza[]>([]);
+  toppings = TOPPINGS;
 
   get pizza(): any {
     return this.pizza$.getValue()[0];

@@ -1,4 +1,4 @@
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {MemoizedSelector} from '@ngrx/store';
 import {MockStore, provideMockStore} from '@ngrx/store/testing';
@@ -8,7 +8,7 @@ import {State} from "../../store/pizzas/pizzas.state";
 
 import {CartComponent} from './cart.component';
 
-xdescribe('CartComponent', () => {
+describe('CartComponent', () => {
   let component: CartComponent;
   let fixture: ComponentFixture<CartComponent>;
 
@@ -30,9 +30,7 @@ xdescribe('CartComponent', () => {
       providers: [
         provideMockStore({initialState}),
       ],
-      schemas: [
-        CUSTOM_ELEMENTS_SCHEMA,
-      ],
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   });
 
@@ -51,12 +49,6 @@ xdescribe('CartComponent', () => {
 
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  afterEach(() => {
-    if (fixture.nativeElement && 'remove' in fixture.nativeElement) {
-      (fixture.nativeElement as HTMLElement).remove();
-    }
   });
 
   it('should create', () => {

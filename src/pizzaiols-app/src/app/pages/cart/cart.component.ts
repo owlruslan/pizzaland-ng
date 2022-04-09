@@ -2,7 +2,6 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {Unsubscribe} from '../../components/unsubscribe.interface';
 import {Pizza} from '../../models';
 import {cartStoreSelectors} from "../../store/cart";
 
@@ -11,7 +10,7 @@ import {cartStoreSelectors} from "../../store/cart";
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
 })
-export class CartComponent implements OnInit, OnDestroy, Unsubscribe {
+export class CartComponent implements OnInit, OnDestroy {
   readonly unsubscribe = new Subject<void>();
 
   pizzas$: Observable<Pizza[]> = this.store.pipe(

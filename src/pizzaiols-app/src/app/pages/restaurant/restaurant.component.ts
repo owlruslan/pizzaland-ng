@@ -5,7 +5,6 @@ import {select, Store} from '@ngrx/store';
 import {combineLatest, Observable, Subject} from 'rxjs';
 import {map, takeUntil} from 'rxjs/operators';
 import {CursorType} from '../../components/restaurant-card/restaurant-card.component';
-import {Unsubscribe} from '../../components/unsubscribe.interface';
 import {GetPizzasResponse} from '../../models';
 import {Restaurant} from '../../models/restaurants/restaurant';
 import {RestaurantsService} from '../../services/restaurants/restaurants.service';
@@ -26,7 +25,7 @@ import {pizzasStoreActions, pizzasStoreSelectors} from "../../store/pizzas";
     ])
   ]
 })
-export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestroy, Unsubscribe {
+export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestroy {
   readonly cursorTypes = CursorType;
   readonly unsubscribe = new Subject<void>();
 

@@ -23,8 +23,7 @@ export class PizzaCardComponent {
     return this.pizza$.getValue();
   }
 
-  @Input()
-  set pizza(value: Pizza) {
+  @Input() set pizza(value: Pizza) {
     this.pizza$.next(value);
   }
 

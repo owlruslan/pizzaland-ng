@@ -7,6 +7,11 @@ const PIZZA_TOPPINGS_ACCESSOR = {
   multi: true
 };
 
+const TOPPINGS = [
+  'anchovy', 'bacon', 'basil', 'chili', 'mozzarella', 'mushroom',
+  'olive', 'onion', 'pepper', 'pepperoni', 'sweetcorn', 'tomato'
+];
+
 @Component({
   selector: 'app-pizza-toppings',
   providers: [PIZZA_TOPPINGS_ACCESSOR],
@@ -14,10 +19,7 @@ const PIZZA_TOPPINGS_ACCESSOR = {
   styleUrls: ['./pizza-toppings.component.scss'],
 })
 export class PizzaToppingsComponent implements ControlValueAccessor {
-  toppings = [
-    'anchovy', 'bacon', 'basil', 'chili', 'mozzarella', 'mushroom',
-    'olive', 'onion', 'pepper', 'pepperoni', 'sweetcorn', 'tomato'
-  ];
+  toppings = TOPPINGS;
 
   value: string | string[] = [];
   focused: string | undefined;

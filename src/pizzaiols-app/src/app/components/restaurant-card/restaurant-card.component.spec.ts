@@ -4,7 +4,7 @@ import {provideMockStore} from '@ngrx/store/testing';
 
 import {RestaurantCardComponent} from './restaurant-card.component';
 
-xdescribe('RestaurantCardComponent', () => {
+describe('RestaurantCardComponent', () => {
   let component: RestaurantCardComponent;
   let fixture: ComponentFixture<RestaurantCardComponent>;
 
@@ -22,12 +22,6 @@ xdescribe('RestaurantCardComponent', () => {
     fixture = TestBed.createComponent(RestaurantCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  afterEach(() => {
-    if (fixture.nativeElement && 'remove' in fixture.nativeElement) {
-      (fixture.nativeElement as HTMLElement).remove();
-    }
   });
 
   it('should create', () => {
