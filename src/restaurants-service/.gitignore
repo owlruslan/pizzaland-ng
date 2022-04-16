@@ -77,4 +77,5 @@ yarn-debug.log*
 *.iml
 out
 gen
-/tmp/cache/
+tmp
+

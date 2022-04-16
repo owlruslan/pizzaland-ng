@@ -5,6 +5,10 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/src/pizzaiols-app/.angular/cache" />
       <excludeFolder url="file://$MODULE_DIR$/src/restaurants-service/tmp/cache/assets" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/modules" />
+      <excludeFolder url="file://$MODULE_DIR$/src/pizzaiols-app/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/src/pizzaiols-app/coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/src/restaurants-service/.idea" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
