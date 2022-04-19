@@ -4,14 +4,20 @@
     <svg fill="none" height="20" viewBox="0 0 100 100" width="20" xmlns="http://www.w3.org/2000/svg">
       <circle cx="50" cy="50" fill="white" r="47" stroke="black" stroke-width="6"/>
       <line stroke="black" stroke-width="6" x1="25" x2="75" y1="51" y2="51"/>
-      <line stroke="black" stroke-width="6" transform="matrix(0.707106 -0.707107 0.707106 0.707107 35 70.3554)" x2="50" y1="-3"
+      <line stroke="black" stroke-width="6" transform="matrix(0.707106 -0.707107 0.707106 0.707107 35 70.3554)" x2="50"
+            y1="-3"
             y2="-3"/>
       <line stroke="black" stroke-width="6" x1="67.234" x2="31.8787" y1="68.4767" y2="33.1213"/>
       <line stroke="black" stroke-width="6" x1="50" x2="50" y1="75" y2="25"/>
     </svg>
   </div>
   <div class="navbar__menu">
-    <div class="navbar__menu__item basket" routerLink="cart" routerLinkActive="active">
+    <div
+      class="navbar__menu__item basket"
+      data-cy="cart-button"
+      routerLink="cart"
+      routerLinkActive="active"
+    >
       <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 0h24v24H0z" fill="none"/>
         <path
