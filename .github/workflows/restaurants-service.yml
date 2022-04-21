@@ -51,5 +51,7 @@ jobs:
         with:
           ruby-version: 3.1.0
           bundler-cache: true
+      - name: Run bundle
+        run: bundle install
       - name: Lint Ruby files
         run: bundle exec rubocop
