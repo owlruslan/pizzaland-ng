@@ -7,3 +7,11 @@ services:
     image: pizzaiols-app
     ports:
       - 4200:4200
+
+  # Backend
+
+  restaurants-service:
+    build: ./src/restaurants-service
+    image: restaurants-service
+    ports:
+      - 3000:3000
