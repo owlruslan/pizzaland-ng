@@ -20,6 +20,13 @@ class Api::V1::RestaurantsController < ApplicationController
     end
   end
 
+  # Finds restaurant by id and renders json object.
   def show
+    restaurant = Restaurant.find_by(id: params[:id])
+    if restaurant
+      render json: restaurant, status: 200
+    else
+      render json: {error: 'Restaurant not found.'}
+    end
   end
 end
