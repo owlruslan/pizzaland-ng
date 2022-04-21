@@ -22,9 +22,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest]
+        os: [ ubuntu-latest ]
         # Due to https://github.com/actions/runner/issues/849, we have to use quotes for '3.0'
-        ruby: [3.1.0]
+        ruby: [ 3.1.0 ]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout code
@@ -35,6 +35,8 @@ jobs:
         with:
           ruby-version: 3.1.0
           bundler-cache: true
+      - name: Run bundle
+        run: bundle install
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
