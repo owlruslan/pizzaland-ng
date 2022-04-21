@@ -2,7 +2,7 @@ class Api::V1::RestaurantsController < ApplicationController
 
   # Renders all items in the restaurants table
   def index
-    restaurants = Restaurants.all
+    restaurants = Restaurant.all
     render json: restaurants, status: 200
   end
 
