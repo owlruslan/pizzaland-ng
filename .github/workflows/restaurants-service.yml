@@ -10,6 +10,9 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+defaults:
+  run:
+    working-directory: src/restaurants-service
 jobs:
   test:
     runs-on: ubuntu-latest
