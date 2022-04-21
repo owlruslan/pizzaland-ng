@@ -1,5 +1,5 @@
-# TODO: https://medium.com/swlh/how-to-build-an-api-with-ruby-on-rails-28e27d47455a
 class Api::V1::RestaurantsController < ApplicationController
+
   # Renders all items in the restaurants table
   def index
     restaurants = Restaurants.all
@@ -9,9 +9,9 @@ class Api::V1::RestaurantsController < ApplicationController
   # Creates new restaurant.
   def create
     restaurant = Restaurant.new(
-      name: prod_params[:name],
-      rating: prod_params[:rating],
-      address: prod_params[:address],
+      name: restaurant_params[:name],
+      rating: restaurant_params[:rating],
+      address: restaurant_params[:address],
     )
     if restaurant.save
       render json: restaurant, status: 200
@@ -28,5 +28,13 @@ class Api::V1::RestaurantsController < ApplicationController
     else
       render json: {error: 'Restaurant not found.'}
     end
+  end
+
+  private def restaurant_params
+    params.require(:restaurant).permit([
+      :name,
+      :rating,
+      :addres
+    ])
   end
 end
