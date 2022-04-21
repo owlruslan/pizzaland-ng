@@ -1,7 +1,7 @@
 ### Example user template
 
 # IntelliJ project files
-.idea
+.idea/*
 *.iml
 out
 gen
@@ -14,4 +14,3 @@ gen
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db
