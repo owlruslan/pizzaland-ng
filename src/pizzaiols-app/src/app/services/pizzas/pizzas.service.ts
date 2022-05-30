@@ -14,17 +14,14 @@ import {APIService} from '../api-service.interface';
 export class PizzasService implements APIService {
   readonly host = environment.host;
 
-  constructor(private http: HttpClient) {
+  constructor() {
   }
 
   /**
    * GET: /api/v1/restaurant
    * Get Pizzas.
    */
-  getPizzas(token: string): Observable<GetPizzasResponse> {
+  getPizzas(): Observable<GetPizzasResponse> {
     return of(mockGetPizzasResponse);
-    /*return this.http.get<ResponseSuccess<GetPizzasResponse>>(`${this.host}/api/v1/restaurant`, {
-      headers: new HttpHeaders({Authorization: `Bearer ${token}`}),
-    });*/
   }
 }
