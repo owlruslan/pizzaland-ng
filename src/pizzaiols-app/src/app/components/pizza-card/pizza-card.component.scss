@@ -1,18 +1,13 @@
 .pizza-card {
   width: 300px;
   height: 400px;
-  background-color: #ffffff;
+  border: 1px solid #f2f2f2;
   cursor: pointer;
-  border-radius: 4px;
-  transition: 300ms ease-out;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  transition: 200ms;
 
   &:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-
-    .pizza-card__preview {
-      transform: scale(1.1);
-    }
+    transform: scale(1.05);
   }
 
   &__price {
@@ -25,7 +20,6 @@
   &__preview {
     height: 200px;
     position: relative;
-    transition: transform 200ms ease-out;
   }
 
   &__info {

@@ -26,20 +26,18 @@ h1 {
 }
 
 .total {
-  font-weight: 900;
+  font-weight: 600;
   text-transform: uppercase;
   font-size: 24px;
   display: flex;
   width: 100%;
-  justify-content: flex-start;
-  margin-top: 30px;
+  justify-content: space-between;
+  border-top: 1px solid #d2d2d7;
+  margin-top: 16px;
+  padding-top: 19px;
 
   &__title {
     margin-right: 30px;
-  }
-
-  &__value {
-    color: #32D184;
   }
 }
 
