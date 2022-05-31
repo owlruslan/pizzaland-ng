@@ -6,7 +6,6 @@
     <div class="pizza-card__info">
       <div class="pizza-card__price">{{ pizza.price  | currency: "USD" }}</div>
       <div class="pizza-card__info__name">{{ pizza.name }}</div>
-      <div class="pizza-card__info__description">{{ pizza.description }}</div>
       <div class="pizza-card__info__bottom">
         <ui-button
           (click)="onBuy(pizza)"
