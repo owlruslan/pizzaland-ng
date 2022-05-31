@@ -14,7 +14,7 @@ export class PizzasEffects {
   getPizzas$ = createEffect(() => this.actions$.pipe(
     ofType(getPizzas),
     withLatestFrom(this.store.pipe(select(getUserTokenState))),
-    switchMap(([action, token]) => this.pizzasService.getPizzas(token || '').pipe(
+    switchMap(() => this.pizzasService.getPizzas().pipe(
         map((response: GetPizzasResponse) => getPizzasSuccess({response}),),
         catchError((errResponse: ResponseError) => of(errResponse).pipe(
           switchMap((response: ResponseError) => [getPizzasFailure({response})]),
