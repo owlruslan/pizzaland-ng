@@ -5,7 +5,7 @@ import {RouterTestingModule} from "@angular/router/testing";
 import {AppRoutingModule} from "./app-routing.module";
 import {CartModule} from "./pages/cart/cart.module";
 import {RestaurantModule} from "./pages/restaurant/restaurant.module";
-import {RestaurantsModule} from "./pages/restaurants/restaurants.module";
+import {RestaurantsModule} from "./restaurants/restaurants.module";
 
 
 export const expectLazyLoadModule = async (route: Route | undefined, module: unknown): Promise<any> => {
