@@ -1,47 +1,25 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {select, Store} from '@ngrx/store';
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Pizza} from "../pizzas/pizza.model";
-import {cartStoreSelectors} from "../store/cart";
+import {CartService} from "./cart.service";
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CartComponent implements OnInit, OnDestroy {
-  readonly unsubscribe = new Subject<void>();
+export class CartComponent implements OnInit {
+  pizzas: Pizza[] = this.cart.getPizzas();
+  total: number = this.pizzas.length;
+  activePizza: Pizza | undefined = undefined;
 
-  pizzas$: Observable<Pizza[]> = this.store.pipe(
-    select(cartStoreSelectors.getPizzas),
-    takeUntil(this.unsubscribe),
-  );
-
-  total$: Observable<number> = this.store.pipe(
-    select(cartStoreSelectors.getTotalState),
-    takeUntil(this.unsubscribe),
-  );
-
-  // @ts-ignore
-  activePizza$ = new BehaviorSubject<Pizza>(null);
-
-  constructor(private store: Store) { }
+  constructor(private cart: CartService) { }
 
   ngOnInit(): void {
-    this.pizzas$.subscribe(resp => {
-      if (resp) {
-        // @ts-ignore
-        this.activePizza$.next(resp[0]);
-      }
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.unsubscribe.next();
+    this.activePizza = this.pizzas[0];
   }
 
   onPizzaHover(pizza: Pizza): void {
-    this.activePizza$.next(pizza);
+    this.activePizza = pizza;
   }
 }

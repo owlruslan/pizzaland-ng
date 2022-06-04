@@ -1,25 +1,14 @@
-import {Component, OnDestroy} from '@angular/core';
-import {select, Store} from '@ngrx/store';
-import {Observable, Subject} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
-import {cartStoreSelectors} from "../../store/cart";
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {CartService} from "../../cart/cart.service";
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavbarComponent implements OnDestroy {
-  readonly unsubscribe = new Subject<void>();
+export class NavbarComponent {
+  pizzasCount: number = this.cart.getPizzas().length;
 
-  pizzasCount$: Observable<number> = this.store.pipe(
-    select(cartStoreSelectors.getPizzasCountState),
-    takeUntil(this.unsubscribe)
-  );
-
-  constructor(private store: Store) { }
-
-  ngOnDestroy(): void {
-    this.unsubscribe.next();
-  }
+  constructor(private cart: CartService) { }
 }

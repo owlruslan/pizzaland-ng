@@ -1,8 +1,8 @@
 <div class="container">
   <h1>Cart</h1>
-  <app-pizza-preview [pizza]="activePizza$ | async"></app-pizza-preview>
+  <app-pizza-preview [pizza]="activePizza"></app-pizza-preview>
   <div class="pizzas">
-    <ng-container *ngFor="let pizza of (pizzas$ | async)">
+    <ng-container *ngFor="let pizza of pizzas">
       <app-pizza-card
         (mouseenter)="onPizzaHover(pizza)"
         [pizza]="pizza"
@@ -15,7 +15,7 @@
       Total
     </div>
     <div class="total__value">
-      {{ total$ | async | currency: 'USD'}}
+      {{ total | currency: 'USD'}}
     </div>
   </div>
 </div>

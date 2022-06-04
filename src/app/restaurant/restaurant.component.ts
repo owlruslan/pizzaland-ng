@@ -1,10 +1,8 @@
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
 import {AfterContentChecked, Component, OnDestroy} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
-import {combineLatest, Observable, Subject} from 'rxjs';
-import {map, takeUntil} from 'rxjs/operators';
+import {Observable, Subject} from 'rxjs';
 import {CursorType} from '../components/restaurant-card/restaurant-card.component';
-import {GetPizzasResponse} from "../pizzas/get-pizzas-response.model";
 import {Pizza} from "../pizzas/pizza.model";
 import {PizzasService} from "../pizzas/pizzas.service";
 import {Restaurant} from '../restaurants/restaurant';
@@ -23,36 +21,38 @@ import {RestaurantsService} from "../restaurants/restaurants.service";
         ),
       ])
     ])
-  ]
+  ],
 })
 export class RestaurantComponent implements AfterContentChecked, OnDestroy {
   readonly cursorTypes = CursorType;
   readonly unsubscribe = new Subject<void>();
-
   readonly restaurant: Observable<Restaurant> = this.restaurantsService.getRestaurant('0');
 
   form = this.fb.group({toppings: [[]]});
-  pizzasResponse$: Observable<GetPizzasResponse> = this.pizzasService.getPizzas();
-  pizzas$: Observable<Pizza[] | undefined> = combineLatest([
+  pizzas: Pizza[] | undefined = this.pizzasService.getPizzas();
+ /* pizzas$: Observable<Pizza[] | undefined> = combineLatest([
     this.form.controls['toppings'].valueChanges,
-    this.pizzasResponse$
+    this.pizzaResults$
   ]).pipe(
     map((results) => {
       const toppings = results[0];
-      const pizzasResponse = results[1];
+      const pizzaResults = results[1];
 
+      console.log(results);
+
+      // @ts-ignore
       if (toppings.length > 0) {
         // @ts-ignore
-        return pizzasResponse.pizzas.filter(pizza =>
+        return pizzaResults.pizzas.filter(pizza =>
           // @ts-ignore
           toppings.some((topping: any) => pizza.toppings.includes(topping))
         );
-      } else {
-        return pizzasResponse.pizzas;
       }
+
+      return pizzaResults.pizzas;
     }),
     takeUntil(this.unsubscribe)
-  );
+  );*/
 
   constructor(
     private restaurantsService: RestaurantsService,

@@ -1,8 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
-import {environment} from '../../environments/environment';
-import mockGetPizzasResponse from './get-pizzas-response.mock';
-import {GetPizzasResponse} from "./get-pizzas-response.model";
+import {mockPizzaResults} from './get-pizzas-response.mock';
+import {Pizza} from "./pizza.model";
 
 
 /**
@@ -10,16 +8,11 @@ import {GetPizzasResponse} from "./get-pizzas-response.model";
  */
 @Injectable({providedIn: 'root'})
 export class PizzasService {
-  readonly host = environment.host;
-
-  constructor() {
-  }
 
   /**
-   * GET: /api/v1/restaurant
    * Get Pizzas.
    */
-  getPizzas(): Observable<GetPizzasResponse> {
-    return of(mockGetPizzasResponse);
+  getPizzas(): Pizza[] {
+    return mockPizzaResults;
   }
 }

@@ -6,10 +6,10 @@
   <div class="filter">
     <app-pizza-toppings formControlName="toppings"></app-pizza-toppings>
   </div>
-  <div *ngIf="(pizzas$ | async); else preloader"
-       [@listAnimation]="(pizzas$ | async)?.length"
+  <div *ngIf="pizzas; else preloader"
+       [@listAnimation]="pizzas?.length"
        class="pizzas">
-    <ng-container *ngFor="let pizza of (pizzas$ | async)">
+    <ng-container *ngFor="let pizza of pizzas">
       <app-pizza-card [pizza]="pizza" class="pizza-card"></app-pizza-card>
     </ng-container>
   </div>

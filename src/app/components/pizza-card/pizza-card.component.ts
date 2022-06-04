@@ -1,8 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {BehaviorSubject} from 'rxjs';
+import {CartService} from "../../cart/cart.service";
 import {Pizza} from "../../pizzas/pizza.model";
-import {cartStoreActions} from "../../store/cart";
 import {ButtonType} from '../../ui/button/button.component';
 
 
@@ -13,21 +11,11 @@ import {ButtonType} from '../../ui/button/button.component';
 })
 export class PizzaCardComponent {
   readonly buttonType = ButtonType.SUCCESS;
+  @Input() pizza: Pizza | undefined = undefined;
 
-  // @ts-ignore
-  pizza$ = new BehaviorSubject<Pizza>(undefined);
-
-  constructor(private store: Store) { }
-
-  get pizza(): Pizza {
-    return this.pizza$.getValue();
-  }
-
-  @Input() set pizza(value: Pizza) {
-    this.pizza$.next(value);
-  }
+  constructor(private cart: CartService) { }
 
   onBuy(pizza: Pizza): void {
-    this.store.dispatch(cartStoreActions.add({pizza}));
+    this.cart.addToCart(pizza);
   }
 }

@@ -1,28 +1,23 @@
-import {GetPizzasResponse} from "./get-pizzas-response.model";
-
-const mockGetPizzasResponse = new GetPizzasResponse();
-mockGetPizzasResponse.pizzas = [
+export const mockPizzaResults = [
   {
     id: '0',
     name: 'Margherita',
-    description: 'PIZZA_DESCRIPTION_0',
+    description: 'Descriptions',
     toppings: ['anchovy', 'basil', 'mozzarella', 'tomato'],
     price: 100,
   },
   {
     id: '1',
     name: 'Marinara',
-    description: 'PIZZA_DESCRIPTION_1',
+    description: 'Descriptions',
     toppings: ['sweetcorn', 'pepper', 'onion', 'olive'],
     price: 130,
   },
   {
     id: '2',
     name: 'Napoletana',
-    description: 'PIZZA_DESCRIPTION_2',
+    description: 'Descriptions',
     toppings: ['bacon', 'mushroom', 'chili', 'pepperoni'],
     price: 146,
   },
 ];
-
-export default mockGetPizzasResponse;
