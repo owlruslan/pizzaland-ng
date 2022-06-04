@@ -9,7 +9,7 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NavbarModule} from "./components/navbar/navbar.module";
-import {CartStoreModule, PizzasStoreModule} from "./store";
+import {CartStoreModule} from "./store";
 
 
 @NgModule({
@@ -26,7 +26,6 @@ import {CartStoreModule, PizzasStoreModule} from "./store";
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
     CartStoreModule,
-    PizzasStoreModule,
     StoreDevtoolsModule.instrument(),
   ],
   bootstrap: [AppComponent]

@@ -6,7 +6,7 @@
   <div class="filter">
     <app-pizza-toppings formControlName="toppings"></app-pizza-toppings>
   </div>
-  <div *ngIf="!(loading$ | async); else preloader"
+  <div *ngIf="(pizzas$ | async); else preloader"
        [@listAnimation]="(pizzas$ | async)?.length"
        class="pizzas">
     <ng-container *ngFor="let pizza of (pizzas$ | async)">
@@ -14,7 +14,7 @@
     </ng-container>
   </div>
   <ng-template #preloader>
-    <div *ngIf="(loading$ | async)" class="pizzas">
+    <div class="pizzas">
       <div class="pizza animate-background"></div>
       <div class="pizza animate-background"></div>
       <div class="pizza animate-background"></div>

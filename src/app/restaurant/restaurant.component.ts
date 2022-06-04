@@ -1,14 +1,15 @@
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
 import {AfterContentChecked, Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
-import {select, Store} from '@ngrx/store';
+import {Store} from '@ngrx/store';
 import {combineLatest, Observable, Subject} from 'rxjs';
 import {map, takeUntil} from 'rxjs/operators';
 import {CursorType} from '../components/restaurant-card/restaurant-card.component';
 import {GetPizzasResponse} from "../pizzas/get-pizzas-response.model";
+import {Pizza} from "../pizzas/pizza.model";
+import {PizzasService} from "../pizzas/pizzas.service";
 import {Restaurant} from '../restaurants/restaurant';
 import {RestaurantsService} from "../restaurants/restaurants.service";
-import {pizzasStoreActions, pizzasStoreSelectors} from "../store/pizzas";
 
 @Component({
   selector: 'app-pizzas',
@@ -25,23 +26,15 @@ import {pizzasStoreActions, pizzasStoreSelectors} from "../store/pizzas";
     ])
   ]
 })
-export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestroy {
+export class RestaurantComponent implements AfterContentChecked, OnDestroy {
   readonly cursorTypes = CursorType;
   readonly unsubscribe = new Subject<void>();
 
   readonly restaurant: Observable<Restaurant> = this.restaurantsService.getRestaurant('0');
 
-  form = this.fb.group({
-    toppings: [[]]
-  });
-
-  pizzasResponse$: Observable<GetPizzasResponse> = this.store.pipe(
-    select(pizzasStoreSelectors.getPizzasResponseState),
-    takeUntil(this.unsubscribe)
-  );
-
-  // @ts-ignore
-  pizzas$: Observable<any[]> = combineLatest([
+  form = this.fb.group({toppings: [[]]});
+  pizzasResponse$: Observable<GetPizzasResponse> = this.pizzasService.getPizzas();
+  pizzas$: Observable<Pizza[] | undefined> = combineLatest([
     this.form.controls['toppings'].valueChanges,
     this.pizzasResponse$
   ]).pipe(
@@ -58,23 +51,16 @@ export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestr
       } else {
         return pizzasResponse.pizzas;
       }
-    })
-  );
-
-  loading$: Observable<boolean> = this.store.pipe(
-    select(pizzasStoreSelectors.getLoadingState),
+    }),
     takeUntil(this.unsubscribe)
   );
 
   constructor(
     private store: Store,
     private restaurantsService: RestaurantsService,
+    private pizzasService: PizzasService,
     private fb: FormBuilder
   ) {
-  }
-
-  ngOnInit(): void {
-    this.store.dispatch(pizzasStoreActions.getPizzas());
   }
 
   ngAfterContentChecked(): void {
