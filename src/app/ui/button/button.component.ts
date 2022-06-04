@@ -15,7 +15,4 @@ export class ButtonComponent {
 
   @Input() title = 'Button';
   @Input() type = this.types.DEFAULT;
-
-  constructor() {
-  }
 }

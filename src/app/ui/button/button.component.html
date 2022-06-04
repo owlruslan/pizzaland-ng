@@ -1,6 +1,1 @@
-<div
-  [ngClass]="{
-    'success': type === types.SUCCESS
-  }"
-  class="button"
->{{ title }}</div>
+<div class="button" [class.success]="type === types.SUCCESS">{{ title }}</div>
