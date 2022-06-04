@@ -8,7 +8,7 @@ import {MockStore, provideMockStore} from '@ngrx/store/testing';
 import {cold} from 'jest-marbles';
 import {State} from 'src/app/store/pizzas/pizzas.state';
 import mockGetPizzasResponse from '../pizzas/get-pizzas-response.mock';
-import {GetPizzasResponse} from '../models';
+import {GetPizzasResponse} from "../pizzas/get-pizzas-response.model";
 import {pizzasStoreSelectors} from "../store/pizzas";
 
 import {RestaurantComponent} from './restaurant.component';
