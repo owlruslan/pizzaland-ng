@@ -1,7 +1,5 @@
 import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {provideMockStore} from '@ngrx/store/testing';
-
 import {RestaurantCardComponent} from './restaurant-card.component';
 
 describe('RestaurantCardComponent', () => {
@@ -11,9 +9,6 @@ describe('RestaurantCardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [RestaurantCardComponent],
-      providers: [
-        provideMockStore()
-      ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   });
