@@ -1,5 +1,5 @@
-import {Restaurant} from '../../models/restaurants/restaurant';
-import {RestaurantModel} from '../../models/restaurants/restaurant.model';
+import {Restaurant} from '../../restaurants/restaurant';
+import {RestaurantModel} from '../../restaurants/restaurant.model';
 
 const mockRestaurants: Restaurant[] = [];
 

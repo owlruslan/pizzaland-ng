@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Restaurant} from '../models/restaurants/restaurant';
+import {Restaurant} from './restaurant';
 import {RestaurantsService} from "./restaurants.service";
 
 @Component({

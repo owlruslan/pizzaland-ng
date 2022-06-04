@@ -7,7 +7,7 @@ import {map, takeUntil} from 'rxjs/operators';
 import {RestaurantsService} from 'src/app/restaurants/restaurants.service';
 import {CursorType} from '../components/restaurant-card/restaurant-card.component';
 import {GetPizzasResponse} from '../models';
-import {Restaurant} from '../models/restaurants/restaurant';
+import {Restaurant} from '../restaurants/restaurant';
 import {pizzasStoreActions, pizzasStoreSelectors} from "../store/pizzas";
 
 @Component({
