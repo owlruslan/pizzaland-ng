@@ -8,11 +8,11 @@ const routes: Routes = [
   },
   {
     path: 'restaurants/:id',
-    loadChildren: () => import('./pages/restaurant/restaurant.module').then(mod => mod.RestaurantModule),
+    loadChildren: () => import('./restaurant/restaurant.module').then(mod => mod.RestaurantModule),
   },
   {
     path: 'cart',
-    loadChildren: () => import('./pages/cart/cart.module').then(mod => mod.CartModule),
+    loadChildren: () => import('./cart/cart.module').then(mod => mod.CartModule),
   },
   {
     path: '',

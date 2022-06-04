@@ -2,8 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {Pizza} from '../../models';
-import {cartStoreSelectors} from "../../store/cart";
+import {Pizza} from '../models';
+import {cartStoreSelectors} from "../store/cart";
 
 @Component({
   selector: 'app-cart',

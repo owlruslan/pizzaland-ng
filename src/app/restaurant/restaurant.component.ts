@@ -5,10 +5,10 @@ import {select, Store} from '@ngrx/store';
 import {combineLatest, Observable, Subject} from 'rxjs';
 import {map, takeUntil} from 'rxjs/operators';
 import {RestaurantsService} from 'src/app/restaurants/restaurants.service';
-import {CursorType} from '../../components/restaurant-card/restaurant-card.component';
-import {GetPizzasResponse} from '../../models';
-import {Restaurant} from '../../models/restaurants/restaurant';
-import {pizzasStoreActions, pizzasStoreSelectors} from "../../store/pizzas";
+import {CursorType} from '../components/restaurant-card/restaurant-card.component';
+import {GetPizzasResponse} from '../models';
+import {Restaurant} from '../models/restaurants/restaurant';
+import {pizzasStoreActions, pizzasStoreSelectors} from "../store/pizzas";
 
 @Component({
   selector: 'app-pizzas',

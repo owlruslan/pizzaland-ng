@@ -3,14 +3,13 @@ import {Observable, of} from 'rxjs';
 import {environment} from '../../../environments/environment';
 import mockGetPizzasResponse from '../../mocks/pizzas/get-pizzas-response.mock';
 import {GetPizzasResponse} from '../../models';
-import {APIService} from '../api-service.interface';
 
 
 /**
  * Implementation of restaurant APIs.
  */
 @Injectable({providedIn: 'root'})
-export class PizzasService implements APIService {
+export class PizzasService {
   readonly host = environment.host;
 
   constructor() {

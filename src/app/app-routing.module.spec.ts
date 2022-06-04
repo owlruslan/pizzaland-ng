@@ -3,8 +3,8 @@ import {Route, Router} from "@angular/router";
 import {RouterTestingModule} from "@angular/router/testing";
 
 import {AppRoutingModule} from "./app-routing.module";
-import {CartModule} from "./pages/cart/cart.module";
-import {RestaurantModule} from "./pages/restaurant/restaurant.module";
+import {CartModule} from "./cart/cart.module";
+import {RestaurantModule} from "./restaurant/restaurant.module";
 import {RestaurantsModule} from "./restaurants/restaurants.module";
 
 
