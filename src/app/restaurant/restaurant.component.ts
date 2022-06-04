@@ -1,7 +1,6 @@
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
-import {AfterContentChecked, Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterContentChecked, Component, OnDestroy} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
-import {Store} from '@ngrx/store';
 import {combineLatest, Observable, Subject} from 'rxjs';
 import {map, takeUntil} from 'rxjs/operators';
 import {CursorType} from '../components/restaurant-card/restaurant-card.component';
@@ -56,7 +55,6 @@ export class RestaurantComponent implements AfterContentChecked, OnDestroy {
   );
 
   constructor(
-    private store: Store,
     private restaurantsService: RestaurantsService,
     private pizzasService: PizzasService,
     private fb: FormBuilder

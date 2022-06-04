@@ -3,29 +3,14 @@ import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {FormBuilder} from '@angular/forms';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MemoizedSelector} from '@ngrx/store';
-import {MockStore, provideMockStore} from '@ngrx/store/testing';
 import {cold} from 'jest-marbles';
-import {State} from 'src/app/store/pizzas/pizzas.state';
-import mockGetPizzasResponse from '../pizzas/get-pizzas-response.mock';
-import {GetPizzasResponse} from "../pizzas/get-pizzas-response.model";
-import {pizzasStoreSelectors} from "../store/pizzas";
 
 import {RestaurantComponent} from './restaurant.component';
 
 
-const initialState = {
-  client: {
-    pizzas: mockGetPizzasResponse
-  }
-};
-
 describe('RestaurantComponent', () => {
   let component: RestaurantComponent;
   let fixture: ComponentFixture<RestaurantComponent>;
-
-  let mockStore: MockStore;
-  let mockPizzasResponseSelector: MemoizedSelector<State, GetPizzasResponse>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -34,10 +19,7 @@ describe('RestaurantComponent', () => {
         NoopAnimationsModule,
         HttpClientTestingModule
       ],
-      providers: [
-        provideMockStore({initialState}),
-        FormBuilder,
-      ],
+      providers: [FormBuilder],
       teardown: { destroyAfterEach: false },
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
@@ -45,13 +27,6 @@ describe('RestaurantComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(RestaurantComponent);
-
-    mockStore = TestBed.inject(MockStore);
-    mockPizzasResponseSelector = mockStore.overrideSelector(
-      pizzasStoreSelectors.getPizzasResponseState,
-      mockGetPizzasResponse
-    );
-
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
