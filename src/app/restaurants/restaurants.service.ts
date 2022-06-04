@@ -4,7 +4,7 @@ import mockRestaurants from '../mocks/restaurants/restaurants.mock';
 import {Restaurant} from '../models/restaurants/restaurant';
 
 @Injectable({providedIn: 'root'})
-export class RestaurantsApiService {
+export class RestaurantsService {
 
   /**
    * Get a restaurant list.

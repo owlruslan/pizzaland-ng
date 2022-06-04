@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Restaurant} from '../models/restaurants/restaurant';
-import {RestaurantsApiService} from "./restaurants-api.service";
+import {RestaurantsService} from "./restaurants.service";
 
 @Component({
   selector: 'app-restaurants',
@@ -11,5 +11,5 @@ import {RestaurantsApiService} from "./restaurants-api.service";
 export class RestaurantsComponent {
   readonly data: Observable<Restaurant[]> = this.restaurants.getRestaurants();
 
-  constructor(private restaurants: RestaurantsApiService) { }
+  constructor(private restaurants: RestaurantsService) { }
 }
