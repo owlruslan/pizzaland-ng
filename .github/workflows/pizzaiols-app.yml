@@ -9,10 +9,6 @@ on:
   pull_request:
     branches: [ master ]
 
-defaults:
-  run:
-    working-directory: src/pizzaiols-app
-
 jobs:
   build:
 
@@ -30,7 +26,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
-          cache-dependency-path: src/pizzaiols-app/yarn.lock
       - run: yarn
       - run: yarn build
       - run: yarn test
