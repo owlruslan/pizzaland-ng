@@ -1,7 +1,7 @@
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
-import {AfterContentChecked, Component, OnDestroy} from '@angular/core';
+import {AfterContentChecked, ChangeDetectionStrategy, Component, OnDestroy} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
-import {Observable, Subject} from 'rxjs';
+import {Subject} from 'rxjs';
 import {CursorType} from '../components/restaurant-card/restaurant-card.component';
 import {Pizza} from "../pizzas/pizza.model";
 import {PizzasService} from "../pizzas/pizzas.service";
@@ -12,6 +12,7 @@ import {RestaurantsService} from "../restaurants/restaurants.service";
   selector: 'app-pizzas',
   templateUrl: './restaurant.component.html',
   styleUrls: ['./restaurant.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('listAnimation', [
       transition('* <=> *', [
@@ -30,7 +31,8 @@ export class RestaurantComponent implements AfterContentChecked, OnDestroy {
 
   form = this.fb.group({toppings: [[]]});
   pizzas: Pizza[] | undefined = this.pizzasService.getPizzas();
- /* pizzas$: Observable<Pizza[] | undefined> = combineLatest([
+  // TODO: add filter
+  /* pizzas$: Observable<Pizza[] | undefined> = combineLatest([
     this.form.controls['toppings'].valueChanges,
     this.pizzaResults$
   ]).pipe(
