@@ -3,7 +3,6 @@ import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {FormBuilder} from '@angular/forms';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {cold} from 'jest-marbles';
 
 import {RestaurantComponent} from './restaurant.component';
 
@@ -33,31 +32,5 @@ describe('RestaurantComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  describe('#restaurant', () => {
-    it('should return right data', () => {
-      component.form.controls['toppings'].setValue(['anchovy']);
-      component.pizzas$ = cold('-a', {
-        a: []
-      });
-      const expected = cold('-b', {
-        b: []
-      });
-
-      expect(component.pizzas$).toBeObservable(expected);
-    });
-
-    it('should return right data', () => {
-      component.form.controls['toppings'].setValue([]);
-      component.pizzas$ = cold('-a', {
-        a: []
-      });
-      const expected = cold('-b', {
-        b: []
-      });
-
-      expect(component.pizzas$).toBeObservable(expected);
-    });
   });
 });

@@ -3,8 +3,6 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {Store} from "@ngrx/store";
 import {provideMockStore} from '@ngrx/store/testing';
 import mockPizza from "../../pizzas/pizza.mock";
-import {cartStoreActions} from "../../store";
-
 import {PizzaCardComponent} from './pizza-card.component';
 
 describe('PizzaCardComponent', () => {
@@ -31,9 +29,9 @@ describe('PizzaCardComponent', () => {
   describe('#onBuy', function () {
     it('should add pizza to cart', function () {
       const pizza = mockPizza;
-      const dispatchSpy = jest.spyOn(store, 'dispatch')
+      const onBuySpy = jest.spyOn(component, 'onBuy')
       component.onBuy(pizza)
-      expect(dispatchSpy).toHaveBeenCalledWith(cartStoreActions.add({pizza}))
+      expect(onBuySpy).toHaveBeenCalledWith(pizza);
     });
   });
 });
