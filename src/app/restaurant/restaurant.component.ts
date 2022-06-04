@@ -6,7 +6,7 @@ import {combineLatest, Observable, Subject} from 'rxjs';
 import {map, takeUntil} from 'rxjs/operators';
 import {RestaurantsService} from 'src/app/restaurants/restaurants.service';
 import {CursorType} from '../components/restaurant-card/restaurant-card.component';
-import {GetPizzasResponse} from '../models';
+import {GetPizzasResponse} from "../pizzas/get-pizzas-response.model";
 import {Restaurant} from '../restaurants/restaurant';
 import {pizzasStoreActions, pizzasStoreSelectors} from "../store/pizzas";
 

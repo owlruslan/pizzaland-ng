@@ -1,5 +1,6 @@
 import {createAction, props} from '@ngrx/store';
-import {GetPizzasResponse, ResponseError} from '../../models';
+import { ResponseError} from '../../models';
+import {GetPizzasResponse} from "../../pizzas/get-pizzas-response.model";
 import {FEATURE_KEY} from "../cart/cart.state";
 
 export const getPizzas = createAction(`${FEATURE_KEY}/getPizzas`);

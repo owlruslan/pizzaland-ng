@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Observable, of} from 'rxjs';
-import mockRestaurants from '../mocks/restaurants/restaurants.mock';
+import mockRestaurants from './restaurants.mock';
 import {Restaurant} from './restaurant';
 
 @Injectable({providedIn: 'root'})

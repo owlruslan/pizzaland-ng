@@ -2,7 +2,7 @@ import {NO_ERRORS_SCHEMA} from '@angular/core';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {ReactiveFormsModule} from '@angular/forms';
 
-import mockPizza from '../../mocks/pizzas/pizza.mock';
+import mockPizza from '../../pizzas/pizza.mock';
 import {PizzaPreviewComponent} from './pizza-preview.component';
 
 describe('PizzaPreviewComponent', () => {

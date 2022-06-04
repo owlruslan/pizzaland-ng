@@ -1,5 +1,5 @@
-import mockGetPizzasResponse from "../../mocks/pizzas/get-pizzas-response.mock";
-import {Pizza} from "../../models";
+import mockGetPizzasResponse from "../../pizzas/get-pizzas-response.mock";
+import {Pizza} from "../../pizzas/pizza.model";
 
 export const FEATURE_KEY = `cart`;
 

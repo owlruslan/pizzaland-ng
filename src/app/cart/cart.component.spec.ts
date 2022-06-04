@@ -2,7 +2,7 @@ import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {MemoizedSelector} from '@ngrx/store';
 import {MockStore, provideMockStore} from '@ngrx/store/testing';
-import mockGetPizzasResponse from '../mocks/pizzas/get-pizzas-response.mock';
+import mockGetPizzasResponse from '../pizzas/get-pizzas-response.mock';
 import {cartStoreSelectors} from "../store/cart";
 import {State} from "../store/pizzas/pizzas.state";
 

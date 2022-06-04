@@ -7,7 +7,7 @@ import {MemoizedSelector} from '@ngrx/store';
 import {MockStore, provideMockStore} from '@ngrx/store/testing';
 import {cold} from 'jest-marbles';
 import {State} from 'src/app/store/pizzas/pizzas.state';
-import mockGetPizzasResponse from '../mocks/pizzas/get-pizzas-response.mock';
+import mockGetPizzasResponse from '../pizzas/get-pizzas-response.mock';
 import {GetPizzasResponse} from '../models';
 import {pizzasStoreSelectors} from "../store/pizzas";
 

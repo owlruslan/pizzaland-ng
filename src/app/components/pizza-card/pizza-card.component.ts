@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {BehaviorSubject} from 'rxjs';
-import {Pizza} from '../../models';
+import {Pizza} from "../../pizzas/pizza.model";
 import {cartStoreActions} from "../../store/cart";
 import {ButtonType} from '../../ui/button/button.component';
 

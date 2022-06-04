@@ -1,4 +1,4 @@
-import {GetPizzasResponse} from '../../models';
+import {GetPizzasResponse} from "../../pizzas/get-pizzas-response.model";
 
 export const FEATURE_KEY = `pizzas`;
 

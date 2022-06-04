@@ -1,7 +1,7 @@
 import {animate, animateChild, query, style, transition, trigger} from '@angular/animations';
 import {Component, Input} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {Pizza} from "../../models";
+import {Pizza} from "../../pizzas/pizza.model";
 
 export const SLIDE_ANIMATION = trigger('slide', [
   transition(':enter', [

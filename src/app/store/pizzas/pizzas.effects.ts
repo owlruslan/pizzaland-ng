@@ -3,8 +3,9 @@ import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Store} from '@ngrx/store';
 import {of} from 'rxjs';
 import {catchError, map, switchMap} from 'rxjs/operators';
-import {GetPizzasResponse, ResponseError} from '../../models';
-import {PizzasService} from '../../services/pizzas/pizzas.service';
+import {ResponseError} from '../../models';
+import {GetPizzasResponse} from "../../pizzas/get-pizzas-response.model";
+import {PizzasService} from '../../pizzas/pizzas.service';
 import {getPizzas, getPizzasFailure, getPizzasSuccess} from './pizzas.actions';
 
 
