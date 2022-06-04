@@ -11,10 +11,7 @@ import {AppComponent} from './app.component';
 import {NavbarModule} from "./components/navbar/navbar.module";
 import {RestaurantsMockService} from './services/restaurants/restaurants-mock.service';
 import {RestaurantsService} from './services/restaurants/restaurants.service';
-import {CartStoreModule} from "./store";
-import {PizzasStoreModule} from "./store";
-import {RestaurantsStoreModule} from "./store";
-import {UserStoreModule} from "./store";
+import {CartStoreModule, PizzasStoreModule, RestaurantsStoreModule} from "./store";
 
 
 @NgModule({
@@ -33,7 +30,6 @@ import {UserStoreModule} from "./store";
     CartStoreModule,
     PizzasStoreModule,
     RestaurantsStoreModule,
-    UserStoreModule,
     StoreDevtoolsModule.instrument(),
   ],
   providers: [
