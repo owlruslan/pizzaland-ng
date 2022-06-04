@@ -3,6 +3,7 @@
 Catalog of pizza restaurants.
 
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://storybook.js.org/)
+![Build](https://github.com/theruslanusmanov/pizzaiols/actions/workflows/pizzaiols.yml/badge.svg)
 
 ## Stack
 
