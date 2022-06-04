@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Restaurant} from '../../models/restaurants/restaurant';
-import {RestaurantsService} from '../../services/restaurants/restaurants.service';
+import {RestaurantsApiService} from "../../services/restaurants/restaurants-api.service";
 
 @Component({
   selector: 'app-restaurants',
@@ -9,7 +9,7 @@ import {RestaurantsService} from '../../services/restaurants/restaurants.service
   styleUrls: ['./restaurants.component.scss']
 })
 export class RestaurantsComponent {
-  readonly restaurants: Observable<Restaurant[]> = this.restaurantsService.getRestaurants();
+  readonly data: Observable<Restaurant[]> = this.restaurants.getRestaurants();
 
-  constructor(private restaurantsService: RestaurantsService) { }
+  constructor(private restaurants: RestaurantsApiService) { }
 }

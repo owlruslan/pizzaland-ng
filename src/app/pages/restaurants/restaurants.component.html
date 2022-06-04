@@ -2,7 +2,7 @@
   <h1>Restaurants</h1>
   <div class="restaurants">
     <app-restaurant-card
-      *ngFor="let restaurant of restaurants | async"
+      *ngFor="let restaurant of data | async"
       [model]="restaurant"
       [routerLink]="restaurant?.id"
     ></app-restaurant-card>

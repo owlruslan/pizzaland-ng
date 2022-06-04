@@ -4,10 +4,10 @@ import {FormBuilder} from '@angular/forms';
 import {select, Store} from '@ngrx/store';
 import {combineLatest, Observable, Subject} from 'rxjs';
 import {map, takeUntil} from 'rxjs/operators';
+import {RestaurantsApiService} from 'src/app/services/restaurants/restaurants-api.service';
 import {CursorType} from '../../components/restaurant-card/restaurant-card.component';
 import {GetPizzasResponse} from '../../models';
 import {Restaurant} from '../../models/restaurants/restaurant';
-import {RestaurantsService} from '../../services/restaurants/restaurants.service';
 import {pizzasStoreActions, pizzasStoreSelectors} from "../../store/pizzas";
 
 @Component({
@@ -68,7 +68,7 @@ export class RestaurantComponent implements OnInit, AfterContentChecked, OnDestr
 
   constructor(
     private store: Store,
-    private restaurantsService: RestaurantsService,
+    private restaurantsService: RestaurantsApiService,
     private fb: FormBuilder
   ) {
   }

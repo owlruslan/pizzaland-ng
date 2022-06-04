@@ -9,9 +9,7 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NavbarModule} from "./components/navbar/navbar.module";
-import {RestaurantsMockService} from './services/restaurants/restaurants-mock.service';
-import {RestaurantsService} from './services/restaurants/restaurants.service';
-import {CartStoreModule, PizzasStoreModule, RestaurantsStoreModule} from "./store";
+import {CartStoreModule, PizzasStoreModule} from "./store";
 
 
 @NgModule({
@@ -29,11 +27,7 @@ import {CartStoreModule, PizzasStoreModule, RestaurantsStoreModule} from "./stor
     EffectsModule.forRoot([]),
     CartStoreModule,
     PizzasStoreModule,
-    RestaurantsStoreModule,
     StoreDevtoolsModule.instrument(),
-  ],
-  providers: [
-    {provide: RestaurantsService, useClass: RestaurantsMockService},
   ],
   bootstrap: [AppComponent]
 })
