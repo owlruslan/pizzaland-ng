@@ -1,7 +1,7 @@
 <div [formGroup]="form" class="container">
   <app-breadcrumbs class="breadcrumbs" path="restaurants"></app-breadcrumbs>
   <div class="restaurant-container">
-    <h1>{{(restaurant | async)?.name}}</h1>
+    <h1>{{restaurant?.name}}</h1>
   </div>
   <div class="filter">
     <app-pizza-toppings formControlName="toppings"></app-pizza-toppings>

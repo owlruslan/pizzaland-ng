@@ -26,7 +26,7 @@ import {RestaurantsService} from "../restaurants/restaurants.service";
 export class RestaurantComponent implements AfterContentChecked, OnDestroy {
   readonly cursorTypes = CursorType;
   readonly unsubscribe = new Subject<void>();
-  readonly restaurant: Observable<Restaurant> = this.restaurantsService.getRestaurant('0');
+  readonly restaurant: Restaurant = this.restaurantsService.getRestaurant('0');
 
   form = this.fb.group({toppings: [[]]});
   pizzas: Pizza[] | undefined = this.pizzasService.getPizzas();
