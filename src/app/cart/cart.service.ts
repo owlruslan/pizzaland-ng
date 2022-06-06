@@ -7,8 +7,6 @@ import {Pizza} from "../pizzas/pizza.model";
 export class CartService {
   private pizzas: Pizza[] = mockPizzaResults.slice(0, 2) || [];
 
-  constructor() { }
-
   addToCart(pizza: Pizza): void {
     this.pizzas.push(pizza);
   }
