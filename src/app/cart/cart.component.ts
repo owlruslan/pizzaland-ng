@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {Pizza} from "../pizzas/pizza.model";
 import {CartService} from "./cart.service";
 
@@ -8,16 +8,12 @@ import {CartService} from "./cart.service";
   styleUrls: ['./cart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CartComponent implements OnInit {
+export class CartComponent {
   pizzas: Pizza[] = this.cart.getPizzas();
   total: number = this.pizzas.length;
-  activePizza: Pizza | undefined = undefined;
+  activePizza: Pizza | undefined = this.pizzas[0];
 
   constructor(private cart: CartService) { }
-
-  ngOnInit(): void {
-    this.activePizza = this.pizzas[0];
-  }
 
   onPizzaHover(pizza: Pizza): void {
     this.activePizza = pizza;
