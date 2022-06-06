@@ -1,5 +1,5 @@
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
-import {AfterContentChecked, ChangeDetectionStrategy, Component, OnDestroy} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {Subject} from 'rxjs';
 import {CartService} from "../cart/cart.service";
@@ -25,9 +25,7 @@ import {RestaurantsService} from "../restaurants/restaurants.service";
     ])
   ],
 })
-export class RestaurantComponent implements AfterContentChecked, OnDestroy {
-  readonly cursorTypes = CursorType;
-  readonly unsubscribe = new Subject<void>();
+export class RestaurantComponent {
   readonly restaurant: Restaurant = this.restaurantsService.getRestaurant('0');
 
   form = this.fb.group({toppings: [[]]});
@@ -63,15 +61,6 @@ export class RestaurantComponent implements AfterContentChecked, OnDestroy {
     private cart: CartService,
     private fb: FormBuilder
   ) {
-  }
-
-  ngAfterContentChecked(): void {
-    this.form.controls['toppings'].enable();
-  }
-
-
-  ngOnDestroy(): void {
-    this.unsubscribe.next();
   }
 
   onAddCart(pizza: Pizza) {
