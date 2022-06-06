@@ -1,14 +1,14 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {Component} from '@angular/core';
 import {CartService} from "../../cart/cart.service";
+import {Pizza} from "../../pizzas/pizza.model";
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent {
-  pizzasCount: number = this.cart.getPizzas().length;
+  pizzas: Pizza[] = this.cart.getPizzas();
 
   constructor(private cart: CartService) { }
 }
