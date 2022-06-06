@@ -4,6 +4,7 @@
   <div class="pizzas">
     <ng-container *ngFor="let pizza of pizzas">
       <app-pizza-card
+        [isShowButton]="false"
         (mouseenter)="onPizzaHover(pizza)"
         [pizza]="pizza"
         class="pizza-card">

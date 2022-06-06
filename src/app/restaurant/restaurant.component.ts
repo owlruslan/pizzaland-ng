@@ -2,6 +2,7 @@ import {animate, query, stagger, style, transition, trigger} from '@angular/anim
 import {AfterContentChecked, ChangeDetectionStrategy, Component, OnDestroy} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {Subject} from 'rxjs';
+import {CartService} from "../cart/cart.service";
 import {CursorType} from '../components/restaurant-card/restaurant-card.component';
 import {Pizza} from "../pizzas/pizza.model";
 import {PizzasService} from "../pizzas/pizzas.service";
@@ -59,6 +60,7 @@ export class RestaurantComponent implements AfterContentChecked, OnDestroy {
   constructor(
     private restaurantsService: RestaurantsService,
     private pizzasService: PizzasService,
+    private cart: CartService,
     private fb: FormBuilder
   ) {
   }
@@ -70,5 +72,9 @@ export class RestaurantComponent implements AfterContentChecked, OnDestroy {
 
   ngOnDestroy(): void {
     this.unsubscribe.next();
+  }
+
+  onAddCart(pizza: Pizza) {
+    this.cart.addToCart(pizza);
   }
 }

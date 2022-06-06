@@ -1,5 +1,4 @@
-import {Component, Input} from '@angular/core';
-import {CartService} from "../../cart/cart.service";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Pizza} from "../../pizzas/pizza.model";
 import {ButtonType} from '../../ui/button/button.component';
 
@@ -12,10 +11,10 @@ import {ButtonType} from '../../ui/button/button.component';
 export class PizzaCardComponent {
   readonly buttonType = ButtonType.SUCCESS;
   @Input() pizza: Pizza | undefined = undefined;
-
-  constructor(private cart: CartService) { }
+  @Input() isShowButton = false;
+  @Output() cartChange = new EventEmitter<Pizza>()
 
   onBuy(pizza: Pizza): void {
-    this.cart.addToCart(pizza);
+    this.cartChange.emit(pizza);
   }
 }

@@ -10,7 +10,11 @@
        [@listAnimation]="pizzas?.length"
        class="pizzas">
     <ng-container *ngFor="let pizza of pizzas">
-      <app-pizza-card [pizza]="pizza" class="pizza-card"></app-pizza-card>
+      <app-pizza-card
+        class="pizza-card"
+        [pizza]="pizza"
+        (cartChange)="onAddCart($event)"
+        [isShowButton]="true"></app-pizza-card>
     </ng-container>
   </div>
   <ng-template #preloader>

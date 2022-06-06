@@ -8,10 +8,11 @@
       <div class="pizza-card__info__name">{{ pizza.name }}</div>
       <div class="pizza-card__info__bottom">
         <ui-button
+          *ngIf="isShowButton"
           (click)="onBuy(pizza)"
           [type]="buttonType"
           class="pizza-card__info__buy-btn"
-          title="Add to Card"></ui-button>
+          title="Add to Cart"></ui-button>
       </div>
     </div>
   </div>
