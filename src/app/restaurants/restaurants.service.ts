@@ -8,7 +8,7 @@ export class RestaurantsService {
   /**
    * Get a restaurant list.
    */
-  getRestaurants(query?: string): Restaurant[] {
+  getRestaurants(): Restaurant[] {
     return mockRestaurants;
   }
 
