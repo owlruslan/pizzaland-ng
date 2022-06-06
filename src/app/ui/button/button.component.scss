@@ -7,7 +7,6 @@
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  text-transform: uppercase;
   background-color: #0270E4;
   color: #ffffff;
   height: 32px;
@@ -20,7 +19,7 @@
   }
 
   &.success {
-    background-color: #32D184;
+    background-color: #63c08e;
 
     &:hover {
       background-color: rgba(#32D184, 0.2);
