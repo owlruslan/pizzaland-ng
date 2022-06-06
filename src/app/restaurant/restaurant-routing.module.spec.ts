@@ -1,9 +1,9 @@
 import {TestBed} from "@angular/core/testing";
 import {Router} from "@angular/router";
 import {RouterTestingModule} from "@angular/router/testing";
+import {RestaurantRoutingModule} from "./restaurant-routing.module";
 
 import {RestaurantComponent} from "./restaurant.component";
-import {RestaurantRoutingModule} from "./restaurant-routing.module";
 
 
 describe('RestaurantRoutingModule', () => {

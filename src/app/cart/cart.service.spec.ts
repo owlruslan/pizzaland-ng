@@ -1,8 +1,8 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 import {mockPizzaResults} from "../pizzas/get-pizzas-response.mock";
 import mockPizza from "../pizzas/pizza.mock";
 
-import { CartService } from './cart.service';
+import {CartService} from './cart.service';
 
 describe('CartService', () => {
   let service: CartService;

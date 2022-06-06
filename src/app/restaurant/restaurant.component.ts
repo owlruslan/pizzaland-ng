@@ -1,9 +1,7 @@
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
-import {ChangeDetectionStrategy, Component, OnDestroy} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
-import {Subject} from 'rxjs';
 import {CartService} from "../cart/cart.service";
-import {CursorType} from '../components/restaurant-card/restaurant-card.component';
 import {Pizza} from "../pizzas/pizza.model";
 import {PizzasService} from "../pizzas/pizzas.service";
 import {Restaurant} from '../restaurants/restaurant';
