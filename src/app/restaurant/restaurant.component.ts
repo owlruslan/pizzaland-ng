@@ -1,6 +1,6 @@
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
+import {UntypedFormBuilder} from '@angular/forms';
 import {CartService} from "../cart/cart.service";
 import {Pizza} from "../pizzas/pizza.model";
 import {PizzasService} from "../pizzas/pizzas.service";
@@ -57,7 +57,7 @@ export class RestaurantComponent {
     private restaurantsService: RestaurantsService,
     private pizzasService: PizzasService,
     private cart: CartService,
-    private fb: FormBuilder
+    private fb: UntypedFormBuilder
   ) {
   }
 
